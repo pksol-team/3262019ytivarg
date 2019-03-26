@@ -1,0 +1,32 @@
+{
+  "name": "gravityforms-gutenberg-block",
+  "version": "1.0.0",
+  "main": "js/block.js",
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-plugin-transform-react-jsx": "^6.24.1",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "cross-env": "^5.2.0",
+    "css-loader": "^0.28.11",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "lodash": "^4.17.11",
+    "node-sass": "^4.10.0",
+    "react": "^16.6.3",
+    "react-click-outside": "^3.0.1",
+    "react-dom": "^16.6.3",
+    "sass-loader": "^6.0.7",
+    "webpack": "^3.12.0"
+  },
+  "scripts": {
+    "build": "cross-env BABEL_ENV=default NODE_ENV=production webpack",
+    "watch-build": "cross-env BABEL_EV=default NODE_ENV=production webpack --watch",
+    "dev": "cross-env BABEL_ENV=default webpack --watch"
+  },
+  "dependencies": {
+    "@wordpress/url": "0.1.0-beta.0",
+    "classnames": "^2.2.6"
+  }
+}

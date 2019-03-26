@@ -1,0 +1,242 @@
+0000.000 (0) Opened log file at time: Sat, 16 Mar 2019 00:29:07 +0000 on http://stripe.pakistancouncilofyouth.com
+0000.001 (0) UpdraftPlus WordPress backup plugin (https://updraftplus.com): 2.16.4.24 WP: 5.1.1 PHP: 7.0.33 (cgi-fcgi, Linux s9.tez.host 3.10.0-714.10.2.lve1.5.19.7.el7.x86_64 #1 SMP Fri Sep 28 08:37:09 EDT 2018 x86_64) MySQL: 10.2.22-MariaDB-cll-lve WPLANG: en_US Server: Apache safe_mode: 0 max_execution_time: 900 memory_limit: 1024M (used: 6.9M | 10M) multisite: N openssl: OpenSSL 1.0.2q  20 Nov 2018 mcrypt: Y LANG:  ZipArchive::addFile: Y
+0000.032 (0) Free space on disk containing Updraft's temporary directory: 216435.3 MB
+0000.033 (0) Tasks: Backup files: 1 (schedule: unset) Backup DB: 1 (schedule: unset)
+0000.035 (0) Semaphore (fd, wpkn_options) being initialised
+0000.036 (0) Requesting semaphore lock (fd) (apparently not via scheduler)
+0000.037 (0) Set semaphore last lock (fd) time to 2019-03-16 00:29:07
+0000.037 (0) Semaphore lock (fd) complete
+0000.039 (0) Backup run: resumption=0, nonce=c8d9319b8097, file_nonce=c8d9319b8097 begun at=1552696147 (0s ago), job type=backup, label=stripe before hamza 16 march
+0000.040 (0) Scheduling a resumption (1) after 300 seconds (1552696447) in case this run gets aborted
+0000.051 (0) Checking if we have a zip executable available
+0000.051 (0) Testing: /usr/bin/zip
+0000.055 (0) Output: zip warning: binziptest/test.zip not found or empty
+0000.056 (0) Output: adding: binziptest/subdir1/	(in=0) (out=0) (stored 0%)
+0000.056 (0) Output: adding: binziptest/subdir1/subdir2/	(in=0) (out=0) (stored 0%)
+0000.056 (0) Output: adding: binziptest/subdir1/subdir2/test.html	(in=131) (out=107) (deflated 18%)
+0000.056 (0) Output: total bytes=131, compressed=107 -> 18% savings
+0000.060 (0) Output: adding: binziptest/subdir1/subdir2/test2.html	(in=138) (out=113) (deflated 18%)
+0000.060 (0) Output: total bytes=269, compressed=220 -> 18% savings
+0000.066 (0) Working binary zip found: /usr/bin/zip
+0000.067 (0) Zip engine: found/will use a binary zip: /usr/bin/zip
+0000.067 (0) Creation of backups of directories: beginning
+0000.068 (0) Beginning creation of dump of plugins (split every: 400 MB)
+0000.129 (0) Total entities for the zip file: 483 directories, 2742 files (0 skipped as non-modified), 36.6 MB
+0000.131 (0) Zip: backup_2019-03-16-0029_My_Blog_c8d9319b8097-plugins.zip.tmp: 100 files added (on-disk size: 0 KB)
+0000.132 (0) Zip: backup_2019-03-16-0029_My_Blog_c8d9319b8097-plugins.zip.tmp: 200 files added (on-disk size: 0 KB)
+0000.134 (0) Zip: backup_2019-03-16-0029_My_Blog_c8d9319b8097-plugins.zip.tmp: 300 files added (on-disk size: 0 KB)
+0000.135 (0) Zip: backup_2019-03-16-0029_My_Blog_c8d9319b8097-plugins.zip.tmp: 400 files added (on-disk size: 0 KB)
+0000.137 (0) Zip: backup_2019-03-16-0029_My_Blog_c8d9319b8097-plugins.zip.tmp: 500 files added (on-disk size: 0 KB)
+0000.137 (0) Adding batch to zip file (UpdraftPlus_BinZip): over 500 files added on this batch (6.2 MB, 2742 files batched, 501 (501) added so far); re-opening (prior size: 0 KB)
+0000.420 (0) backup_2019-03-16-0029_My_Blog_c8d9319b8097-plugins.zip.tmp: size is now: 2.20 MB
+0000.422 (0) Zip: backup_2019-03-16-0029_My_Blog_c8d9319b8097-plugins.zip.tmp: 600 files added (on-disk size: 2221.6 KB)
+0000.424 (0) Zip: backup_2019-03-16-0029_My_Blog_c8d9319b8097-plugins.zip.tmp: 700 files added (on-disk size: 2221.6 KB)
+0000.426 (0) Zip: backup_2019-03-16-0029_My_Blog_c8d9319b8097-plugins.zip.tmp: 800 files added (on-disk size: 2221.6 KB)
+0000.427 (0) Zip: backup_2019-03-16-0029_My_Blog_c8d9319b8097-plugins.zip.tmp: 900 files added (on-disk size: 2221.6 KB)
+0000.429 (0) Zip: backup_2019-03-16-0029_My_Blog_c8d9319b8097-plugins.zip.tmp: 1000 files added (on-disk size: 2221.6 KB)
+0000.429 (0) Adding batch to zip file (UpdraftPlus_BinZip): over 500 files added on this batch (4.5 MB, 2742 files batched, 501 (1002) added so far); re-opening (prior size: 2221.6 KB)
+0000.590 (0) backup_2019-03-16-0029_My_Blog_c8d9319b8097-plugins.zip.tmp: size is now: 3.60 MB
+0001.988 (0) Zip: backup_2019-03-16-0029_My_Blog_c8d9319b8097-plugins.zip.tmp: 1100 files added (on-disk size: 3735.5 KB)
+0001.989 (0) Zip: backup_2019-03-16-0029_My_Blog_c8d9319b8097-plugins.zip.tmp: 1200 files added (on-disk size: 3735.5 KB)
+0001.992 (0) Zip: backup_2019-03-16-0029_My_Blog_c8d9319b8097-plugins.zip.tmp: 1300 files added (on-disk size: 3735.5 KB)
+0001.993 (0) Zip: backup_2019-03-16-0029_My_Blog_c8d9319b8097-plugins.zip.tmp: 1400 files added (on-disk size: 3735.5 KB)
+0001.995 (0) Zip: backup_2019-03-16-0029_My_Blog_c8d9319b8097-plugins.zip.tmp: 1500 files added (on-disk size: 3735.5 KB)
+0001.996 (0) Adding batch to zip file (UpdraftPlus_BinZip): over 500 files added on this batch (2.1 MB, 2742 files batched, 501 (1503) added so far); re-opening (prior size: 3735.5 KB)
+0002.085 (0) backup_2019-03-16-0029_My_Blog_c8d9319b8097-plugins.zip.tmp: size is now: 4.40 MB
+0002.087 (0) Zip: backup_2019-03-16-0029_My_Blog_c8d9319b8097-plugins.zip.tmp: 1600 files added (on-disk size: 4508.6 KB)
+0002.089 (0) Zip: backup_2019-03-16-0029_My_Blog_c8d9319b8097-plugins.zip.tmp: 1700 files added (on-disk size: 4508.6 KB)
+0002.091 (0) Zip: backup_2019-03-16-0029_My_Blog_c8d9319b8097-plugins.zip.tmp: 1800 files added (on-disk size: 4508.6 KB)
+0002.093 (0) Zip: backup_2019-03-16-0029_My_Blog_c8d9319b8097-plugins.zip.tmp: 1900 files added (on-disk size: 4508.6 KB)
+0002.095 (0) Zip: backup_2019-03-16-0029_My_Blog_c8d9319b8097-plugins.zip.tmp: 2000 files added (on-disk size: 4508.6 KB)
+0002.096 (0) Adding batch to zip file (UpdraftPlus_BinZip): over 500 files added on this batch (2.8 MB, 2742 files batched, 501 (2004) added so far); re-opening (prior size: 4508.6 KB)
+0004.375 (0) backup_2019-03-16-0029_My_Blog_c8d9319b8097-plugins.zip.tmp: size is now: 5.60 MB
+0004.391 (0) Zip: backup_2019-03-16-0029_My_Blog_c8d9319b8097-plugins.zip.tmp: 2100 files added (on-disk size: 5723 KB)
+0004.393 (0) Zip: backup_2019-03-16-0029_My_Blog_c8d9319b8097-plugins.zip.tmp: 2200 files added (on-disk size: 5723 KB)
+0004.396 (0) Zip: backup_2019-03-16-0029_My_Blog_c8d9319b8097-plugins.zip.tmp: 2300 files added (on-disk size: 5723 KB)
+0004.398 (0) Zip: backup_2019-03-16-0029_My_Blog_c8d9319b8097-plugins.zip.tmp: 2400 files added (on-disk size: 5723 KB)
+0004.400 (0) Zip: backup_2019-03-16-0029_My_Blog_c8d9319b8097-plugins.zip.tmp: 2500 files added (on-disk size: 5723 KB)
+0004.401 (0) Adding batch to zip file (UpdraftPlus_BinZip): over 500 files added on this batch (16.6 MB, 2742 files batched, 501 (2505) added so far); re-opening (prior size: 5723 KB)
+0015.274 (0) backup_2019-03-16-0029_My_Blog_c8d9319b8097-plugins.zip.tmp: size is now: 9.70 MB
+0015.277 (0) Zip: backup_2019-03-16-0029_My_Blog_c8d9319b8097-plugins.zip.tmp: 2600 files added (on-disk size: 9899 KB)
+0015.279 (0) Zip: backup_2019-03-16-0029_My_Blog_c8d9319b8097-plugins.zip.tmp: 2700 files added (on-disk size: 9899 KB)
+0027.768 (0) Created plugins zip (0) - 11774.5 KB in 27.7 s (425.5 KB/s) (sha1: 7322f62d037a2644e31afa7ddfc752dda501245b, sha256: e4ad0eb617c1e92871b8b7fcdab581111c569907cf89b3fbf73ec895a67ffbc0)
+0027.777 (0) Beginning creation of dump of themes (split every: 400 MB)
+0027.908 (0) Free disk space in account: 4561.6 MB (8.8 % used)
+0027.911 (0) Total entities for the zip file: 45 directories, 195 files (0 skipped as non-modified), 3 MB
+0027.912 (0) Zip: backup_2019-03-16-0029_My_Blog_c8d9319b8097-themes.zip.tmp: 100 files added (on-disk size: 0 KB)
+0034.049 (0) backup_2019-03-16-0029_My_Blog_c8d9319b8097-themes.zip.tmp: size is now: 1.90 MB
+0034.066 (0) Created themes zip (0) - 1948.7 KB in 6.2 s (316.5 KB/s) (sha1: 2261c95b8a7fe979d53d1d3cf3e9bd26dd233795, sha256: 143548ed5ddc43fe747aad98d1329775c6a43be477acc55b04c799bb1a916a09)
+0034.067 (0) Exclusion option setting (uploads): backup*,*backups,backwpup*,wp-clone,snapshots
+0034.067 (0) Looking for candidates to backup in: /home/pcy/public_html/stripe/wp-content/uploads
+0034.068 (0) finding files: 2019: adding to list (1)
+0034.068 (0) Beginning creation of dump of uploads (split every: 400 MB)
+0034.093 (0) Free disk space in account: 4561.6 MB (8.8 % used)
+0034.095 (0) Total entities for the zip file: 2 directories, 0 files (0 skipped as non-modified), 0 MB
+0034.099 (0) backup_2019-03-16-0029_My_Blog_c8d9319b8097-uploads.zip.tmp: size is now: 0.00 MB
+0034.101 (0) Created uploads zip (0) - 0.3 KB in 0 s (49.3 KB/s) (sha1: ba759931ac862732d77f26fcba66ad788ed5f11a, sha256: 5dd3be084a12320f0e00510c1fe11cf212d6d194cf10cfa030f93823430f8072)
+0034.102 (0) No backup of wpcore: excluded by user's options
+0034.103 (0) Beginning backup of other directories found in the content directory (index: 0)
+0034.103 (0) Exclusion option setting (others): upgrade,cache,updraft,backup*,*backups,mysql.sql,debug.log
+0034.104 (0) Looking for candidates to backup in: /home/pcy/public_html/stripe/wp-content
+0034.104 (0) finding files: plugins: skipping: this is the plugins directory
+0034.105 (0) finding files: updraft: skipping: this is the updraft directory
+0034.105 (0) finding files: index.php: adding to list (1)
+0034.106 (0) finding files: uploads: skipping: this is the uploads directory
+0034.106 (0) finding files: themes: skipping: this is the themes directory
+0034.106 (0) finding files: upgrade: skipping: excluded by options
+0034.148 (0) Free disk space in account: 4561.6 MB (8.8 % used)
+0034.149 (0) Total entities for the zip file: 0 directories, 1 files (0 skipped as non-modified), 0 MB
+0034.153 (0) backup_2019-03-16-0029_My_Blog_c8d9319b8097-others.zip.tmp: size is now: 0.00 MB
+0034.155 (0) Created others zip (0) - 0.2 KB in 0 s (30 KB/s) (sha1: 53771ddf03151b6952b85041f877dab88c3fccfc, sha256: fea63d94c90afeefb53cdde6c4dfadaee0d253ee2a7bf2d925894c3d2fee36d6)
+0034.155 (0) No backup of more: excluded by user's options
+0034.157 (0) Saving backup status to database (elements: 8)
+0034.158 (0) Beginning creation of database dump (WordPress DB)
+0034.159 (0) Testing potential mysqldump binary: /usr/bin/mysqldump
+0034.170 (0) Output: /*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;\n/*!40103 SET TIME_ZONE='+00:00' */;\n/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;\n/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;\n/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;\n/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;\nDROP TABLE IF EXISTS `wpkn_options`;\n/*!40101 SET @saved_cs_client     = @@character_set_client */;\n/*!40101 SET character_set_client = utf8 */;\nC (truncated - 1218 bytes total)
+0034.172 (0) Working binary mysqldump found: /usr/bin/mysqldump
+0034.174 (0) Table wpkn_options: Total expected rows (approximate): 192
+0034.192 (0) Table wpkn_options: Total rows added: 188 in 0.02 seconds
+0034.193 (0) Table wpkn_options: finishing file (backup_2019-03-16-0029_My_Blog_c8d9319b8097-db-table-wpkn_options.table.gz - 131.5 KB)
+0034.195 (0) Table wpkn_users: Total expected rows (approximate): 1
+0034.196 (0) Table wpkn_users: Total rows added: 1 in 0.00 seconds
+0034.196 (0) Table wpkn_users: finishing file (backup_2019-03-16-0029_My_Blog_c8d9319b8097-db-table-wpkn_users.table.gz - 0.6 KB)
+0034.198 (0) Table wpkn_usermeta: Total expected rows (approximate): 18
+0034.199 (0) Table wpkn_usermeta: Total rows added: 18 in 0.00 seconds
+0034.200 (0) Table wpkn_usermeta: finishing file (backup_2019-03-16-0029_My_Blog_c8d9319b8097-db-table-wpkn_usermeta.table.gz - 1.1 KB)
+0034.201 (0) Table wpkn_commentmeta: Total expected rows (approximate): 0
+0034.202 (0) Table wpkn_commentmeta: Total rows added: 0 in 0.00 seconds
+0034.202 (0) Table wpkn_commentmeta: finishing file (backup_2019-03-16-0029_My_Blog_c8d9319b8097-db-table-wpkn_commentmeta.table.gz - 0.4 KB)
+0034.204 (0) Table wpkn_comments: Total expected rows (approximate): 1
+0034.205 (0) Table wpkn_comments: Total rows added: 1 in 0.00 seconds
+0034.205 (0) Table wpkn_comments: finishing file (backup_2019-03-16-0029_My_Blog_c8d9319b8097-db-table-wpkn_comments.table.gz - 0.7 KB)
+0034.207 (0) Table wpkn_links: Total expected rows (approximate): 0
+0034.208 (0) Table wpkn_links: Total rows added: 0 in 0.00 seconds
+0034.208 (0) Table wpkn_links: finishing file (backup_2019-03-16-0029_My_Blog_c8d9319b8097-db-table-wpkn_links.table.gz - 0.4 KB)
+0034.210 (0) Table wpkn_postmeta: Total expected rows (approximate): 2
+0034.211 (0) Table wpkn_postmeta: Total rows added: 2 in 0.00 seconds
+0034.211 (0) Table wpkn_postmeta: finishing file (backup_2019-03-16-0029_My_Blog_c8d9319b8097-db-table-wpkn_postmeta.table.gz - 0.4 KB)
+0034.212 (0) Table wpkn_posts: Total expected rows (approximate): 4
+0034.214 (0) Table wpkn_posts: Total rows added: 4 in 0.00 seconds
+0034.214 (0) Table wpkn_posts: finishing file (backup_2019-03-16-0029_My_Blog_c8d9319b8097-db-table-wpkn_posts.table.gz - 3.1 KB)
+0034.216 (0) Table wpkn_term_relationships: Total expected rows (approximate): 1
+0034.217 (0) Table wpkn_term_relationships: Total rows added: 1 in 0.00 seconds
+0034.217 (0) Table wpkn_term_relationships: finishing file (backup_2019-03-16-0029_My_Blog_c8d9319b8097-db-table-wpkn_term_relationships.table.gz - 0.4 KB)
+0034.219 (0) Table wpkn_term_taxonomy: Total expected rows (approximate): 1
+0034.220 (0) Table wpkn_term_taxonomy: Total rows added: 1 in 0.00 seconds
+0034.220 (0) Table wpkn_term_taxonomy: finishing file (backup_2019-03-16-0029_My_Blog_c8d9319b8097-db-table-wpkn_term_taxonomy.table.gz - 0.4 KB)
+0034.222 (0) Table wpkn_termmeta: Total expected rows (approximate): 0
+0034.223 (0) Table wpkn_termmeta: Total rows added: 0 in 0.00 seconds
+0034.223 (0) Table wpkn_termmeta: finishing file (backup_2019-03-16-0029_My_Blog_c8d9319b8097-db-table-wpkn_termmeta.table.gz - 0.4 KB)
+0034.225 (0) Table wpkn_terms: Total expected rows (approximate): 1
+0034.226 (0) Table wpkn_terms: Total rows added: 1 in 0.00 seconds
+0034.226 (0) Table wpkn_terms: finishing file (backup_2019-03-16-0029_My_Blog_c8d9319b8097-db-table-wpkn_terms.table.gz - 0.4 KB)
+0034.228 (0) Table wpkn_gf_draft_submissions: Total expected rows (approximate): 0
+0034.229 (0) Table wpkn_gf_draft_submissions: Total rows added: 0 in 0.00 seconds
+0034.229 (0) Table wpkn_gf_draft_submissions: finishing file (backup_2019-03-16-0029_My_Blog_c8d9319b8097-db-table-wpkn_gf_draft_submissions.table.gz - 0.4 KB)
+0034.231 (0) Table wpkn_gf_entry: Total expected rows (approximate): 0
+0034.232 (0) Table wpkn_gf_entry: Total rows added: 0 in 0.00 seconds
+0034.232 (0) Table wpkn_gf_entry: finishing file (backup_2019-03-16-0029_My_Blog_c8d9319b8097-db-table-wpkn_gf_entry.table.gz - 0.5 KB)
+0034.234 (0) Table wpkn_gf_entry_meta: Total expected rows (approximate): 0
+0034.235 (0) Table wpkn_gf_entry_meta: Total rows added: 0 in 0.00 seconds
+0034.235 (0) Table wpkn_gf_entry_meta: finishing file (backup_2019-03-16-0029_My_Blog_c8d9319b8097-db-table-wpkn_gf_entry_meta.table.gz - 0.4 KB)
+0034.236 (0) Table wpkn_gf_entry_notes: Total expected rows (approximate): 0
+0034.237 (0) Table wpkn_gf_entry_notes: Total rows added: 0 in 0.00 seconds
+0034.238 (0) Table wpkn_gf_entry_notes: finishing file (backup_2019-03-16-0029_My_Blog_c8d9319b8097-db-table-wpkn_gf_entry_notes.table.gz - 0.4 KB)
+0034.239 (0) Table wpkn_gf_form: Total expected rows (approximate): 0
+0034.240 (0) Table wpkn_gf_form: Total rows added: 0 in 0.00 seconds
+0034.240 (0) Table wpkn_gf_form: finishing file (backup_2019-03-16-0029_My_Blog_c8d9319b8097-db-table-wpkn_gf_form.table.gz - 0.4 KB)
+0034.242 (0) Table wpkn_gf_form_meta: Total expected rows (approximate): 0
+0034.242 (0) Table wpkn_gf_form_meta: Total rows added: 0 in 0.00 seconds
+0034.243 (0) Table wpkn_gf_form_meta: finishing file (backup_2019-03-16-0029_My_Blog_c8d9319b8097-db-table-wpkn_gf_form_meta.table.gz - 0.3 KB)
+0034.244 (0) Table wpkn_gf_form_view: Total expected rows (approximate): 0
+0034.245 (0) Table wpkn_gf_form_view: Total rows added: 0 in 0.00 seconds
+0034.245 (0) Table wpkn_gf_form_view: finishing file (backup_2019-03-16-0029_My_Blog_c8d9319b8097-db-table-wpkn_gf_form_view.table.gz - 0.4 KB)
+0034.247 (0) Table wpkn_rg_form: Total expected rows (approximate): 0
+0034.247 (0) Table wpkn_rg_form: Total rows added: 0 in 0.00 seconds
+0034.248 (0) Table wpkn_rg_form: finishing file (backup_2019-03-16-0029_My_Blog_c8d9319b8097-db-table-wpkn_rg_form.table.gz - 0.4 KB)
+0034.249 (0) Table wpkn_rg_form_meta: Total expected rows (approximate): 0
+0034.250 (0) Table wpkn_rg_form_meta: Total rows added: 0 in 0.00 seconds
+0034.250 (0) Table wpkn_rg_form_meta: finishing file (backup_2019-03-16-0029_My_Blog_c8d9319b8097-db-table-wpkn_rg_form_meta.table.gz - 0.3 KB)
+0034.252 (0) Table wpkn_rg_form_view: Total expected rows (approximate): 0
+0034.252 (0) Table wpkn_rg_form_view: Total rows added: 0 in 0.00 seconds
+0034.253 (0) Table wpkn_rg_form_view: finishing file (backup_2019-03-16-0029_My_Blog_c8d9319b8097-db-table-wpkn_rg_form_view.table.gz - 0.4 KB)
+0034.254 (0) Table wpkn_rg_incomplete_submissions: Total expected rows (approximate): 0
+0034.255 (0) Table wpkn_rg_incomplete_submissions: Total rows added: 0 in 0.00 seconds
+0034.255 (0) Table wpkn_rg_incomplete_submissions: finishing file (backup_2019-03-16-0029_My_Blog_c8d9319b8097-db-table-wpkn_rg_incomplete_submissions.table.gz - 0.4 KB)
+0034.257 (0) Table wpkn_rg_lead: Total expected rows (approximate): 0
+0034.257 (0) Table wpkn_rg_lead: Total rows added: 0 in 0.00 seconds
+0034.258 (0) Table wpkn_rg_lead: finishing file (backup_2019-03-16-0029_My_Blog_c8d9319b8097-db-table-wpkn_rg_lead.table.gz - 0.5 KB)
+0034.259 (0) Table wpkn_rg_lead_detail: Total expected rows (approximate): 0
+0034.260 (0) Table wpkn_rg_lead_detail: Total rows added: 0 in 0.00 seconds
+0034.260 (0) Table wpkn_rg_lead_detail: finishing file (backup_2019-03-16-0029_My_Blog_c8d9319b8097-db-table-wpkn_rg_lead_detail.table.gz - 0.4 KB)
+0034.262 (0) Table wpkn_rg_lead_detail_long: Total expected rows (approximate): 0
+0034.263 (0) Table wpkn_rg_lead_detail_long: Total rows added: 0 in 0.00 seconds
+0034.263 (0) Table wpkn_rg_lead_detail_long: finishing file (backup_2019-03-16-0029_My_Blog_c8d9319b8097-db-table-wpkn_rg_lead_detail_long.table.gz - 0.3 KB)
+0034.264 (0) Table wpkn_rg_lead_meta: Total expected rows (approximate): 0
+0034.265 (0) Table wpkn_rg_lead_meta: Total rows added: 0 in 0.00 seconds
+0034.266 (0) Table wpkn_rg_lead_meta: finishing file (backup_2019-03-16-0029_My_Blog_c8d9319b8097-db-table-wpkn_rg_lead_meta.table.gz - 0.4 KB)
+0034.267 (0) Table wpkn_rg_lead_notes: Total expected rows (approximate): 0
+0034.268 (0) Table wpkn_rg_lead_notes: Total rows added: 0 in 0.00 seconds
+0034.268 (0) Table wpkn_rg_lead_notes: finishing file (backup_2019-03-16-0029_My_Blog_c8d9319b8097-db-table-wpkn_rg_lead_notes.table.gz - 0.4 KB)
+0034.270 (0) backup_2019-03-16-0029_My_Blog_c8d9319b8097-db-table-wpkn_options.table.gz (1/28): adding to final database dump
+0034.285 (0) backup_2019-03-16-0029_My_Blog_c8d9319b8097-db-table-wpkn_users.table.gz (2/28): adding to final database dump
+0034.285 (0) backup_2019-03-16-0029_My_Blog_c8d9319b8097-db-table-wpkn_usermeta.table.gz (3/28): adding to final database dump
+0034.286 (0) backup_2019-03-16-0029_My_Blog_c8d9319b8097-db-table-wpkn_commentmeta.table.gz (4/28): adding to final database dump
+0034.286 (0) backup_2019-03-16-0029_My_Blog_c8d9319b8097-db-table-wpkn_comments.table.gz (5/28): adding to final database dump
+0034.287 (0) backup_2019-03-16-0029_My_Blog_c8d9319b8097-db-table-wpkn_links.table.gz (6/28): adding to final database dump
+0034.287 (0) backup_2019-03-16-0029_My_Blog_c8d9319b8097-db-table-wpkn_postmeta.table.gz (7/28): adding to final database dump
+0034.288 (0) backup_2019-03-16-0029_My_Blog_c8d9319b8097-db-table-wpkn_posts.table.gz (8/28): adding to final database dump
+0034.288 (0) backup_2019-03-16-0029_My_Blog_c8d9319b8097-db-table-wpkn_term_relationships.table.gz (9/28): adding to final database dump
+0034.288 (0) backup_2019-03-16-0029_My_Blog_c8d9319b8097-db-table-wpkn_term_taxonomy.table.gz (10/28): adding to final database dump
+0034.289 (0) backup_2019-03-16-0029_My_Blog_c8d9319b8097-db-table-wpkn_termmeta.table.gz (11/28): adding to final database dump
+0034.289 (0) backup_2019-03-16-0029_My_Blog_c8d9319b8097-db-table-wpkn_terms.table.gz (12/28): adding to final database dump
+0034.289 (0) backup_2019-03-16-0029_My_Blog_c8d9319b8097-db-table-wpkn_gf_draft_submissions.table.gz (13/28): adding to final database dump
+0034.290 (0) backup_2019-03-16-0029_My_Blog_c8d9319b8097-db-table-wpkn_gf_entry.table.gz (14/28): adding to final database dump
+0034.290 (0) backup_2019-03-16-0029_My_Blog_c8d9319b8097-db-table-wpkn_gf_entry_meta.table.gz (15/28): adding to final database dump
+0034.290 (0) backup_2019-03-16-0029_My_Blog_c8d9319b8097-db-table-wpkn_gf_entry_notes.table.gz (16/28): adding to final database dump
+0034.291 (0) backup_2019-03-16-0029_My_Blog_c8d9319b8097-db-table-wpkn_gf_form.table.gz (17/28): adding to final database dump
+0034.291 (0) backup_2019-03-16-0029_My_Blog_c8d9319b8097-db-table-wpkn_gf_form_meta.table.gz (18/28): adding to final database dump
+0034.291 (0) backup_2019-03-16-0029_My_Blog_c8d9319b8097-db-table-wpkn_gf_form_view.table.gz (19/28): adding to final database dump
+0034.292 (0) backup_2019-03-16-0029_My_Blog_c8d9319b8097-db-table-wpkn_rg_form.table.gz (20/28): adding to final database dump
+0034.292 (0) backup_2019-03-16-0029_My_Blog_c8d9319b8097-db-table-wpkn_rg_form_meta.table.gz (21/28): adding to final database dump
+0034.292 (0) backup_2019-03-16-0029_My_Blog_c8d9319b8097-db-table-wpkn_rg_form_view.table.gz (22/28): adding to final database dump
+0034.292 (0) backup_2019-03-16-0029_My_Blog_c8d9319b8097-db-table-wpkn_rg_incomplete_submissions.table.gz (23/28): adding to final database dump
+0034.293 (0) backup_2019-03-16-0029_My_Blog_c8d9319b8097-db-table-wpkn_rg_lead.table.gz (24/28): adding to final database dump
+0034.293 (0) backup_2019-03-16-0029_My_Blog_c8d9319b8097-db-table-wpkn_rg_lead_detail.table.gz (25/28): adding to final database dump
+0034.293 (0) backup_2019-03-16-0029_My_Blog_c8d9319b8097-db-table-wpkn_rg_lead_detail_long.table.gz (26/28): adding to final database dump
+0034.294 (0) backup_2019-03-16-0029_My_Blog_c8d9319b8097-db-table-wpkn_rg_lead_meta.table.gz (27/28): adding to final database dump
+0034.294 (0) backup_2019-03-16-0029_My_Blog_c8d9319b8097-db-table-wpkn_rg_lead_notes.table.gz (28/28): adding to final database dump
+0034.294 (0) backup_2019-03-16-0029_My_Blog_c8d9319b8097-db.gz: finished writing out complete database file (128 KB)
+0034.297 (0) Total database tables backed up: 28 (backup_2019-03-16-0029_My_Blog_c8d9319b8097-db.gz, size: 141062, sha256)
+0034.299 (0) backup_2019-03-16-0029_My_Blog_c8d9319b8097-plugins.zip: plugins: This file has not yet been successfully uploaded: will queue
+0034.299 (0) backup_2019-03-16-0029_My_Blog_c8d9319b8097-themes.zip: themes: This file has not yet been successfully uploaded: will queue
+0034.299 (0) backup_2019-03-16-0029_My_Blog_c8d9319b8097-uploads.zip: uploads: This file has not yet been successfully uploaded: will queue
+0034.299 (0) backup_2019-03-16-0029_My_Blog_c8d9319b8097-others.zip: others: This file has not yet been successfully uploaded: will queue
+0034.300 (0) backup_2019-03-16-0029_My_Blog_c8d9319b8097-db.gz: db: This file has not yet been successfully uploaded: will queue
+0034.300 (0) Saving backup history. Total backup size: 13.5 MB
+0034.301 (0) Requesting upload of the files that have not yet been successfully uploaded (5)
+0034.302 (0) Cloud backup selection (1/1): none with instance (1/1) (last)
+0034.302 (0) No remote despatch: user chose no remote backup service
+0034.302 (0) Recording as successfully uploaded: backup_2019-03-16-0029_My_Blog_c8d9319b8097-plugins.zip
+0034.303 (0) Recording as successfully uploaded: backup_2019-03-16-0029_My_Blog_c8d9319b8097-themes.zip
+0034.304 (0) Recording as successfully uploaded: backup_2019-03-16-0029_My_Blog_c8d9319b8097-uploads.zip
+0034.304 (0) Recording as successfully uploaded: backup_2019-03-16-0029_My_Blog_c8d9319b8097-others.zip
+0034.305 (0) Recording as successfully uploaded: backup_2019-03-16-0029_My_Blog_c8d9319b8097-db.gz
+0034.306 (0) Retain: beginning examination of existing backup sets; user setting: retain_files=2, retain_db=2
+0034.307 (0) Number of backup sets in history: 1; groups (db): 1
+0034.307 (0) Examining (for databases) backup set with group_id=0, nonce=c8d9319b8097, datestamp=1552696147 (Mar 16 2019 00:29:07)
+0034.307 (0) This backup set is the backup set just made, so will not be deleted.
+0034.307 (0) Number of backup sets in history: 1; groups (files): 1
+0034.308 (0) Examining (for files) backup set with nonce=c8d9319b8097, datestamp=1552696147 (Mar 16 2019 00:29:07)
+0034.308 (0) This backup set is the backup set just made, so will not be deleted.
+0034.308 (0) This backup set is the backup set just made, so will not be deleted.
+0034.308 (0) This backup set is the backup set just made, so will not be deleted.
+0034.308 (0) This backup set is the backup set just made, so will not be deleted.
+0034.308 (0) This backup set remains non-empty (f=1/d=1); will retain in history
+0034.308 (0) Retain: saving new backup history (sets now: 1) and finishing retain operation
+0034.309 (0) Resume backup (c8d9319b8097, 0): finish run
+0034.310 (0) Decremented the semaphore (fd) by 1
+0034.310 (0) Semaphore (fd) unlocked
+0034.310 (0) There were no errors in the uploads, so the 'resume' event (1) is being unscheduled
+0034.312 (0) No email will/can be sent - the user has not configured an email address.
+0034.312 (0) The backup apparently succeeded and is now complete

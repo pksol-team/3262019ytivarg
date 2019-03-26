@@ -1,0 +1,40 @@
+#gform_fields li.piperecorder_options_setting ul li {
+
+	padding: 0;
+
+}
+
+.piperecorder_width_setting,
+.piperecorder_height_setting,
+.piperecorder_recording_time_setting {
+
+	float: left;
+
+}
+
+.piperecorder_width_setting,
+.piperecorder_height_setting {
+
+	width: 30%;
+
+}
+
+.piperecorder_recording_time_setting {
+
+	width: 40%;
+
+}
+
+.piperecorder_width_setting input,
+.piperecorder_height_setting input,
+.piperecorder_recording_time_setting input {
+
+	width: 100px;
+
+}
+
+.piperecorder_options_setting {
+
+	clear: both;
+
+}

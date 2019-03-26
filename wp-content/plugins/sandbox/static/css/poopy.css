@@ -1,0 +1,212 @@
+.poopy_menu_content{
+    display: none;
+    background: #23282d;
+    padding: 0 10px 10px 10px !important;
+}
+.poopy_menu_content ul li{
+    float: none !important;
+    line-height: 20px !important;
+    list-style: inside !important;
+}
+#wpadminbar{
+    background: #9D6F4D !important;
+}
+.poopy_menu a.ab-item{
+    float: left !important;
+    cursor: default !important;
+}
+.poopy_menu a.ab-item .sandbox-username,
+.poopy_menu a.ab-item .sandbox-password{
+    -webkit-user-select: all !important;  /* Chrome all / Safari all */
+    -moz-user-select: all !important;     /* Firefox all */
+    -ms-user-select: all !important;      /* IE 10+ */
+    user-select: all !important;          /* Likely future */
+}
+.poopy_menu a.ab-item:hover,.poopy_menu a.ab-item:active,.poopy_menu a.ab-item:focus{
+    background: #9D6F4D !important;
+    cursor: default !important;
+    color: #eee !important;
+}
+.poopy_upgrade_link{
+    color: #008ec2;
+}
+.poopy_upgrade_link::after{
+    font-family: "dashicons";
+    content: "\f504";
+    font-size: 18px;
+    position: relative;
+    top: 3px;
+    left: 3px;
+}
+#template_url {
+    pointer-events: none;
+}
+#sandbox_license{
+    padding: 5px;
+    width: 260px;
+    -moz-border-radius: 3px;
+    -khtml-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+}
+.sandbox-save-button {
+    width: auto!important;
+    line-height: 26px!important;
+    height: 28px!important;
+    padding: 0 10px 1px!important;
+}
+.migrate-sandbox{
+    padding: 0 30px !important;
+}
+body, #wpcontent{
+    position: relative;
+}
+.poopy_affiliates{
+    display: none;
+}
+.poopy_affiliate{
+    position: fixed;
+    z-index: 99999;
+}
+html.wp-toolbar{
+    padding-top: 0;
+}
+#wpadminbar{
+    height: 135px !important;
+    display: none;
+}
+#toolbar-header{
+    padding-left: 5px !important;
+    height: 103px !important;
+    display: none;
+}
+#toolbar-header * {
+    line-height: 25px !important;
+}
+#toolbar-header h3{
+    font-size: 18px;
+    color: #fff;
+    padding-bottom: 0;
+}
+#toolbar-header p{
+    color: #fff;
+    font-size: 12px;
+}
+.toolbar-header-left, .toolbar-header-right{
+    display: inline-block;
+}
+.toolbar-header-left{
+    background: url("../img/poopy_icon.png") no-repeat !important;
+    background-position-y: 10px !important;
+    background-size: 90px !important;
+    padding-left: 100px !important;
+    padding-top: 30px !important;
+    height: 100% !important;
+}
+.toolbar-header-right{
+    text-align: center;
+}
+.toolbar-header-right a{
+    text-decoration: none !important;
+    background-size: auto !important;
+    background-color: #592500 !important;
+    color: #fff !important;
+    padding: 10px 30px !important;
+    -moz-border-radius: 15px !important;
+    -khtml-border-radius: 15px !important;
+    -webkit-border-radius: 15px !important;
+    border-radius: 15px !important;
+    transition: all ease 0.5s !important;
+    display: inline-block !important;
+    position: relative !important;
+    top: -5px !important;
+    margin-left: 20px !important;
+}
+.toolbar-header-right a.install-chrome-extension{
+    display: none !important;
+}
+.toolbar-header-right a:hover{
+    background-size: auto !important;
+    text-decoration: none !important;
+    transform: scale(1.05, 1.05) !important;
+}
+#toolbar-header .toolbar-header-right *{
+    line-height: 20px !important;
+}
+span.sandbox-toolbox-help {
+    display: inline-block !important;
+    width: 16px !important;
+    height: 16px !important;
+    margin-left: 5px !important;
+    position: relative !important;
+    top: 3px !important;
+    background: url("images/question-mark.png");
+    background-size: 16px 16px;
+}
+.toolbar-tipsy .tipsy-inner{
+    background-color: #592500;
+    color: #fff;
+    border: 1px solid #592500;
+    padding: 5px !important;
+}
+.custom-header-media img{
+    top: auto !important;
+}
+.chrome-extension-ad{
+    background: #9D6F4D;
+    color: #fff;
+    border: 4px solid #000;
+    padding: 10px;
+    text-align: center;
+    width: 420px;
+}
+.chrome-extension-ad h3{
+    color: #fff;
+    font-size: 25px;
+    margin: 10px 0;
+}
+.chrome-extension-ad h4{
+    color: #fff;
+    font-size: 20px;
+    margin: 0;
+    margin-top: 10px;
+}
+.chrome-extension-ad .install-now{
+    clear: both;
+    width: 280px;
+    margin-top: 10px;
+    text-decoration: none !important;
+    background-size: auto !important;
+    background-color: #592500 !important;
+    color: #fff !important;
+    padding: 10px 30px !important;
+    -moz-border-radius: 5px !important;
+    -khtml-border-radius: 5px !important;
+    -webkit-border-radius: 5px !important;
+    border-radius: 5px !important;
+    transition: all ease 0.5s !important;
+    display: inline-block !important;
+    position: relative !important;
+    font-size: 20px;
+}
+.chrome-extension-ad .install-now:hover {
+    background-size: auto !important;
+    text-decoration: none !important;
+    transform: scale(1.05, 1.05) !important;
+}
+.chrome-extension-ad .detailed-description{
+    padding: 0 60px;
+}
+.sandbox_remaining a{
+    width: 195px !important;
+}
+.sandbox_remaining a .poopy-menu-title{
+    display: inline-block;
+    width: 166px !important;
+}
+.edit-post-header, .edit-post-sidebar{
+    top: 135px !important;
+}
+.editor-post-save-draft {
+    margin-right: 30px !important;
+}

@@ -1,0 +1,24 @@
+0000.001 () Opened log file at time: Sat, 16 Mar 2019 00:38:36 +0000 on http://stripe.pakistancouncilofyouth.com
+0000.001 () UpdraftPlus WordPress backup plugin (https://updraftplus.com): 2.16.4.24 WP: 5.1.1 PHP: 7.0.33 (cgi-fcgi, Linux s9.tez.host 3.10.0-714.10.2.lve1.5.19.7.el7.x86_64 #1 SMP Fri Sep 28 08:37:09 EDT 2018 x86_64) MySQL: 10.2.22-MariaDB-cll-lve WPLANG: en_US Server: Apache safe_mode: 0 max_execution_time: 900 memory_limit: 1024M (used: 7.5M | 10M) multisite: N openssl: OpenSSL 1.0.2q  20 Nov 2018 mcrypt: Y LANG:  ZipArchive::addFile: Y
+0000.027 () Free space on disk containing Updraft's temporary directory: 216398.3 MB / Free disk space in account: 4535 MB (9.3 % used)
+0000.040 () Restore job started. Entities to restore: plugins. Restore options: {"updraft_encryptionphrase":"","updraft_restorer_wpcore_includewpconfig":false,"updraft_incremental_restore_point":-1}
+0000.041 () Will not delete any archives after unpacking them, because there was no cloud storage for this backup
+0000.041 () Entity: plugins
+0000.041 () restore_backup(backup_file=backup_2019-03-16-0019_Gravity_Forms_Demo_7916e172290b-plugins.zip, type=plugins, info=a:2:{s:4:"path";s:47:"/home/pcy/public_html/stripe/wp-content/plugins";s:11:"description";s:7:"Plugins";}, last_one=1)
+0000.041 () Unpacking backup... (backup_2019-03-16-0019_Gravity_Forms_Demo_7916e172290b-plugins.zip, 16.6 Mb)
+0000.042 () Unzipping backup_2019-03-16-0019_Gravity_Forms_Demo_7916e172290b-plugins.zip to /home/pcy/public_html/stripe/wp-content/upgrade/d0d2c412/ using UpdraftPlus_ZipArchive
+0000.116 () Unzip progress: 1002 out of 5627 files (1.4 MB, plugins/gravityformsstripe/includes/stripe/stripe-php/lib/SingletonApiResource.php)
+0003.721 () Unzip progress: 2003 out of 5627 files (7.7 MB, plugins/gravityformspaypal/images/active1.png)
+0021.284 () Unzip progress: 2914 out of 5627 files (19.6 MB, plugins/gravityforms/js/shortcode-ui.js)
+0038.934 () Unzip progress: 3908 out of 5627 files (35.7 MB, plugins/updraftplus/includes/Google/Service/Dfareporting.php)
+0051.266 () Unzip progress: 4909 out of 5627 files (46.7 MB, plugins/updraftplus/vendor/kriswallsmith/assetic/src/Assetic/Filter/MinifyCssCompressorFilter.php)
+0052.991 () Unzip progress: 5627 out of 5627 files (50 MB, plugins/updraftplus/vendor/phpseclib/phpseclib/travis/setup-secure-shell.sh)
+0052.995 () Moving old data: filesystem method / updraft_dir is potentially possible
+0052.995 () Moving old data: can potentially use wp_filesystem method / -old
+0052.995 () Moving old data out of the way...
+0053.070 () Top-level entities being moved: stripe-local-payments, akismet, index.php, wp-file-manager, updraftplus, gravityforms, hello.php
+0053.077 () Moving unpacked backup into place...
+0053.212 () Top-level entities being moved: gravityformsactivecampaign, gravityformspaypal, gravityformssurvey, gravityformsemma, gravityformshipchat, gravityformshighrise, gravityformsagilecrm, gravityformsmailgun, gravityformswebhooks, gravityformsmadmimi, gravityformsuserregistration, gravityformsmailchimp, gravityformscapsulecrm, gravityformsgutenberg, gravityformschainedselects, gravityformsquiz, gravityformsbreeze, gravityformscleverreach, gravityformscampfire, gravityformssignature, index.php, gravityformspipe, gravityformszapier, gravityformsauthorizenet, gravityformsaweber, gravityformscampaignmonitor, gravityformsdropbox, gravityformscoupons, sandbox, wp-file-manager, gravityformspartialentries, gravityformspostmark, gravityformsgetresponse, gravity-forms-highrise, gravityformspaypalpaymentspro, updraftplus, gravityformsbatchbook, gravityformsslack, gravityformsfreshbooks, gravityforms, gravityformstwilio, gravityformssendgrid, gravityformsstripe, gravityformszohocrm, gravityformsicontact, gravityformspolls, gravityformshelpscout, gravityformstrello
+0053.215 () Cleaning up rubbish...
+0053.234 () Restore successful!
+0053.234 () Restore successful

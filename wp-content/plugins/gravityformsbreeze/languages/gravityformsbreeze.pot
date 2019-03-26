@@ -1,0 +1,146 @@
+# Copyright 2009-2018 Rocketgenius, Inc.
+msgid ""
+msgstr ""
+"Project-Id-Version: Gravity Forms Breeze Add-On 1.3\n"
+"Report-Msgid-Bugs-To: http://www.gravtiyhelp.com\n"
+"POT-Creation-Date: 2018-04-09 20:16:38+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2018-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Rocketgenius <customerservice@rocketgenius.com>\n"
+"Language-Team: Rocketgenius <customerservice@rocketgenius.com>\n"
+"X-Generator: Gravity Forms Build Server\n"
+"X-Poedit-KeywordsList: "
+"__;_e;_x:1,2c;_ex:1,2c;_n:1,2;_nx:1,2,4c;_n_noop:1,2;_nx_noop:1,2,3c;esc_"
+"attr__;esc_html__;esc_attr_e;esc_html_e;esc_attr_x:1,2c;esc_html_x:1,2c;\n"
+"Project-Id-Version: gravityformsbreeze\n"
+"Language: en_US\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-Basepath: ../\n"
+"X-Poedit-Bookmarks: \n"
+"X-Poedit-Country: United States\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Textdomain-Support: yes\n"
+
+#: class-gf-breeze.php:185
+msgid "Create Breeze card only when payment is received."
+msgstr ""
+
+#: class-gf-breeze.php:207
+msgid "API Token"
+msgstr ""
+
+#: class-gf-breeze.php:215
+msgid "Breeze settings have been updated."
+msgstr ""
+
+#: class-gf-breeze.php:239
+msgid "Feed Name"
+msgstr ""
+
+#: class-gf-breeze.php:244 class-gf-breeze.php:276 class-gf-breeze.php:502
+msgid "Name"
+msgstr ""
+
+#: class-gf-breeze.php:244
+msgid "Enter a feed name to uniquely identify this setup."
+msgstr ""
+
+#: class-gf-breeze.php:248 class-gf-breeze.php:503
+msgid "Breeze Project"
+msgstr ""
+
+#: class-gf-breeze.php:256 class-gf-breeze.php:504
+msgid "Breeze List"
+msgstr ""
+
+#: class-gf-breeze.php:268
+msgid "Card Settings"
+msgstr ""
+
+#: class-gf-breeze.php:284
+msgid "Description"
+msgstr ""
+
+#: class-gf-breeze.php:289
+msgid "Due Date"
+msgstr ""
+
+#: class-gf-breeze.php:290
+msgid "days after today"
+msgstr ""
+
+#: class-gf-breeze.php:296
+msgid "Assign Users to Card"
+msgstr ""
+
+#: class-gf-breeze.php:304
+msgid "Feed Conditional Logic"
+msgstr ""
+
+#: class-gf-breeze.php:310 class-gf-breeze.php:313
+msgid "Conditional Logic"
+msgstr ""
+
+#: class-gf-breeze.php:311
+msgid "Enable"
+msgstr ""
+
+#: class-gf-breeze.php:312
+msgid "Export to Breeze if"
+msgstr ""
+
+#: class-gf-breeze.php:313
+msgid ""
+"When conditional logic is enabled, form submissions will only be exported "
+"to Breeze when the condition is met. When disabled, all form submissions "
+"will be posted."
+msgstr ""
+
+#: class-gf-breeze.php:334
+msgid "Select a Breeze Project"
+msgstr ""
+
+#: class-gf-breeze.php:373
+msgid "Select a Breeze List"
+msgstr ""
+
+#: class-gf-breeze.php:454
+msgid "No Due Date"
+msgstr ""
+
+#: class-gf-breeze.php:605
+msgid "Feed was not processed because API was not initialized."
+msgstr ""
+
+#: class-gf-breeze.php:662
+msgid "Card could not be created because no name was provided."
+msgstr ""
+
+#: class-gf-breeze.php:677
+msgid "Card could not be created: "
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+msgid "Gravity Forms Breeze Add-On"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid "https://www.gravityforms.com"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"Integrates Gravity Forms with Breeze, allowing form submissions to be "
+"automatically sent to your Breeze account."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "rocketgenius"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "https://www.rocketgenius.com"
+msgstr ""

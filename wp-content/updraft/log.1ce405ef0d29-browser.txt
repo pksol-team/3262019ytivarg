@@ -1,0 +1,14 @@
+0000.040 (R) [notice] Looking for plugins archive: file name: backup_2019-03-16-0019_Gravity_Forms_Demo_7916e172290b-plugins.zip
+0000.040 (R) [notice] Archive is expected to be size: 17041.8 KB: OK
+0000.041 (R) [notice] Will not delete any archives after unpacking them, because there was no cloud storage for this backup
+0000.041 (R) [notice] Unpacking backup... (backup_2019-03-16-0019_Gravity_Forms_Demo_7916e172290b-plugins.zip, 16.6 Mb)
+0000.116 (R) [notice] Unzip progress: 1002 out of 5627 files (1.4 MB, plugins/gravityformsstripe/includes/stripe/stripe-php/lib/SingletonApiResource.php)
+0003.720 (R) [notice] Unzip progress: 2003 out of 5627 files (7.7 MB, plugins/gravityformspaypal/images/active1.png)
+0021.284 (R) [notice] Unzip progress: 2914 out of 5627 files (19.6 MB, plugins/gravityforms/js/shortcode-ui.js)
+0038.933 (R) [notice] Unzip progress: 3908 out of 5627 files (35.7 MB, plugins/updraftplus/includes/Google/Service/Dfareporting.php)
+0051.266 (R) [notice] Unzip progress: 4909 out of 5627 files (46.7 MB, plugins/updraftplus/vendor/kriswallsmith/assetic/src/Assetic/Filter/MinifyCssCompressorFilter.php)
+0052.991 (R) [notice] Unzip progress: 5627 out of 5627 files (50 MB, plugins/updraftplus/vendor/phpseclib/phpseclib/travis/setup-secure-shell.sh)
+0052.995 (R) [notice] Moving old data out of the way...
+0053.097 (R) [notice] Moving unpacked backup into place...
+0053.215 (R) [notice] Cleaning up rubbish...
+0053.234 (R) [notice] Restore successful!

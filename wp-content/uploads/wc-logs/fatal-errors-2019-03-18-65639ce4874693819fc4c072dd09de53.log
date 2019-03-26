@@ -1,0 +1,14 @@
+2019-03-18T13:29:44+00:00 CRITICAL require_once(): Failed opening required 'class-gfbancontact' (include_path='E:\xampp\php\PEAR') in E:\xampp\htdocs\gravity\wp-content\plugins\gravityformbancontact\bancontact.php on line 40
+
+2019-03-18T13:29:50+00:00 CRITICAL require_once(): Failed opening required 'class-gfbancontact' (include_path='E:\xampp\php\PEAR') in E:\xampp\htdocs\gravity\wp-content\plugins\gravityformbancontact\bancontact.php on line 40
+
+2019-03-18T13:35:07+00:00 CRITICAL syntax error, unexpected 'array' (T_ARRAY), expecting ')' in E:\xampp\htdocs\gravity\wp-content\plugins\gravityformbancontact\class-gfbancontact.php on line 145
+
+2019-03-18T13:35:29+00:00 CRITICAL syntax error, unexpected 'array' (T_ARRAY), expecting ')' in E:\xampp\htdocs\gravity\wp-content\plugins\gravityformbancontact\class-gfbancontact.php on line 145
+
+2019-03-18T13:35:56+00:00 CRITICAL syntax error, unexpected 'array' (T_ARRAY), expecting ')' in E:\xampp\htdocs\gravity\wp-content\plugins\gravityformbancontact\class-gfbancontact.php on line 145
+
+2019-03-18T13:35:58+00:00 CRITICAL syntax error, unexpected 'array' (T_ARRAY), expecting ')' in E:\xampp\htdocs\gravity\wp-content\plugins\gravityformbancontact\class-gfbancontact.php on line 145
+
+2019-03-18T13:36:05+00:00 CRITICAL syntax error, unexpected 'array' (T_ARRAY), expecting ')' in E:\xampp\htdocs\gravity\wp-content\plugins\gravityformbancontact\class-gfbancontact.php on line 145
+
