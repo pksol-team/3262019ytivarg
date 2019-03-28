@@ -1,0 +1,337 @@
+0000.000 (0) Opened log file at time: Thu, 28 Mar 2019 01:00:08 +0000 on http://stripe.pakistancouncilofyouth.com
+0000.001 (0) UpdraftPlus WordPress backup plugin (https://updraftplus.com): 2.16.4.24 WP: 5.1.1 PHP: 7.0.33 (cgi-fcgi, Linux s9.tez.host 3.10.0-714.10.2.lve1.5.19.7.el7.x86_64 #1 SMP Fri Sep 28 08:37:09 EDT 2018 x86_64) MySQL: 10.2.22-MariaDB-cll-lve WPLANG: en_US Server: Apache safe_mode: 0 max_execution_time: 900 memory_limit: 1024M (used: 10.9M | 14M) multisite: N openssl: OpenSSL 1.0.2q  20 Nov 2018 mcrypt: Y LANG:  ZipArchive::addFile: Y
+0000.051 (0) Free space on disk containing Updraft's temporary directory: 207228.5 MB
+0000.059 (0) Tasks: Backup files: 1 (schedule: daily) Backup DB:  (schedule: daily)
+0000.060 (0) Processed schedules. Combining jobs from identical schedules. Tasks now: Backup files: 1 Backup DB: 1
+0000.061 (0) Requesting semaphore lock (fd) (apparently via scheduler: last_scheduled_action_called_at=1553663237, seconds_ago=71571)
+0000.063 (0) Set semaphore last lock (fd) time to 2019-03-28 01:00:08
+0000.063 (0) Semaphore lock (fd) complete
+0000.065 (0) Backup run: resumption=0, nonce=5e5ab2b73b75, file_nonce=5e5ab2b73b75 begun at=1553734808 (0s ago), job type=backup
+0000.066 (0) Scheduling a resumption (1) after 300 seconds (1553735108) in case this run gets aborted
+0000.079 (0) Checking if we have a zip executable available
+0000.080 (0) Testing: /usr/bin/zip
+0000.084 (0) Output: zip warning: binziptest/test.zip not found or empty
+0000.084 (0) Output: adding: binziptest/subdir1/	(in=0) (out=0) (stored 0%)
+0000.085 (0) Output: adding: binziptest/subdir1/subdir2/	(in=0) (out=0) (stored 0%)
+0000.085 (0) Output: adding: binziptest/subdir1/subdir2/test.html	(in=131) (out=107) (deflated 18%)
+0000.086 (0) Output: total bytes=131, compressed=107 -> 18% savings
+0000.089 (0) Output: adding: binziptest/subdir1/subdir2/test2.html	(in=138) (out=113) (deflated 18%)
+0000.090 (0) Output: total bytes=269, compressed=220 -> 18% savings
+0000.212 (0) Working binary zip found: /usr/bin/zip
+0000.270 (0) Zip engine: found/will use a binary zip: /usr/bin/zip
+0000.316 (0) Creation of backups of directories: beginning
+0000.326 (0) No backup of plugins: excluded by user's options
+0000.330 (0) No backup of themes: excluded by user's options
+0000.330 (0) No backup of uploads: excluded by user's options
+0000.331 (0) No backup of wpcore: excluded by user's options
+0000.331 (0) No backup of others: excluded by user's options
+0000.332 (0) No backup of more: excluded by user's options
+0000.333 (0) Saving backup status to database (elements: 0)
+0000.335 (0) Beginning creation of database dump (WordPress DB)
+0000.335 (0) Testing potential mysqldump binary: /usr/bin/mysqldump
+0000.388 (0) Output: /*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;\n/*!40103 SET TIME_ZONE='+00:00' */;\n/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;\n/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;\n/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;\n/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;\nDROP TABLE IF EXISTS `wpkn_options`;\n/*!40101 SET @saved_cs_client     = @@character_set_client */;\n/*!40101 SET character_set_client = utf8 */;\nC (truncated - 1220 bytes total)
+0000.391 (0) Binary mysqldump: error (code: 5)
+0000.391 (0) Testing potential mysqldump binary: /bin/mysqldump
+0000.417 (0) Output: /*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;\n/*!40103 SET TIME_ZONE='+00:00' */;\n/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;\n/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;\n/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;\n/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;\nDROP TABLE IF EXISTS `wpkn_options`;\n/*!40101 SET @saved_cs_client     = @@character_set_client */;\n/*!40101 SET character_set_client = utf8 */;\nC (truncated - 1220 bytes total)
+0000.421 (0) Working binary mysqldump found: /bin/mysqldump
+0000.423 (0) Table wpkn_options: Total expected rows (approximate): 440
+0000.428 (0) Table wpkn_options: Total rows added: 436 in 0.00 seconds
+0000.429 (0) Table wpkn_options: finishing file (backup_2019-03-28-0100_My_Blog_5e5ab2b73b75-db-table-wpkn_options.table.gz - 14.7 KB)
+0000.431 (0) Table wpkn_users: Total expected rows (approximate): 1
+0000.432 (0) Table wpkn_users: Total rows added: 1 in 0.00 seconds
+0000.432 (0) Table wpkn_users: finishing file (backup_2019-03-28-0100_My_Blog_5e5ab2b73b75-db-table-wpkn_users.table.gz - 0.6 KB)
+0000.434 (0) Table wpkn_usermeta: Total expected rows (approximate): 36
+0000.435 (0) Table wpkn_usermeta: Total rows added: 36 in 0.00 seconds
+0000.435 (0) Table wpkn_usermeta: finishing file (backup_2019-03-28-0100_My_Blog_5e5ab2b73b75-db-table-wpkn_usermeta.table.gz - 1.6 KB)
+0000.437 (0) Table wpkn_commentmeta: Total expected rows (approximate): 0
+0000.438 (0) Table wpkn_commentmeta: Total rows added: 0 in 0.00 seconds
+0000.438 (0) Table wpkn_commentmeta: finishing file (backup_2019-03-28-0100_My_Blog_5e5ab2b73b75-db-table-wpkn_commentmeta.table.gz - 0.4 KB)
+0000.439 (0) Table wpkn_comments: Total expected rows (approximate): 4
+0000.441 (0) Table wpkn_comments: Total rows added: 4 in 0.00 seconds
+0000.441 (0) Table wpkn_comments: finishing file (backup_2019-03-28-0100_My_Blog_5e5ab2b73b75-db-table-wpkn_comments.table.gz - 0.9 KB)
+0000.443 (0) Table wpkn_links: Total expected rows (approximate): 0
+0000.444 (0) Table wpkn_links: Total rows added: 0 in 0.00 seconds
+0000.444 (0) Table wpkn_links: finishing file (backup_2019-03-28-0100_My_Blog_5e5ab2b73b75-db-table-wpkn_links.table.gz - 0.4 KB)
+0000.446 (0) Table wpkn_postmeta: Total expected rows (approximate): 136
+0000.447 (0) Table wpkn_postmeta: Total rows added: 136 in 0.00 seconds
+0000.448 (0) Table wpkn_postmeta: finishing file (backup_2019-03-28-0100_My_Blog_5e5ab2b73b75-db-table-wpkn_postmeta.table.gz - 2.1 KB)
+0000.450 (0) Table wpkn_posts: Total expected rows (approximate): 23
+0000.452 (0) Table wpkn_posts: Total rows added: 23 in 0.00 seconds
+0000.453 (0) Table wpkn_posts: finishing file (backup_2019-03-28-0100_My_Blog_5e5ab2b73b75-db-table-wpkn_posts.table.gz - 3.9 KB)
+0000.455 (0) Table wpkn_term_relationships: Total expected rows (approximate): 4
+0000.457 (0) Table wpkn_term_relationships: Total rows added: 4 in 0.00 seconds
+0000.457 (0) Table wpkn_term_relationships: finishing file (backup_2019-03-28-0100_My_Blog_5e5ab2b73b75-db-table-wpkn_term_relationships.table.gz - 0.4 KB)
+0000.459 (0) Table wpkn_term_taxonomy: Total expected rows (approximate): 15
+0000.461 (0) Table wpkn_term_taxonomy: Total rows added: 15 in 0.00 seconds
+0000.461 (0) Table wpkn_term_taxonomy: finishing file (backup_2019-03-28-0100_My_Blog_5e5ab2b73b75-db-table-wpkn_term_taxonomy.table.gz - 0.5 KB)
+0000.463 (0) Table wpkn_termmeta: Total expected rows (approximate): 1
+0000.465 (0) Table wpkn_termmeta: Total rows added: 1 in 0.00 seconds
+0000.466 (0) Table wpkn_termmeta: finishing file (backup_2019-03-28-0100_My_Blog_5e5ab2b73b75-db-table-wpkn_termmeta.table.gz - 0.4 KB)
+0000.468 (0) Table wpkn_terms: Total expected rows (approximate): 15
+0000.469 (0) Table wpkn_terms: Total rows added: 15 in 0.00 seconds
+0000.470 (0) Table wpkn_terms: finishing file (backup_2019-03-28-0100_My_Blog_5e5ab2b73b75-db-table-wpkn_terms.table.gz - 0.5 KB)
+0000.472 (0) Table wpkn_woocommerce_order_itemmeta: Total expected rows (approximate): 18
+0000.474 (0) Table wpkn_woocommerce_order_itemmeta: Total rows added: 18 in 0.00 seconds
+0000.475 (0) Table wpkn_woocommerce_order_itemmeta: finishing file (backup_2019-03-28-0100_My_Blog_5e5ab2b73b75-db-table-wpkn_woocommerce_order_itemmeta.table.gz - 0.6 KB)
+0000.477 (0) Table wpkn_woocommerce_payment_tokenmeta: Total expected rows (approximate): 0
+0000.478 (0) Table wpkn_woocommerce_payment_tokenmeta: Total rows added: 0 in 0.00 seconds
+0000.479 (0) Table wpkn_woocommerce_payment_tokenmeta: finishing file (backup_2019-03-28-0100_My_Blog_5e5ab2b73b75-db-table-wpkn_woocommerce_payment_tokenmeta.table.gz - 0.4 KB)
+0000.481 (0) Table wpkn_gf_addon_feed: Total expected rows (approximate): 1
+0000.483 (0) Table wpkn_gf_addon_feed: Total rows added: 1 in 0.00 seconds
+0000.483 (0) Table wpkn_gf_addon_feed: finishing file (backup_2019-03-28-0100_My_Blog_5e5ab2b73b75-db-table-wpkn_gf_addon_feed.table.gz - 0.6 KB)
+0000.485 (0) Table wpkn_gf_addon_payment_callback: Total expected rows (approximate): 0
+0000.487 (0) Table wpkn_gf_addon_payment_callback: Total rows added: 0 in 0.00 seconds
+0000.487 (0) Table wpkn_gf_addon_payment_callback: finishing file (backup_2019-03-28-0100_My_Blog_5e5ab2b73b75-db-table-wpkn_gf_addon_payment_callback.table.gz - 0.4 KB)
+0000.490 (0) Table wpkn_gf_addon_payment_transaction: Total expected rows (approximate): 0
+0000.491 (0) Table wpkn_gf_addon_payment_transaction: Total rows added: 0 in 0.00 seconds
+0000.492 (0) Table wpkn_gf_addon_payment_transaction: finishing file (backup_2019-03-28-0100_My_Blog_5e5ab2b73b75-db-table-wpkn_gf_addon_payment_transaction.table.gz - 0.4 KB)
+0000.494 (0) Table wpkn_gf_draft_submissions: Total expected rows (approximate): 0
+0000.498 (0) Table wpkn_gf_draft_submissions: Total rows added: 0 in 0.00 seconds
+0000.499 (0) Table wpkn_gf_draft_submissions: finishing file (backup_2019-03-28-0100_My_Blog_5e5ab2b73b75-db-table-wpkn_gf_draft_submissions.table.gz - 0.4 KB)
+0000.501 (0) Table wpkn_gf_entry: Total expected rows (approximate): 1
+0000.502 (0) Table wpkn_gf_entry: Total rows added: 1 in 0.00 seconds
+0000.503 (0) Table wpkn_gf_entry: finishing file (backup_2019-03-28-0100_My_Blog_5e5ab2b73b75-db-table-wpkn_gf_entry.table.gz - 0.8 KB)
+0000.505 (0) Table wpkn_gf_entry_meta: Total expected rows (approximate): 9
+0000.506 (0) Table wpkn_gf_entry_meta: Total rows added: 9 in 0.00 seconds
+0000.507 (0) Table wpkn_gf_entry_meta: finishing file (backup_2019-03-28-0100_My_Blog_5e5ab2b73b75-db-table-wpkn_gf_entry_meta.table.gz - 0.6 KB)
+0000.509 (0) Table wpkn_gf_entry_notes: Total expected rows (approximate): 0
+0000.510 (0) Table wpkn_gf_entry_notes: Total rows added: 0 in 0.00 seconds
+0000.511 (0) Table wpkn_gf_entry_notes: finishing file (backup_2019-03-28-0100_My_Blog_5e5ab2b73b75-db-table-wpkn_gf_entry_notes.table.gz - 0.4 KB)
+0000.513 (0) Table wpkn_gf_form: Total expected rows (approximate): 2
+0000.514 (0) Table wpkn_gf_form: Total rows added: 2 in 0.00 seconds
+0000.515 (0) Table wpkn_gf_form: finishing file (backup_2019-03-28-0100_My_Blog_5e5ab2b73b75-db-table-wpkn_gf_form.table.gz - 0.4 KB)
+0000.517 (0) Table wpkn_gf_form_meta: Total expected rows (approximate): 2
+0000.519 (0) Table wpkn_gf_form_meta: Total rows added: 2 in 0.00 seconds
+0000.519 (0) Table wpkn_gf_form_meta: finishing file (backup_2019-03-28-0100_My_Blog_5e5ab2b73b75-db-table-wpkn_gf_form_meta.table.gz - 1.6 KB)
+0000.522 (0) Table wpkn_gf_form_revisions: Total expected rows (approximate): 0
+0000.523 (0) Table wpkn_gf_form_revisions: Total rows added: 0 in 0.00 seconds
+0000.524 (0) Table wpkn_gf_form_revisions: finishing file (backup_2019-03-28-0100_My_Blog_5e5ab2b73b75-db-table-wpkn_gf_form_revisions.table.gz - 0.4 KB)
+0000.526 (0) Table wpkn_gf_form_view: Total expected rows (approximate): 2
+0000.528 (0) Table wpkn_gf_form_view: Total rows added: 2 in 0.00 seconds
+0000.528 (0) Table wpkn_gf_form_view: finishing file (backup_2019-03-28-0100_My_Blog_5e5ab2b73b75-db-table-wpkn_gf_form_view.table.gz - 0.4 KB)
+0000.531 (0) Table wpkn_gf_rest_api_keys: Total expected rows (approximate): 0
+0000.533 (0) Table wpkn_gf_rest_api_keys: Total rows added: 0 in 0.00 seconds
+0000.533 (0) Table wpkn_gf_rest_api_keys: finishing file (backup_2019-03-28-0100_My_Blog_5e5ab2b73b75-db-table-wpkn_gf_rest_api_keys.table.gz - 0.4 KB)
+0000.534 (0) PHP event: code E_USER_NOTICE: An outdated add-on or custom code is attempting to access the wpkn_rg_form table which is not valid in this version of Gravity Forms. Update your add-ons and custom code to prevent loss of form data. Further details: https://docs.gravityforms.com/database-storage-structure-reference/#changes-from-gravity-forms-2-2 (line 5390, wp-content/plugins/gravityforms/gravityforms.php)
+0000.535 (0) PHP event: code E_USER_NOTICE: An outdated add-on or custom code is attempting to access the wpkn_rg_form table which is not valid in this version of Gravity Forms. Update your add-ons and custom code to prevent loss of form data. Further details: https://docs.gravityforms.com/database-storage-structure-reference/#changes-from-gravity-forms-2-2 (line 5390, wp-content/plugins/gravityforms/gravityforms.php)
+0000.536 (0) Table wpkn_rg_form: Total expected rows (approximate): 0
+0000.536 (0) PHP event: code E_USER_NOTICE: An outdated add-on or custom code is attempting to access the wpkn_rg_form table which is not valid in this version of Gravity Forms. Update your add-ons and custom code to prevent loss of form data. Further details: https://docs.gravityforms.com/database-storage-structure-reference/#changes-from-gravity-forms-2-2 (line 5390, wp-content/plugins/gravityforms/gravityforms.php)
+0000.537 (0) PHP event: code E_USER_NOTICE: An outdated add-on or custom code is attempting to access the wpkn_rg_form table which is not valid in this version of Gravity Forms. Update your add-ons and custom code to prevent loss of form data. Further details: https://docs.gravityforms.com/database-storage-structure-reference/#changes-from-gravity-forms-2-2 (line 5390, wp-content/plugins/gravityforms/gravityforms.php)
+0000.538 (0) PHP event: code E_USER_NOTICE: An outdated add-on or custom code is attempting to access the wpkn_rg_form table which is not valid in this version of Gravity Forms. Update your add-ons and custom code to prevent loss of form data. Further details: https://docs.gravityforms.com/database-storage-structure-reference/#changes-from-gravity-forms-2-2 (line 5390, wp-content/plugins/gravityforms/gravityforms.php)
+0000.538 (0) PHP event: code E_USER_NOTICE: An outdated add-on or custom code is attempting to access the wpkn_rg_form table which is not valid in this version of Gravity Forms. Update your add-ons and custom code to prevent loss of form data. Further details: https://docs.gravityforms.com/database-storage-structure-reference/#changes-from-gravity-forms-2-2 (line 5390, wp-content/plugins/gravityforms/gravityforms.php)
+0000.538 (0) Table wpkn_rg_form: Total rows added: 0 in 0.00 seconds
+0000.539 (0) PHP event: code E_USER_NOTICE: An outdated add-on or custom code is attempting to access the wpkn_rg_form table which is not valid in this version of Gravity Forms. Update your add-ons and custom code to prevent loss of form data. Further details: https://docs.gravityforms.com/database-storage-structure-reference/#changes-from-gravity-forms-2-2 (line 5390, wp-content/plugins/gravityforms/gravityforms.php)
+0000.539 (0) Table wpkn_rg_form: finishing file (backup_2019-03-28-0100_My_Blog_5e5ab2b73b75-db-table-wpkn_rg_form.table.gz - 0.4 KB)
+0000.539 (0) PHP event: code E_USER_NOTICE: An outdated add-on or custom code is attempting to access the wpkn_rg_form table which is not valid in this version of Gravity Forms. Update your add-ons and custom code to prevent loss of form data. Further details: https://docs.gravityforms.com/database-storage-structure-reference/#changes-from-gravity-forms-2-2 (line 5390, wp-content/plugins/gravityforms/gravityforms.php)
+0000.540 (0) PHP event: code E_USER_NOTICE: An outdated add-on or custom code is attempting to access the wpkn_rg_form table which is not valid in this version of Gravity Forms. Update your add-ons and custom code to prevent loss of form data. Further details: https://docs.gravityforms.com/database-storage-structure-reference/#changes-from-gravity-forms-2-2 (line 5390, wp-content/plugins/gravityforms/gravityforms.php)
+0000.541 (0) PHP event: code E_USER_NOTICE: An outdated add-on or custom code is attempting to access the wpkn_rg_form_meta table which is not valid in this version of Gravity Forms. Update your add-ons and custom code to prevent loss of form data. Further details: https://docs.gravityforms.com/database-storage-structure-reference/#changes-from-gravity-forms-2-2 (line 5390, wp-content/plugins/gravityforms/gravityforms.php)
+0000.542 (0) PHP event: code E_USER_NOTICE: An outdated add-on or custom code is attempting to access the wpkn_rg_form_meta table which is not valid in this version of Gravity Forms. Update your add-ons and custom code to prevent loss of form data. Further details: https://docs.gravityforms.com/database-storage-structure-reference/#changes-from-gravity-forms-2-2 (line 5390, wp-content/plugins/gravityforms/gravityforms.php)
+0000.543 (0) Table wpkn_rg_form_meta: Total expected rows (approximate): 0
+0000.543 (0) PHP event: code E_USER_NOTICE: An outdated add-on or custom code is attempting to access the wpkn_rg_form_meta table which is not valid in this version of Gravity Forms. Update your add-ons and custom code to prevent loss of form data. Further details: https://docs.gravityforms.com/database-storage-structure-reference/#changes-from-gravity-forms-2-2 (line 5390, wp-content/plugins/gravityforms/gravityforms.php)
+0000.544 (0) PHP event: code E_USER_NOTICE: An outdated add-on or custom code is attempting to access the wpkn_rg_form_meta table which is not valid in this version of Gravity Forms. Update your add-ons and custom code to prevent loss of form data. Further details: https://docs.gravityforms.com/database-storage-structure-reference/#changes-from-gravity-forms-2-2 (line 5390, wp-content/plugins/gravityforms/gravityforms.php)
+0000.545 (0) PHP event: code E_USER_NOTICE: An outdated add-on or custom code is attempting to access the wpkn_rg_form_meta table which is not valid in this version of Gravity Forms. Update your add-ons and custom code to prevent loss of form data. Further details: https://docs.gravityforms.com/database-storage-structure-reference/#changes-from-gravity-forms-2-2 (line 5390, wp-content/plugins/gravityforms/gravityforms.php)
+0000.545 (0) PHP event: code E_USER_NOTICE: An outdated add-on or custom code is attempting to access the wpkn_rg_form_meta table which is not valid in this version of Gravity Forms. Update your add-ons and custom code to prevent loss of form data. Further details: https://docs.gravityforms.com/database-storage-structure-reference/#changes-from-gravity-forms-2-2 (line 5390, wp-content/plugins/gravityforms/gravityforms.php)
+0000.545 (0) Table wpkn_rg_form_meta: Total rows added: 0 in 0.00 seconds
+0000.545 (0) PHP event: code E_USER_NOTICE: An outdated add-on or custom code is attempting to access the wpkn_rg_form_meta table which is not valid in this version of Gravity Forms. Update your add-ons and custom code to prevent loss of form data. Further details: https://docs.gravityforms.com/database-storage-structure-reference/#changes-from-gravity-forms-2-2 (line 5390, wp-content/plugins/gravityforms/gravityforms.php)
+0000.546 (0) Table wpkn_rg_form_meta: finishing file (backup_2019-03-28-0100_My_Blog_5e5ab2b73b75-db-table-wpkn_rg_form_meta.table.gz - 0.3 KB)
+0000.546 (0) PHP event: code E_USER_NOTICE: An outdated add-on or custom code is attempting to access the wpkn_rg_form_meta table which is not valid in this version of Gravity Forms. Update your add-ons and custom code to prevent loss of form data. Further details: https://docs.gravityforms.com/database-storage-structure-reference/#changes-from-gravity-forms-2-2 (line 5390, wp-content/plugins/gravityforms/gravityforms.php)
+0000.547 (0) PHP event: code E_USER_NOTICE: An outdated add-on or custom code is attempting to access the wpkn_rg_form_meta table which is not valid in this version of Gravity Forms. Update your add-ons and custom code to prevent loss of form data. Further details: https://docs.gravityforms.com/database-storage-structure-reference/#changes-from-gravity-forms-2-2 (line 5390, wp-content/plugins/gravityforms/gravityforms.php)
+0000.548 (0) PHP event: code E_USER_NOTICE: An outdated add-on or custom code is attempting to access the wpkn_rg_form_view table which is not valid in this version of Gravity Forms. Update your add-ons and custom code to prevent loss of form data. Further details: https://docs.gravityforms.com/database-storage-structure-reference/#changes-from-gravity-forms-2-2 (line 5390, wp-content/plugins/gravityforms/gravityforms.php)
+0000.549 (0) PHP event: code E_USER_NOTICE: An outdated add-on or custom code is attempting to access the wpkn_rg_form_view table which is not valid in this version of Gravity Forms. Update your add-ons and custom code to prevent loss of form data. Further details: https://docs.gravityforms.com/database-storage-structure-reference/#changes-from-gravity-forms-2-2 (line 5390, wp-content/plugins/gravityforms/gravityforms.php)
+0000.550 (0) Table wpkn_rg_form_view: Total expected rows (approximate): 0
+0000.550 (0) PHP event: code E_USER_NOTICE: An outdated add-on or custom code is attempting to access the wpkn_rg_form_view table which is not valid in this version of Gravity Forms. Update your add-ons and custom code to prevent loss of form data. Further details: https://docs.gravityforms.com/database-storage-structure-reference/#changes-from-gravity-forms-2-2 (line 5390, wp-content/plugins/gravityforms/gravityforms.php)
+0000.550 (0) PHP event: code E_USER_NOTICE: An outdated add-on or custom code is attempting to access the wpkn_rg_form_view table which is not valid in this version of Gravity Forms. Update your add-ons and custom code to prevent loss of form data. Further details: https://docs.gravityforms.com/database-storage-structure-reference/#changes-from-gravity-forms-2-2 (line 5390, wp-content/plugins/gravityforms/gravityforms.php)
+0000.551 (0) PHP event: code E_USER_NOTICE: An outdated add-on or custom code is attempting to access the wpkn_rg_form_view table which is not valid in this version of Gravity Forms. Update your add-ons and custom code to prevent loss of form data. Further details: https://docs.gravityforms.com/database-storage-structure-reference/#changes-from-gravity-forms-2-2 (line 5390, wp-content/plugins/gravityforms/gravityforms.php)
+0000.551 (0) PHP event: code E_USER_NOTICE: An outdated add-on or custom code is attempting to access the wpkn_rg_form_view table which is not valid in this version of Gravity Forms. Update your add-ons and custom code to prevent loss of form data. Further details: https://docs.gravityforms.com/database-storage-structure-reference/#changes-from-gravity-forms-2-2 (line 5390, wp-content/plugins/gravityforms/gravityforms.php)
+0000.552 (0) Table wpkn_rg_form_view: Total rows added: 0 in 0.00 seconds
+0000.552 (0) PHP event: code E_USER_NOTICE: An outdated add-on or custom code is attempting to access the wpkn_rg_form_view table which is not valid in this version of Gravity Forms. Update your add-ons and custom code to prevent loss of form data. Further details: https://docs.gravityforms.com/database-storage-structure-reference/#changes-from-gravity-forms-2-2 (line 5390, wp-content/plugins/gravityforms/gravityforms.php)
+0000.552 (0) Table wpkn_rg_form_view: finishing file (backup_2019-03-28-0100_My_Blog_5e5ab2b73b75-db-table-wpkn_rg_form_view.table.gz - 0.4 KB)
+0000.552 (0) PHP event: code E_USER_NOTICE: An outdated add-on or custom code is attempting to access the wpkn_rg_form_view table which is not valid in this version of Gravity Forms. Update your add-ons and custom code to prevent loss of form data. Further details: https://docs.gravityforms.com/database-storage-structure-reference/#changes-from-gravity-forms-2-2 (line 5390, wp-content/plugins/gravityforms/gravityforms.php)
+0000.553 (0) PHP event: code E_USER_NOTICE: An outdated add-on or custom code is attempting to access the wpkn_rg_form_view table which is not valid in this version of Gravity Forms. Update your add-ons and custom code to prevent loss of form data. Further details: https://docs.gravityforms.com/database-storage-structure-reference/#changes-from-gravity-forms-2-2 (line 5390, wp-content/plugins/gravityforms/gravityforms.php)
+0000.554 (0) PHP event: code E_USER_NOTICE: An outdated add-on or custom code is attempting to access the wpkn_rg_incomplete_submissions table which is not valid in this version of Gravity Forms. Update your add-ons and custom code to prevent loss of form data. Further details: https://docs.gravityforms.com/database-storage-structure-reference/#changes-from-gravity-forms-2-2 (line 5390, wp-content/plugins/gravityforms/gravityforms.php)
+0000.555 (0) PHP event: code E_USER_NOTICE: An outdated add-on or custom code is attempting to access the wpkn_rg_incomplete_submissions table which is not valid in this version of Gravity Forms. Update your add-ons and custom code to prevent loss of form data. Further details: https://docs.gravityforms.com/database-storage-structure-reference/#changes-from-gravity-forms-2-2 (line 5390, wp-content/plugins/gravityforms/gravityforms.php)
+0000.556 (0) Table wpkn_rg_incomplete_submissions: Total expected rows (approximate): 0
+0000.556 (0) PHP event: code E_USER_NOTICE: An outdated add-on or custom code is attempting to access the wpkn_rg_incomplete_submissions table which is not valid in this version of Gravity Forms. Update your add-ons and custom code to prevent loss of form data. Further details: https://docs.gravityforms.com/database-storage-structure-reference/#changes-from-gravity-forms-2-2 (line 5390, wp-content/plugins/gravityforms/gravityforms.php)
+0000.556 (0) PHP event: code E_USER_NOTICE: An outdated add-on or custom code is attempting to access the wpkn_rg_incomplete_submissions table which is not valid in this version of Gravity Forms. Update your add-ons and custom code to prevent loss of form data. Further details: https://docs.gravityforms.com/database-storage-structure-reference/#changes-from-gravity-forms-2-2 (line 5390, wp-content/plugins/gravityforms/gravityforms.php)
+0000.557 (0) PHP event: code E_USER_NOTICE: An outdated add-on or custom code is attempting to access the wpkn_rg_incomplete_submissions table which is not valid in this version of Gravity Forms. Update your add-ons and custom code to prevent loss of form data. Further details: https://docs.gravityforms.com/database-storage-structure-reference/#changes-from-gravity-forms-2-2 (line 5390, wp-content/plugins/gravityforms/gravityforms.php)
+0000.557 (0) PHP event: code E_USER_NOTICE: An outdated add-on or custom code is attempting to access the wpkn_rg_incomplete_submissions table which is not valid in this version of Gravity Forms. Update your add-ons and custom code to prevent loss of form data. Further details: https://docs.gravityforms.com/database-storage-structure-reference/#changes-from-gravity-forms-2-2 (line 5390, wp-content/plugins/gravityforms/gravityforms.php)
+0000.558 (0) Table wpkn_rg_incomplete_submissions: Total rows added: 0 in 0.00 seconds
+0000.558 (0) PHP event: code E_USER_NOTICE: An outdated add-on or custom code is attempting to access the wpkn_rg_incomplete_submissions table which is not valid in this version of Gravity Forms. Update your add-ons and custom code to prevent loss of form data. Further details: https://docs.gravityforms.com/database-storage-structure-reference/#changes-from-gravity-forms-2-2 (line 5390, wp-content/plugins/gravityforms/gravityforms.php)
+0000.558 (0) Table wpkn_rg_incomplete_submissions: finishing file (backup_2019-03-28-0100_My_Blog_5e5ab2b73b75-db-table-wpkn_rg_incomplete_submissions.table.gz - 0.4 KB)
+0000.558 (0) PHP event: code E_USER_NOTICE: An outdated add-on or custom code is attempting to access the wpkn_rg_incomplete_submissions table which is not valid in this version of Gravity Forms. Update your add-ons and custom code to prevent loss of form data. Further details: https://docs.gravityforms.com/database-storage-structure-reference/#changes-from-gravity-forms-2-2 (line 5390, wp-content/plugins/gravityforms/gravityforms.php)
+0000.559 (0) PHP event: code E_USER_NOTICE: An outdated add-on or custom code is attempting to access the wpkn_rg_incomplete_submissions table which is not valid in this version of Gravity Forms. Update your add-ons and custom code to prevent loss of form data. Further details: https://docs.gravityforms.com/database-storage-structure-reference/#changes-from-gravity-forms-2-2 (line 5390, wp-content/plugins/gravityforms/gravityforms.php)
+0000.561 (0) PHP event: code E_USER_NOTICE: An outdated add-on or custom code is attempting to access the wpkn_rg_lead table which is not valid in this version of Gravity Forms. Update your add-ons and custom code to prevent loss of form data. Further details: https://docs.gravityforms.com/database-storage-structure-reference/#changes-from-gravity-forms-2-2 (line 5390, wp-content/plugins/gravityforms/gravityforms.php)
+0000.561 (0) PHP event: code E_USER_NOTICE: An outdated add-on or custom code is attempting to access the wpkn_rg_lead table which is not valid in this version of Gravity Forms. Update your add-ons and custom code to prevent loss of form data. Further details: https://docs.gravityforms.com/database-storage-structure-reference/#changes-from-gravity-forms-2-2 (line 5390, wp-content/plugins/gravityforms/gravityforms.php)
+0000.562 (0) Table wpkn_rg_lead: Total expected rows (approximate): 0
+0000.563 (0) PHP event: code E_USER_NOTICE: An outdated add-on or custom code is attempting to access the wpkn_rg_lead table which is not valid in this version of Gravity Forms. Update your add-ons and custom code to prevent loss of form data. Further details: https://docs.gravityforms.com/database-storage-structure-reference/#changes-from-gravity-forms-2-2 (line 5390, wp-content/plugins/gravityforms/gravityforms.php)
+0000.563 (0) PHP event: code E_USER_NOTICE: An outdated add-on or custom code is attempting to access the wpkn_rg_lead table which is not valid in this version of Gravity Forms. Update your add-ons and custom code to prevent loss of form data. Further details: https://docs.gravityforms.com/database-storage-structure-reference/#changes-from-gravity-forms-2-2 (line 5390, wp-content/plugins/gravityforms/gravityforms.php)
+0000.564 (0) PHP event: code E_USER_NOTICE: An outdated add-on or custom code is attempting to access the wpkn_rg_lead table which is not valid in this version of Gravity Forms. Update your add-ons and custom code to prevent loss of form data. Further details: https://docs.gravityforms.com/database-storage-structure-reference/#changes-from-gravity-forms-2-2 (line 5390, wp-content/plugins/gravityforms/gravityforms.php)
+0000.564 (0) PHP event: code E_USER_NOTICE: An outdated add-on or custom code is attempting to access the wpkn_rg_lead table which is not valid in this version of Gravity Forms. Update your add-ons and custom code to prevent loss of form data. Further details: https://docs.gravityforms.com/database-storage-structure-reference/#changes-from-gravity-forms-2-2 (line 5390, wp-content/plugins/gravityforms/gravityforms.php)
+0000.565 (0) Table wpkn_rg_lead: Total rows added: 0 in 0.00 seconds
+0000.565 (0) PHP event: code E_USER_NOTICE: An outdated add-on or custom code is attempting to access the wpkn_rg_lead table which is not valid in this version of Gravity Forms. Update your add-ons and custom code to prevent loss of form data. Further details: https://docs.gravityforms.com/database-storage-structure-reference/#changes-from-gravity-forms-2-2 (line 5390, wp-content/plugins/gravityforms/gravityforms.php)
+0000.565 (0) Table wpkn_rg_lead: finishing file (backup_2019-03-28-0100_My_Blog_5e5ab2b73b75-db-table-wpkn_rg_lead.table.gz - 0.5 KB)
+0000.566 (0) PHP event: code E_USER_NOTICE: An outdated add-on or custom code is attempting to access the wpkn_rg_lead table which is not valid in this version of Gravity Forms. Update your add-ons and custom code to prevent loss of form data. Further details: https://docs.gravityforms.com/database-storage-structure-reference/#changes-from-gravity-forms-2-2 (line 5390, wp-content/plugins/gravityforms/gravityforms.php)
+0000.567 (0) PHP event: code E_USER_NOTICE: An outdated add-on or custom code is attempting to access the wpkn_rg_lead table which is not valid in this version of Gravity Forms. Update your add-ons and custom code to prevent loss of form data. Further details: https://docs.gravityforms.com/database-storage-structure-reference/#changes-from-gravity-forms-2-2 (line 5390, wp-content/plugins/gravityforms/gravityforms.php)
+0000.568 (0) PHP event: code E_USER_NOTICE: An outdated add-on or custom code is attempting to access the wpkn_rg_lead_detail table which is not valid in this version of Gravity Forms. Update your add-ons and custom code to prevent loss of form data. Further details: https://docs.gravityforms.com/database-storage-structure-reference/#changes-from-gravity-forms-2-2 (line 5390, wp-content/plugins/gravityforms/gravityforms.php)
+0000.569 (0) PHP event: code E_USER_NOTICE: An outdated add-on or custom code is attempting to access the wpkn_rg_lead_detail table which is not valid in this version of Gravity Forms. Update your add-ons and custom code to prevent loss of form data. Further details: https://docs.gravityforms.com/database-storage-structure-reference/#changes-from-gravity-forms-2-2 (line 5390, wp-content/plugins/gravityforms/gravityforms.php)
+0000.570 (0) Table wpkn_rg_lead_detail: Total expected rows (approximate): 0
+0000.570 (0) PHP event: code E_USER_NOTICE: An outdated add-on or custom code is attempting to access the wpkn_rg_lead_detail table which is not valid in this version of Gravity Forms. Update your add-ons and custom code to prevent loss of form data. Further details: https://docs.gravityforms.com/database-storage-structure-reference/#changes-from-gravity-forms-2-2 (line 5390, wp-content/plugins/gravityforms/gravityforms.php)
+0000.570 (0) PHP event: code E_USER_NOTICE: An outdated add-on or custom code is attempting to access the wpkn_rg_lead_detail table which is not valid in this version of Gravity Forms. Update your add-ons and custom code to prevent loss of form data. Further details: https://docs.gravityforms.com/database-storage-structure-reference/#changes-from-gravity-forms-2-2 (line 5390, wp-content/plugins/gravityforms/gravityforms.php)
+0000.571 (0) PHP event: code E_USER_NOTICE: An outdated add-on or custom code is attempting to access the wpkn_rg_lead_detail table which is not valid in this version of Gravity Forms. Update your add-ons and custom code to prevent loss of form data. Further details: https://docs.gravityforms.com/database-storage-structure-reference/#changes-from-gravity-forms-2-2 (line 5390, wp-content/plugins/gravityforms/gravityforms.php)
+0000.572 (0) PHP event: code E_USER_NOTICE: An outdated add-on or custom code is attempting to access the wpkn_rg_lead_detail table which is not valid in this version of Gravity Forms. Update your add-ons and custom code to prevent loss of form data. Further details: https://docs.gravityforms.com/database-storage-structure-reference/#changes-from-gravity-forms-2-2 (line 5390, wp-content/plugins/gravityforms/gravityforms.php)
+0000.572 (0) Table wpkn_rg_lead_detail: Total rows added: 0 in 0.00 seconds
+0000.572 (0) PHP event: code E_USER_NOTICE: An outdated add-on or custom code is attempting to access the wpkn_rg_lead_detail table which is not valid in this version of Gravity Forms. Update your add-ons and custom code to prevent loss of form data. Further details: https://docs.gravityforms.com/database-storage-structure-reference/#changes-from-gravity-forms-2-2 (line 5390, wp-content/plugins/gravityforms/gravityforms.php)
+0000.572 (0) Table wpkn_rg_lead_detail: finishing file (backup_2019-03-28-0100_My_Blog_5e5ab2b73b75-db-table-wpkn_rg_lead_detail.table.gz - 0.4 KB)
+0000.572 (0) PHP event: code E_USER_NOTICE: An outdated add-on or custom code is attempting to access the wpkn_rg_lead_detail table which is not valid in this version of Gravity Forms. Update your add-ons and custom code to prevent loss of form data. Further details: https://docs.gravityforms.com/database-storage-structure-reference/#changes-from-gravity-forms-2-2 (line 5390, wp-content/plugins/gravityforms/gravityforms.php)
+0000.573 (0) PHP event: code E_USER_NOTICE: An outdated add-on or custom code is attempting to access the wpkn_rg_lead_detail table which is not valid in this version of Gravity Forms. Update your add-ons and custom code to prevent loss of form data. Further details: https://docs.gravityforms.com/database-storage-structure-reference/#changes-from-gravity-forms-2-2 (line 5390, wp-content/plugins/gravityforms/gravityforms.php)
+0000.574 (0) PHP event: code E_USER_NOTICE: An outdated add-on or custom code is attempting to access the wpkn_rg_lead_detail table which is not valid in this version of Gravity Forms. Update your add-ons and custom code to prevent loss of form data. Further details: https://docs.gravityforms.com/database-storage-structure-reference/#changes-from-gravity-forms-2-2 (line 5390, wp-content/plugins/gravityforms/gravityforms.php)
+0000.575 (0) PHP event: code E_USER_NOTICE: An outdated add-on or custom code is attempting to access the wpkn_rg_lead_detail table which is not valid in this version of Gravity Forms. Update your add-ons and custom code to prevent loss of form data. Further details: https://docs.gravityforms.com/database-storage-structure-reference/#changes-from-gravity-forms-2-2 (line 5390, wp-content/plugins/gravityforms/gravityforms.php)
+0000.575 (0) Table wpkn_rg_lead_detail_long: Total expected rows (approximate): 0
+0000.575 (0) PHP event: code E_USER_NOTICE: An outdated add-on or custom code is attempting to access the wpkn_rg_lead_detail table which is not valid in this version of Gravity Forms. Update your add-ons and custom code to prevent loss of form data. Further details: https://docs.gravityforms.com/database-storage-structure-reference/#changes-from-gravity-forms-2-2 (line 5390, wp-content/plugins/gravityforms/gravityforms.php)
+0000.576 (0) PHP event: code E_USER_NOTICE: An outdated add-on or custom code is attempting to access the wpkn_rg_lead_detail table which is not valid in this version of Gravity Forms. Update your add-ons and custom code to prevent loss of form data. Further details: https://docs.gravityforms.com/database-storage-structure-reference/#changes-from-gravity-forms-2-2 (line 5390, wp-content/plugins/gravityforms/gravityforms.php)
+0000.577 (0) PHP event: code E_USER_NOTICE: An outdated add-on or custom code is attempting to access the wpkn_rg_lead_detail table which is not valid in this version of Gravity Forms. Update your add-ons and custom code to prevent loss of form data. Further details: https://docs.gravityforms.com/database-storage-structure-reference/#changes-from-gravity-forms-2-2 (line 5390, wp-content/plugins/gravityforms/gravityforms.php)
+0000.577 (0) PHP event: code E_USER_NOTICE: An outdated add-on or custom code is attempting to access the wpkn_rg_lead_detail table which is not valid in this version of Gravity Forms. Update your add-ons and custom code to prevent loss of form data. Further details: https://docs.gravityforms.com/database-storage-structure-reference/#changes-from-gravity-forms-2-2 (line 5390, wp-content/plugins/gravityforms/gravityforms.php)
+0000.577 (0) Table wpkn_rg_lead_detail_long: Total rows added: 0 in 0.00 seconds
+0000.577 (0) PHP event: code E_USER_NOTICE: An outdated add-on or custom code is attempting to access the wpkn_rg_lead_detail table which is not valid in this version of Gravity Forms. Update your add-ons and custom code to prevent loss of form data. Further details: https://docs.gravityforms.com/database-storage-structure-reference/#changes-from-gravity-forms-2-2 (line 5390, wp-content/plugins/gravityforms/gravityforms.php)
+0000.578 (0) Table wpkn_rg_lead_detail_long: finishing file (backup_2019-03-28-0100_My_Blog_5e5ab2b73b75-db-table-wpkn_rg_lead_detail_long.table.gz - 0.3 KB)
+0000.578 (0) PHP event: code E_USER_NOTICE: An outdated add-on or custom code is attempting to access the wpkn_rg_lead_detail table which is not valid in this version of Gravity Forms. Update your add-ons and custom code to prevent loss of form data. Further details: https://docs.gravityforms.com/database-storage-structure-reference/#changes-from-gravity-forms-2-2 (line 5390, wp-content/plugins/gravityforms/gravityforms.php)
+0000.601 (0) PHP event: code E_USER_NOTICE: An outdated add-on or custom code is attempting to access the wpkn_rg_lead_detail table which is not valid in this version of Gravity Forms. Update your add-ons and custom code to prevent loss of form data. Further details: https://docs.gravityforms.com/database-storage-structure-reference/#changes-from-gravity-forms-2-2 (line 5390, wp-content/plugins/gravityforms/gravityforms.php)
+0000.601 (0) PHP event: code E_USER_NOTICE: An outdated add-on or custom code is attempting to access the wpkn_rg_lead_meta table which is not valid in this version of Gravity Forms. Update your add-ons and custom code to prevent loss of form data. Further details: https://docs.gravityforms.com/database-storage-structure-reference/#changes-from-gravity-forms-2-2 (line 5390, wp-content/plugins/gravityforms/gravityforms.php)
+0000.602 (0) PHP event: code E_USER_NOTICE: An outdated add-on or custom code is attempting to access the wpkn_rg_lead_meta table which is not valid in this version of Gravity Forms. Update your add-ons and custom code to prevent loss of form data. Further details: https://docs.gravityforms.com/database-storage-structure-reference/#changes-from-gravity-forms-2-2 (line 5390, wp-content/plugins/gravityforms/gravityforms.php)
+0000.603 (0) Table wpkn_rg_lead_meta: Total expected rows (approximate): 0
+0000.603 (0) PHP event: code E_USER_NOTICE: An outdated add-on or custom code is attempting to access the wpkn_rg_lead_meta table which is not valid in this version of Gravity Forms. Update your add-ons and custom code to prevent loss of form data. Further details: https://docs.gravityforms.com/database-storage-structure-reference/#changes-from-gravity-forms-2-2 (line 5390, wp-content/plugins/gravityforms/gravityforms.php)
+0000.603 (0) PHP event: code E_USER_NOTICE: An outdated add-on or custom code is attempting to access the wpkn_rg_lead_meta table which is not valid in this version of Gravity Forms. Update your add-ons and custom code to prevent loss of form data. Further details: https://docs.gravityforms.com/database-storage-structure-reference/#changes-from-gravity-forms-2-2 (line 5390, wp-content/plugins/gravityforms/gravityforms.php)
+0000.604 (0) PHP event: code E_USER_NOTICE: An outdated add-on or custom code is attempting to access the wpkn_rg_lead_meta table which is not valid in this version of Gravity Forms. Update your add-ons and custom code to prevent loss of form data. Further details: https://docs.gravityforms.com/database-storage-structure-reference/#changes-from-gravity-forms-2-2 (line 5390, wp-content/plugins/gravityforms/gravityforms.php)
+0000.604 (0) PHP event: code E_USER_NOTICE: An outdated add-on or custom code is attempting to access the wpkn_rg_lead_meta table which is not valid in this version of Gravity Forms. Update your add-ons and custom code to prevent loss of form data. Further details: https://docs.gravityforms.com/database-storage-structure-reference/#changes-from-gravity-forms-2-2 (line 5390, wp-content/plugins/gravityforms/gravityforms.php)
+0000.604 (0) Table wpkn_rg_lead_meta: Total rows added: 0 in 0.00 seconds
+0000.604 (0) PHP event: code E_USER_NOTICE: An outdated add-on or custom code is attempting to access the wpkn_rg_lead_meta table which is not valid in this version of Gravity Forms. Update your add-ons and custom code to prevent loss of form data. Further details: https://docs.gravityforms.com/database-storage-structure-reference/#changes-from-gravity-forms-2-2 (line 5390, wp-content/plugins/gravityforms/gravityforms.php)
+0000.605 (0) Table wpkn_rg_lead_meta: finishing file (backup_2019-03-28-0100_My_Blog_5e5ab2b73b75-db-table-wpkn_rg_lead_meta.table.gz - 0.4 KB)
+0000.605 (0) PHP event: code E_USER_NOTICE: An outdated add-on or custom code is attempting to access the wpkn_rg_lead_meta table which is not valid in this version of Gravity Forms. Update your add-ons and custom code to prevent loss of form data. Further details: https://docs.gravityforms.com/database-storage-structure-reference/#changes-from-gravity-forms-2-2 (line 5390, wp-content/plugins/gravityforms/gravityforms.php)
+0000.605 (0) PHP event: code E_USER_NOTICE: An outdated add-on or custom code is attempting to access the wpkn_rg_lead_meta table which is not valid in this version of Gravity Forms. Update your add-ons and custom code to prevent loss of form data. Further details: https://docs.gravityforms.com/database-storage-structure-reference/#changes-from-gravity-forms-2-2 (line 5390, wp-content/plugins/gravityforms/gravityforms.php)
+0000.606 (0) PHP event: code E_USER_NOTICE: An outdated add-on or custom code is attempting to access the wpkn_rg_lead_notes table which is not valid in this version of Gravity Forms. Update your add-ons and custom code to prevent loss of form data. Further details: https://docs.gravityforms.com/database-storage-structure-reference/#changes-from-gravity-forms-2-2 (line 5390, wp-content/plugins/gravityforms/gravityforms.php)
+0000.606 (0) PHP event: code E_USER_NOTICE: An outdated add-on or custom code is attempting to access the wpkn_rg_lead_notes table which is not valid in this version of Gravity Forms. Update your add-ons and custom code to prevent loss of form data. Further details: https://docs.gravityforms.com/database-storage-structure-reference/#changes-from-gravity-forms-2-2 (line 5390, wp-content/plugins/gravityforms/gravityforms.php)
+0000.607 (0) Table wpkn_rg_lead_notes: Total expected rows (approximate): 0
+0000.607 (0) PHP event: code E_USER_NOTICE: An outdated add-on or custom code is attempting to access the wpkn_rg_lead_notes table which is not valid in this version of Gravity Forms. Update your add-ons and custom code to prevent loss of form data. Further details: https://docs.gravityforms.com/database-storage-structure-reference/#changes-from-gravity-forms-2-2 (line 5390, wp-content/plugins/gravityforms/gravityforms.php)
+0000.607 (0) PHP event: code E_USER_NOTICE: An outdated add-on or custom code is attempting to access the wpkn_rg_lead_notes table which is not valid in this version of Gravity Forms. Update your add-ons and custom code to prevent loss of form data. Further details: https://docs.gravityforms.com/database-storage-structure-reference/#changes-from-gravity-forms-2-2 (line 5390, wp-content/plugins/gravityforms/gravityforms.php)
+0000.608 (0) PHP event: code E_USER_NOTICE: An outdated add-on or custom code is attempting to access the wpkn_rg_lead_notes table which is not valid in this version of Gravity Forms. Update your add-ons and custom code to prevent loss of form data. Further details: https://docs.gravityforms.com/database-storage-structure-reference/#changes-from-gravity-forms-2-2 (line 5390, wp-content/plugins/gravityforms/gravityforms.php)
+0000.608 (0) PHP event: code E_USER_NOTICE: An outdated add-on or custom code is attempting to access the wpkn_rg_lead_notes table which is not valid in this version of Gravity Forms. Update your add-ons and custom code to prevent loss of form data. Further details: https://docs.gravityforms.com/database-storage-structure-reference/#changes-from-gravity-forms-2-2 (line 5390, wp-content/plugins/gravityforms/gravityforms.php)
+0000.609 (0) Table wpkn_rg_lead_notes: Total rows added: 0 in 0.00 seconds
+0000.609 (0) PHP event: code E_USER_NOTICE: An outdated add-on or custom code is attempting to access the wpkn_rg_lead_notes table which is not valid in this version of Gravity Forms. Update your add-ons and custom code to prevent loss of form data. Further details: https://docs.gravityforms.com/database-storage-structure-reference/#changes-from-gravity-forms-2-2 (line 5390, wp-content/plugins/gravityforms/gravityforms.php)
+0000.609 (0) Table wpkn_rg_lead_notes: finishing file (backup_2019-03-28-0100_My_Blog_5e5ab2b73b75-db-table-wpkn_rg_lead_notes.table.gz - 0.4 KB)
+0000.609 (0) PHP event: code E_USER_NOTICE: An outdated add-on or custom code is attempting to access the wpkn_rg_lead_notes table which is not valid in this version of Gravity Forms. Update your add-ons and custom code to prevent loss of form data. Further details: https://docs.gravityforms.com/database-storage-structure-reference/#changes-from-gravity-forms-2-2 (line 5390, wp-content/plugins/gravityforms/gravityforms.php)
+0000.610 (0) PHP event: code E_USER_NOTICE: An outdated add-on or custom code is attempting to access the wpkn_rg_lead_notes table which is not valid in this version of Gravity Forms. Update your add-ons and custom code to prevent loss of form data. Further details: https://docs.gravityforms.com/database-storage-structure-reference/#changes-from-gravity-forms-2-2 (line 5390, wp-content/plugins/gravityforms/gravityforms.php)
+0000.611 (0) Table wpkn_wc_download_log: Total expected rows (approximate): 0
+0000.612 (0) Table wpkn_wc_download_log: Total rows added: 0 in 0.00 seconds
+0000.613 (0) Table wpkn_wc_download_log: finishing file (backup_2019-03-28-0100_My_Blog_5e5ab2b73b75-db-table-wpkn_wc_download_log.table.gz - 0.4 KB)
+0000.627 (0) Table wpkn_wc_webhooks: Total expected rows (approximate): 0
+0000.629 (0) Table wpkn_wc_webhooks: Total rows added: 0 in 0.00 seconds
+0000.629 (0) Table wpkn_wc_webhooks: finishing file (backup_2019-03-28-0100_My_Blog_5e5ab2b73b75-db-table-wpkn_wc_webhooks.table.gz - 0.5 KB)
+0000.632 (0) Table wpkn_woocommerce_api_keys: Total expected rows (approximate): 0
+0000.633 (0) Table wpkn_woocommerce_api_keys: Total rows added: 0 in 0.00 seconds
+0000.633 (0) Table wpkn_woocommerce_api_keys: finishing file (backup_2019-03-28-0100_My_Blog_5e5ab2b73b75-db-table-wpkn_woocommerce_api_keys.table.gz - 0.4 KB)
+0000.636 (0) Table wpkn_woocommerce_attribute_taxonomies: Total expected rows (approximate): 0
+0000.637 (0) Table wpkn_woocommerce_attribute_taxonomies: Total rows added: 0 in 0.00 seconds
+0000.637 (0) Table wpkn_woocommerce_attribute_taxonomies: finishing file (backup_2019-03-28-0100_My_Blog_5e5ab2b73b75-db-table-wpkn_woocommerce_attribute_taxonomies.table.gz - 0.4 KB)
+0000.640 (0) Table wpkn_woocommerce_downloadable_product_permissions: Total expected rows (approximate): 0
+0000.641 (0) Table wpkn_woocommerce_downloadable_product_permissions: Total rows added: 0 in 0.00 seconds
+0000.642 (0) Table wpkn_woocommerce_downloadable_product_permissions: finishing file (backup_2019-03-28-0100_My_Blog_5e5ab2b73b75-db-table-wpkn_woocommerce_downloadable_product_permissions.table.gz - 0.5 KB)
+0000.643 (0) Table wpkn_woocommerce_log: Total expected rows (approximate): 0
+0000.645 (0) Table wpkn_woocommerce_log: Total rows added: 0 in 0.00 seconds
+0000.645 (0) Table wpkn_woocommerce_log: finishing file (backup_2019-03-28-0100_My_Blog_5e5ab2b73b75-db-table-wpkn_woocommerce_log.table.gz - 0.4 KB)
+0000.647 (0) Table wpkn_woocommerce_order_items: Total expected rows (approximate): 0
+0000.649 (0) Table wpkn_woocommerce_order_items: Total rows added: 2 in 0.00 seconds
+0000.649 (0) Table wpkn_woocommerce_order_items: finishing file (backup_2019-03-28-0100_My_Blog_5e5ab2b73b75-db-table-wpkn_woocommerce_order_items.table.gz - 0.4 KB)
+0000.652 (0) Table wpkn_woocommerce_payment_tokens: Total expected rows (approximate): 0
+0000.653 (0) Table wpkn_woocommerce_payment_tokens: Total rows added: 0 in 0.00 seconds
+0000.654 (0) Table wpkn_woocommerce_payment_tokens: finishing file (backup_2019-03-28-0100_My_Blog_5e5ab2b73b75-db-table-wpkn_woocommerce_payment_tokens.table.gz - 0.4 KB)
+0000.656 (0) Table wpkn_woocommerce_sessions: Total expected rows (approximate): 2
+0000.657 (0) Table wpkn_woocommerce_sessions: Total rows added: 2 in 0.00 seconds
+0000.657 (0) Table wpkn_woocommerce_sessions: finishing file (backup_2019-03-28-0100_My_Blog_5e5ab2b73b75-db-table-wpkn_woocommerce_sessions.table.gz - 1.2 KB)
+0000.659 (0) Table wpkn_woocommerce_shipping_zone_locations: Total expected rows (approximate): 0
+0000.660 (0) Table wpkn_woocommerce_shipping_zone_locations: Total rows added: 0 in 0.00 seconds
+0000.661 (0) Table wpkn_woocommerce_shipping_zone_locations: finishing file (backup_2019-03-28-0100_My_Blog_5e5ab2b73b75-db-table-wpkn_woocommerce_shipping_zone_locations.table.gz - 0.4 KB)
+0000.662 (0) Table wpkn_woocommerce_shipping_zone_methods: Total expected rows (approximate): 0
+0000.663 (0) Table wpkn_woocommerce_shipping_zone_methods: Total rows added: 0 in 0.00 seconds
+0000.664 (0) Table wpkn_woocommerce_shipping_zone_methods: finishing file (backup_2019-03-28-0100_My_Blog_5e5ab2b73b75-db-table-wpkn_woocommerce_shipping_zone_methods.table.gz - 0.4 KB)
+0000.665 (0) Table wpkn_woocommerce_shipping_zones: Total expected rows (approximate): 0
+0000.666 (0) Table wpkn_woocommerce_shipping_zones: Total rows added: 0 in 0.00 seconds
+0000.667 (0) Table wpkn_woocommerce_shipping_zones: finishing file (backup_2019-03-28-0100_My_Blog_5e5ab2b73b75-db-table-wpkn_woocommerce_shipping_zones.table.gz - 0.3 KB)
+0000.668 (0) Table wpkn_woocommerce_tax_rate_locations: Total expected rows (approximate): 0
+0000.669 (0) Table wpkn_woocommerce_tax_rate_locations: Total rows added: 0 in 0.00 seconds
+0000.670 (0) Table wpkn_woocommerce_tax_rate_locations: finishing file (backup_2019-03-28-0100_My_Blog_5e5ab2b73b75-db-table-wpkn_woocommerce_tax_rate_locations.table.gz - 0.4 KB)
+0000.671 (0) Table wpkn_woocommerce_tax_rates: Total expected rows (approximate): 0
+0000.672 (0) Table wpkn_woocommerce_tax_rates: Total rows added: 0 in 0.00 seconds
+0000.673 (0) Table wpkn_woocommerce_tax_rates: finishing file (backup_2019-03-28-0100_My_Blog_5e5ab2b73b75-db-table-wpkn_woocommerce_tax_rates.table.gz - 0.4 KB)
+0000.674 (0) backup_2019-03-28-0100_My_Blog_5e5ab2b73b75-db-table-wpkn_options.table.gz (1/49): adding to final database dump
+0000.676 (0) backup_2019-03-28-0100_My_Blog_5e5ab2b73b75-db-table-wpkn_users.table.gz (2/49): adding to final database dump
+0000.676 (0) backup_2019-03-28-0100_My_Blog_5e5ab2b73b75-db-table-wpkn_usermeta.table.gz (3/49): adding to final database dump
+0000.677 (0) backup_2019-03-28-0100_My_Blog_5e5ab2b73b75-db-table-wpkn_commentmeta.table.gz (4/49): adding to final database dump
+0000.677 (0) backup_2019-03-28-0100_My_Blog_5e5ab2b73b75-db-table-wpkn_comments.table.gz (5/49): adding to final database dump
+0000.678 (0) backup_2019-03-28-0100_My_Blog_5e5ab2b73b75-db-table-wpkn_links.table.gz (6/49): adding to final database dump
+0000.678 (0) backup_2019-03-28-0100_My_Blog_5e5ab2b73b75-db-table-wpkn_postmeta.table.gz (7/49): adding to final database dump
+0000.678 (0) backup_2019-03-28-0100_My_Blog_5e5ab2b73b75-db-table-wpkn_posts.table.gz (8/49): adding to final database dump
+0000.679 (0) backup_2019-03-28-0100_My_Blog_5e5ab2b73b75-db-table-wpkn_term_relationships.table.gz (9/49): adding to final database dump
+0000.679 (0) backup_2019-03-28-0100_My_Blog_5e5ab2b73b75-db-table-wpkn_term_taxonomy.table.gz (10/49): adding to final database dump
+0000.680 (0) backup_2019-03-28-0100_My_Blog_5e5ab2b73b75-db-table-wpkn_termmeta.table.gz (11/49): adding to final database dump
+0000.680 (0) backup_2019-03-28-0100_My_Blog_5e5ab2b73b75-db-table-wpkn_terms.table.gz (12/49): adding to final database dump
+0000.681 (0) backup_2019-03-28-0100_My_Blog_5e5ab2b73b75-db-table-wpkn_woocommerce_order_itemmeta.table.gz (13/49): adding to final database dump
+0000.681 (0) backup_2019-03-28-0100_My_Blog_5e5ab2b73b75-db-table-wpkn_woocommerce_payment_tokenmeta.table.gz (14/49): adding to final database dump
+0000.681 (0) backup_2019-03-28-0100_My_Blog_5e5ab2b73b75-db-table-wpkn_gf_addon_feed.table.gz (15/49): adding to final database dump
+0000.681 (0) backup_2019-03-28-0100_My_Blog_5e5ab2b73b75-db-table-wpkn_gf_addon_payment_callback.table.gz (16/49): adding to final database dump
+0000.682 (0) backup_2019-03-28-0100_My_Blog_5e5ab2b73b75-db-table-wpkn_gf_addon_payment_transaction.table.gz (17/49): adding to final database dump
+0000.682 (0) backup_2019-03-28-0100_My_Blog_5e5ab2b73b75-db-table-wpkn_gf_draft_submissions.table.gz (18/49): adding to final database dump
+0000.682 (0) backup_2019-03-28-0100_My_Blog_5e5ab2b73b75-db-table-wpkn_gf_entry.table.gz (19/49): adding to final database dump
+0000.683 (0) backup_2019-03-28-0100_My_Blog_5e5ab2b73b75-db-table-wpkn_gf_entry_meta.table.gz (20/49): adding to final database dump
+0000.683 (0) backup_2019-03-28-0100_My_Blog_5e5ab2b73b75-db-table-wpkn_gf_entry_notes.table.gz (21/49): adding to final database dump
+0000.683 (0) backup_2019-03-28-0100_My_Blog_5e5ab2b73b75-db-table-wpkn_gf_form.table.gz (22/49): adding to final database dump
+0000.684 (0) backup_2019-03-28-0100_My_Blog_5e5ab2b73b75-db-table-wpkn_gf_form_meta.table.gz (23/49): adding to final database dump
+0000.685 (0) backup_2019-03-28-0100_My_Blog_5e5ab2b73b75-db-table-wpkn_gf_form_revisions.table.gz (24/49): adding to final database dump
+0000.685 (0) backup_2019-03-28-0100_My_Blog_5e5ab2b73b75-db-table-wpkn_gf_form_view.table.gz (25/49): adding to final database dump
+0000.685 (0) backup_2019-03-28-0100_My_Blog_5e5ab2b73b75-db-table-wpkn_gf_rest_api_keys.table.gz (26/49): adding to final database dump
+0000.685 (0) backup_2019-03-28-0100_My_Blog_5e5ab2b73b75-db-table-wpkn_rg_form.table.gz (27/49): adding to final database dump
+0000.686 (0) PHP event: code E_USER_NOTICE: An outdated add-on or custom code is attempting to access the wpkn_rg_form table which is not valid in this version of Gravity Forms. Update your add-ons and custom code to prevent loss of form data. Further details: https://docs.gravityforms.com/database-storage-structure-reference/#changes-from-gravity-forms-2-2 (line 5390, wp-content/plugins/gravityforms/gravityforms.php)
+0000.686 (0) backup_2019-03-28-0100_My_Blog_5e5ab2b73b75-db-table-wpkn_rg_form_meta.table.gz (28/49): adding to final database dump
+0000.686 (0) PHP event: code E_USER_NOTICE: An outdated add-on or custom code is attempting to access the wpkn_rg_form_meta table which is not valid in this version of Gravity Forms. Update your add-ons and custom code to prevent loss of form data. Further details: https://docs.gravityforms.com/database-storage-structure-reference/#changes-from-gravity-forms-2-2 (line 5390, wp-content/plugins/gravityforms/gravityforms.php)
+0000.687 (0) backup_2019-03-28-0100_My_Blog_5e5ab2b73b75-db-table-wpkn_rg_form_view.table.gz (29/49): adding to final database dump
+0000.687 (0) PHP event: code E_USER_NOTICE: An outdated add-on or custom code is attempting to access the wpkn_rg_form_view table which is not valid in this version of Gravity Forms. Update your add-ons and custom code to prevent loss of form data. Further details: https://docs.gravityforms.com/database-storage-structure-reference/#changes-from-gravity-forms-2-2 (line 5390, wp-content/plugins/gravityforms/gravityforms.php)
+0000.687 (0) backup_2019-03-28-0100_My_Blog_5e5ab2b73b75-db-table-wpkn_rg_incomplete_submissions.table.gz (30/49): adding to final database dump
+0000.687 (0) PHP event: code E_USER_NOTICE: An outdated add-on or custom code is attempting to access the wpkn_rg_incomplete_submissions table which is not valid in this version of Gravity Forms. Update your add-ons and custom code to prevent loss of form data. Further details: https://docs.gravityforms.com/database-storage-structure-reference/#changes-from-gravity-forms-2-2 (line 5390, wp-content/plugins/gravityforms/gravityforms.php)
+0000.688 (0) backup_2019-03-28-0100_My_Blog_5e5ab2b73b75-db-table-wpkn_rg_lead.table.gz (31/49): adding to final database dump
+0000.688 (0) PHP event: code E_USER_NOTICE: An outdated add-on or custom code is attempting to access the wpkn_rg_lead table which is not valid in this version of Gravity Forms. Update your add-ons and custom code to prevent loss of form data. Further details: https://docs.gravityforms.com/database-storage-structure-reference/#changes-from-gravity-forms-2-2 (line 5390, wp-content/plugins/gravityforms/gravityforms.php)
+0000.689 (0) backup_2019-03-28-0100_My_Blog_5e5ab2b73b75-db-table-wpkn_rg_lead_detail.table.gz (32/49): adding to final database dump
+0000.689 (0) PHP event: code E_USER_NOTICE: An outdated add-on or custom code is attempting to access the wpkn_rg_lead_detail table which is not valid in this version of Gravity Forms. Update your add-ons and custom code to prevent loss of form data. Further details: https://docs.gravityforms.com/database-storage-structure-reference/#changes-from-gravity-forms-2-2 (line 5390, wp-content/plugins/gravityforms/gravityforms.php)
+0000.689 (0) backup_2019-03-28-0100_My_Blog_5e5ab2b73b75-db-table-wpkn_rg_lead_detail_long.table.gz (33/49): adding to final database dump
+0000.689 (0) PHP event: code E_USER_NOTICE: An outdated add-on or custom code is attempting to access the wpkn_rg_lead_detail table which is not valid in this version of Gravity Forms. Update your add-ons and custom code to prevent loss of form data. Further details: https://docs.gravityforms.com/database-storage-structure-reference/#changes-from-gravity-forms-2-2 (line 5390, wp-content/plugins/gravityforms/gravityforms.php)
+0000.690 (0) backup_2019-03-28-0100_My_Blog_5e5ab2b73b75-db-table-wpkn_rg_lead_meta.table.gz (34/49): adding to final database dump
+0000.690 (0) PHP event: code E_USER_NOTICE: An outdated add-on or custom code is attempting to access the wpkn_rg_lead_meta table which is not valid in this version of Gravity Forms. Update your add-ons and custom code to prevent loss of form data. Further details: https://docs.gravityforms.com/database-storage-structure-reference/#changes-from-gravity-forms-2-2 (line 5390, wp-content/plugins/gravityforms/gravityforms.php)
+0000.690 (0) backup_2019-03-28-0100_My_Blog_5e5ab2b73b75-db-table-wpkn_rg_lead_notes.table.gz (35/49): adding to final database dump
+0000.691 (0) PHP event: code E_USER_NOTICE: An outdated add-on or custom code is attempting to access the wpkn_rg_lead_notes table which is not valid in this version of Gravity Forms. Update your add-ons and custom code to prevent loss of form data. Further details: https://docs.gravityforms.com/database-storage-structure-reference/#changes-from-gravity-forms-2-2 (line 5390, wp-content/plugins/gravityforms/gravityforms.php)
+0000.691 (0) backup_2019-03-28-0100_My_Blog_5e5ab2b73b75-db-table-wpkn_wc_download_log.table.gz (36/49): adding to final database dump
+0000.691 (0) backup_2019-03-28-0100_My_Blog_5e5ab2b73b75-db-table-wpkn_wc_webhooks.table.gz (37/49): adding to final database dump
+0000.692 (0) backup_2019-03-28-0100_My_Blog_5e5ab2b73b75-db-table-wpkn_woocommerce_api_keys.table.gz (38/49): adding to final database dump
+0000.692 (0) backup_2019-03-28-0100_My_Blog_5e5ab2b73b75-db-table-wpkn_woocommerce_attribute_taxonomies.table.gz (39/49): adding to final database dump
+0000.692 (0) backup_2019-03-28-0100_My_Blog_5e5ab2b73b75-db-table-wpkn_woocommerce_downloadable_product_permissions.table.gz (40/49): adding to final database dump
+0000.693 (0) backup_2019-03-28-0100_My_Blog_5e5ab2b73b75-db-table-wpkn_woocommerce_log.table.gz (41/49): adding to final database dump
+0000.693 (0) backup_2019-03-28-0100_My_Blog_5e5ab2b73b75-db-table-wpkn_woocommerce_order_items.table.gz (42/49): adding to final database dump
+0000.693 (0) backup_2019-03-28-0100_My_Blog_5e5ab2b73b75-db-table-wpkn_woocommerce_payment_tokens.table.gz (43/49): adding to final database dump
+0000.694 (0) backup_2019-03-28-0100_My_Blog_5e5ab2b73b75-db-table-wpkn_woocommerce_sessions.table.gz (44/49): adding to final database dump
+0000.694 (0) backup_2019-03-28-0100_My_Blog_5e5ab2b73b75-db-table-wpkn_woocommerce_shipping_zone_locations.table.gz (45/49): adding to final database dump
+0000.694 (0) backup_2019-03-28-0100_My_Blog_5e5ab2b73b75-db-table-wpkn_woocommerce_shipping_zone_methods.table.gz (46/49): adding to final database dump
+0000.695 (0) backup_2019-03-28-0100_My_Blog_5e5ab2b73b75-db-table-wpkn_woocommerce_shipping_zones.table.gz (47/49): adding to final database dump
+0000.695 (0) backup_2019-03-28-0100_My_Blog_5e5ab2b73b75-db-table-wpkn_woocommerce_tax_rate_locations.table.gz (48/49): adding to final database dump
+0000.695 (0) backup_2019-03-28-0100_My_Blog_5e5ab2b73b75-db-table-wpkn_woocommerce_tax_rates.table.gz (49/49): adding to final database dump
+0000.696 (0) backup_2019-03-28-0100_My_Blog_5e5ab2b73b75-db.gz: finished writing out complete database file (24 KB)
+0000.698 (0) Total database tables backed up: 49 (backup_2019-03-28-0100_My_Blog_5e5ab2b73b75-db.gz, size: 29533, sha256)
+0000.700 (0) backup_2019-03-28-0100_My_Blog_5e5ab2b73b75-db.gz: db: This file has not yet been successfully uploaded: will queue
+0000.700 (0) Saving backup history. Total backup size: 28.8 KB
+0000.701 (0) Requesting upload of the files that have not yet been successfully uploaded (1)
+0000.702 (0) Cloud backup selection (1/1): none with instance (1/1) (last)
+0000.703 (0) No remote despatch: user chose no remote backup service
+0000.703 (0) Recording as successfully uploaded: backup_2019-03-28-0100_My_Blog_5e5ab2b73b75-db.gz
+0000.704 (0) Prune old backups from local store: nothing to do, since the user disabled local deletion and we are using local backups
+0000.704 (0) Resume backup (5e5ab2b73b75, 0): finish run
+0000.705 (0) Decremented the semaphore (fd) by 1
+0000.706 (0) Semaphore (fd) unlocked
+0000.706 (0) There were no errors in the uploads, so the 'resume' event (1) is being unscheduled
+0000.707 (0) No email will/can be sent - the user has not configured an email address.
+0000.707 (0) The backup apparently succeeded and is now complete

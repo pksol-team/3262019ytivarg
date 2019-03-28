@@ -1005,7 +1005,7 @@ class GFFormDisplay {
 			}
 
 			$form_string .= "
-                        <div class='gform_body'>";
+                        <div class='gform_body working'>";
 
 			//add first page if this form has any page fields
 			if ( $has_pages ) {
