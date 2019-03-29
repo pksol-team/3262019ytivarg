@@ -54,6 +54,8 @@ add_action( 'wp_footer', 'gravity_script', 100 );
 
 function gravity_script() {
 
+    var_dump($_POST);
+
     $settings = get_option('gravityformsaddon_gravityformsstripe_settings');
     $stripe_publishable = '';
 
@@ -69,49 +71,131 @@ function gravity_script() {
 
         if($stripe_publishable != '') {
 
+            $total_price = $_POST['total-input-gravity'];
+
+            echo "
+            
+            <script>    
+
+                window.onload = function() {
+                
+
+                        var form = jQuery('.gform_wrapper');
+
+                        if(form.length > 0) {
+
+                            var gravity_total = form.find('[name=total-input-gravity]');
+                            var field_total = jQuery('.ginput_total');
+    
+                            if(gravity_total.length == 1 && field_total.length == 1) {
+                                
+                                writeTotal(field_total.next().val());
+    
+                                field_total.next().change(function(e) {
+                                    
+                                    var price_input = $(this);
+                                    writeTotal(price_input.val());
+    
+                                });
+    
+                            }
+                            
+                        }
+
+                        function writeTotal(price) {
+                            jQuery('[name=total-input-gravity]').val(price);
+                        }
+
+                    };
+
+                </script>
+
+            
+            ";
+
+            if(isset($total_price)) {
+                echo "<script>
+
+
+                window.onload = function() {
+
+                    var if_submit = jQuery('.gform_confirmation_message');
+
+                    if(if_submit.length > 0) {
+                        
+                        jQuery('.gform_confirmation_message').html('Redirecting...');
+
+                        var stripe = Stripe('".$stripe_publishable."');
+        
+                        stripe.createSource({
+
+                            type: 'bancontact',
+                            amount: ".$total_price.",
+                            currency: 'eur',
+                            statement_descriptor: 'ORDER AT11990',
+                            
+                            owner: {
+                                name: 'Jenny Rosen',
+                            },
+                            
+                            redirect: {
+                                return_url: 'https://stripe.pakistancouncilofyouth.com/',
+                            },
+
+                        }).then(function(result) {
+                            
+                            // console.log(result);
+
+                            var ajaxurl = '".get_site_url()."/wp-admin/admin-ajax.php';
+
+                            var data = {
+                                result: result,
+                                action: 'redirection_at_stripe'
+                            }
+    
+                            jQuery.post(ajaxurl, data, function(response) {
+                                console.log(response);
+                                // window.location.href = result.source.redirect.url;
+                            });
+
+
+                        });
+
+
+
+                    }
+
+
+
+                };
+
+
+
+                </script>";
+            }
+
+
             // echo "
             // <script src='https://js.stripe.com/v3/'></script>
             // <script>
                 
-            //     var stripe = Stripe('".$stripe_publishable."');
-                
-            //     // stripe.createSource({
+            // var stripe = Stripe('".$stripe_publishable."');
+            
+            // stripe.createSource({
 
-            //     //     type: 'bancontact',
-            //     //     amount: 50,
-            //     //     currency: 'eur',
-            //     //     statement_descriptor: 'ORDER AT11990',
-            //     //     owner: {
-            //     //         name: 'Jenny Rosen',
-            //     //     },
-            //     //     redirect: {
-            //     //         return_url: 'https://stripe.pakistancouncilofyouth.com/',
-            //     //     },
-            //     // }).then(function(result) {
-            //     //     console.log(result);
-            //     // });
-
-            //     jQuery(document).ready(function($) {
-
-            //         $('.gform_wrapper').each(function(index, form) {
-
-            //             var form = $(form);
-
-            //             var is_redirect_url = form.find('[value=redirect_url]');
-            //             var is_secret_stripe = form.find('[value=client_secret]');
-            //             var is_source_stripe = form.find('[value=source_id]');
-
-            //             if(is_redirect_url.length == 1 && is_secret_stripe.length == 1 && is_source_stripe.length == 1) {
-                            
-            //                 // console.log('apply stripe key');
-
-            //             }
-
-            //         });
-
-            //     });
-
-            // </script>";
+            //     type: 'bancontact',
+            //     amount: 50,
+            //     currency: 'eur',
+            //     statement_descriptor: 'ORDER AT11990',
+            //     owner: {
+            //         name: 'Jenny Rosen',
+            //     },
+            //     redirect: {
+            //         return_url: 'https://stripe.pakistancouncilofyouth.com/',
+            //     },
+            // }).then(function(result) {
+            //     console.log(result);
+            // });
 
         }
         
@@ -121,104 +205,88 @@ function gravity_script() {
 
 
 
-// add_filter( 'gform_entry_meta', 'custom_entry_metas', 10, 2);
-
-
-// function custom_entry_metas($entry_meta, $form_id) {
-    
-
-//     $entry_meta['score'] = array(
-//         'label' => 'Score',
-//         'is_numeric' => true,
-//         'update_entry_meta_callback' => 'update_entry_meta',
-//         'is_default_column' => true
-//     );
-
-// }
-
-
-
-
 add_action( 'gform_after_submission', 'update_status_gravity', 10, 2);
 
 function update_status_gravity( $entry, $form ) {
 
-    $field_names = [];
-    foreach ( $form['fields'] as $field ) {
-        
-        $field_names[] = ['name' => $field->label, 'meta_name' => $field->id ];
+    $settings = get_option('gravityformsaddon_gravityformsstripe_settings');
+    $stripe_publishable = '';
+
+    if($settings['webhooks_enabled'] == '1') {
+
+        if( $settings['api_mode'] == 'test' && $settings['test_publishable_key_is_valid'] == '1' && $settings['test_secret_key_is_valid'] == '1' ) {
+            $stripe_publishable = $settings['test_publishable_key'];
+        } elseif( $settings['api_mode'] == 'live' && $settings['live_publishable_key_is_valid'] == '1' && $settings['live_secret_key_is_valid'] == '1' ) {        
+            $stripe_publishable = $settings['live_publishable_key'];
+        }
+
+        if($stripe_publishable != '') {
+            
+            global $wpdb;
+            $entry_id = $entry['id'];
+            $prefix = $wpdb->prefix;
+
+            $wpdb->query(
+                "UPDATE $prefix"."gf_entry
+                SET status = 'deactive'
+                WHERE id = $entry_id"
+            );
+
+            $total_price = $_POST['total-input-gravity'];
+
+            echo '
+
+            <script src="https://js.stripe.com/v3/"></script>
+            <script>
+
+                // jQuery(".gform_confirmation_message").html("Redirecting...");
+
+                // console.log(document.getElementsByClassName("gform_confirmation_message"));
+
+                // window.onload = function() {
+
+
+                    // document.getElementsByClassName("gform_confirmation_message")[0].innerHtml = "Redirecting...";
+                    // $(".gform_confirmation_message").html("Redirecting...");
+
+                // } 
+
+                // jQuery(".gform_confirmation_message").html("Redirecting...");
+
+                
+
+                // var newScript = document.createElement("script");
+                // var inlineScript = document.createTextNode("'.$script.'");
+                // newScript.appendChild(inlineScript); 
+                
+                // console.log(document.getElementsByTagName("body"));
+                
+                // .appendChild(newScript);
+
+
+
+                // console.log(document.getElementsByTagName("body"));
+
+
+            </script>
+
+
+        ';
+
+        }
 
     }
 
-    var_dump($field_names);
-
-
-    // var_dump($form);
-
-    // $summary = RGFormsModel::get_form_counts($entry['id']);
-
-    // var_dump($summary);
-
-
-
+    // $field_names = [];
     // foreach ( $form['fields'] as $field ) {
-    //     $inputs = $field->get_entry_inputs();
-    //     if ( is_array( $inputs ) ) {
-    //         foreach ( $inputs as $input ) {
-                
-    //             $value = rgar( $entry, (string) $input['id'] );
-                
-    //             var_dump($input['id'], $value);
+        
+    //     $field_names[] = ['name' => $field->label, 'meta_name' => $field->id ];
 
-    //             // do something with the value
-    //         }
-    //     } else {
-
-    //         $value = rgar( $entry, (string) $field->id );
-
-    //         var_dump($input['id'], $value);
-    //         // do something with the value
-    //     }
     // }
 
-
-
-
+    // var_dump($field_names);
 
     // gform_update_meta( $entry['id'], 'source_id', 'test' );
-    
-    // $settings = get_option('gravityformsaddon_gravityformsstripe_settings');
-    // $stripe_publishable = '';
-
-    // if($settings['webhooks_enabled'] == '1') {
-
-    //     $process_the_gateway = false;
-
-    //     if( $settings['api_mode'] == 'test' && $settings['test_publishable_key_is_valid'] == '1' && $settings['test_secret_key_is_valid'] == '1' ) {
-    //         $stripe_publishable = $settings['test_publishable_key'];
-    //     } elseif( $settings['api_mode'] == 'live' && $settings['live_publishable_key_is_valid'] == '1' && $settings['live_secret_key_is_valid'] == '1' ) {        
-    //         $stripe_publishable = $settings['live_publishable_key'];
-    //     }
-
-    //     if($stripe_publishable != '') {
-
-
-
-            // global $wpdb;
-            // $entry_id = $entry['id'];
-            // $prefix = $wpdb->prefix;
-
-            // $wpdb->query(
-            //     "UPDATE $prefix"."gf_entry
-            //     SET status = 'deactive'
-            //     WHERE id = $entry_id"
-            // );
-
-            // echo "
-            // <script src='https://js.stripe.com/v3/'></script>            
-            // <script>
-
-            //     window.onload = function() {
 
 
             //         var ajaxurl = '".get_site_url()."/wp-admin/admin-ajax.php';
@@ -270,13 +338,21 @@ function update_status_gravity( $entry, $form ) {
 
 
 
-// add_action( 'wp_ajax_nopriv_redirection_at_stripe', 'redirection_at_stripe' );
-// add_action( 'wp_ajax_redirection_at_stripe', 'redirection_at_stripe' );
+add_action( 'wp_ajax_nopriv_redirection_at_stripe', 'redirection_at_stripe' );
+add_action( 'wp_ajax_redirection_at_stripe', 'redirection_at_stripe' );
 
-// function redirection_at_stripe() { 
-//     echo 'working';
-//     die();
-// }
+function redirection_at_stripe() { 
+    
+    // $data = $_POST['data'];
+    // gform_update_meta( $entry['id'], 'source_id', 'test' );
+    
+
+
+    die();
+
+
+
+}
 
 
 // if(isset($_GET['client_secret'])) {

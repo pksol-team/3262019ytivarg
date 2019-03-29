@@ -113,7 +113,7 @@ class Simple_GF_Field extends GF_Field {
 				<option value='sofortbanking'>Sofort Banking</option>
 			</select>
 
-			<input type='hidden' name='my-input' value=''>
+			<input type='hidden' name='total-input-gravity'>
 
 		";
 
