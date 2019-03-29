@@ -1,0 +1,23 @@
+2019-03-28T06:42:02+00:00 CRITICAL require_once(): Failed opening required 'includes/class-simple-gf-field.php' (include_path='E:\xampp\php\PEAR') in E:\xampp\htdocs\gravity\wp-content\plugins\gravityformbancontact\class-gfbancontact.php on line 33
+
+2019-03-28T08:14:00+00:00 CRITICAL Uncaught Error: Call to undefined function gf_coupons() in E:\xampp\htdocs\gravity\wp-content\plugins\gravityformbancontact\includes\class-simple-gf-field.php:148
+Stack trace:
+#0 E:\xampp\htdocs\gravity\wp-content\plugins\gravityforms\common.php(3372): Simple_GF_Field->get_field_input(Array, '', NULL)
+#1 E:\xampp\htdocs\gravity\wp-content\plugins\gravityforms\form_display.php(3100): GFCommon::get_field_input(Object(Simple_GF_Field), '', 0, 1, Array)
+#2 E:\xampp\htdocs\gravity\wp-content\plugins\gravityforms\form_display.php(3036): GFFormDisplay::get_field_content(Object(Simple_GF_Field), '', false, 1, Array)
+#3 E:\xampp\htdocs\gravity\wp-content\plugins\gravityforms\form_display.php(1042): GFFormDisplay::get_field(Object(Simple_GF_Field), NULL, false, Array, Array)
+#4 E:\xampp\htdocs\gravity\wp-content\plugins\gravityforms\gravityforms.php(2562): GFFormDisplay::get_form('1', false, false, false, Array, false, 0)
+#5 E:\xampp\htdocs\gravity\wp-content\plugins\gravityforms\gravityforms.php(1670): GFForms::get_fo in E:\xampp\htdocs\gravity\wp-content\plugins\gravityformbancontact\includes\class-simple-gf-field.php on line 148
+
+2019-03-28T09:23:35+00:00 CRITICAL Uncaught Error: Class 'GF_Field_Attendees' not found in E:\xampp\htdocs\gravity\wp-content\plugins\gravityformbancontact\includes\class-simple-gf-field.php:172
+Stack trace:
+#0 E:\xampp\htdocs\gravity\wp-content\plugins\gravityformbancontact\class-gfbancontact.php(33): require_once()
+#1 E:\xampp\htdocs\gravity\wp-content\plugins\gravityforms\includes\addon\class-gf-addon.php(122): GFBanContact->pre_init()
+#2 E:\xampp\htdocs\gravity\wp-content\plugins\gravityformbancontact\class-gfbancontact.php(24): GFAddOn->__construct()
+#3 E:\xampp\htdocs\gravity\wp-content\plugins\gravityforms\includes\addon\class-gf-addon.php(177): GFBanContact::get_instance()
+#4 E:\xampp\htdocs\gravity\wp-content\plugins\gravityforms\gravityforms.php(250): GFAddOn::init_addons()
+#5 E:\xampp\htdocs\gravity\wp-includes\class-wp-hook.php(286): GFForms::loaded('')
+#6 E:\xampp\htdocs\gravity\wp-includes\class-wp-hook.php(310): WP_Hook->apply_filters(NULL, Array)
+#7 E:\xampp\htdocs\gravity\wp-includes\plugin.php(465): WP_Hook->do_action(Array)
+ in E:\xampp\htdocs\gravity\wp-content\plugins\gravityformbancontact\includes\class-simple-gf-field.php on line 172
+

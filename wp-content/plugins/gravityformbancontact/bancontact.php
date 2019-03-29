@@ -1,4 +1,5 @@
 <?php
+
 /*
 Plugin Name: Gravity Forms Bancontact Add-On
 Plugin URI: http://www.gravityforms.com
@@ -142,24 +143,70 @@ add_action( 'gform_after_submission', 'update_status_gravity', 10, 2);
 
 function update_status_gravity( $entry, $form ) {
 
-    $settings = get_option('gravityformsaddon_gravityformsstripe_settings');
-    $stripe_publishable = '';
+    $field_names = [];
+    foreach ( $form['fields'] as $field ) {
+        
+        $field_names[] = ['name' => $field->label, 'meta_name' => $field->id ];
 
-    if($settings['webhooks_enabled'] == '1') {
+    }
 
-        $process_the_gateway = false;
+    var_dump($field_names);
 
-        if( $settings['api_mode'] == 'test' && $settings['test_publishable_key_is_valid'] == '1' && $settings['test_secret_key_is_valid'] == '1' ) {
-            $stripe_publishable = $settings['test_publishable_key'];
-        } elseif( $settings['api_mode'] == 'live' && $settings['live_publishable_key_is_valid'] == '1' && $settings['live_secret_key_is_valid'] == '1' ) {        
-            $stripe_publishable = $settings['live_publishable_key'];
-        }
 
-        if($stripe_publishable != '') {
+    // var_dump($form);
 
-            global $wpdb;
-            $entry_id = $entry['id'];
-            $prefix = $wpdb->prefix;
+    // $summary = RGFormsModel::get_form_counts($entry['id']);
+
+    // var_dump($summary);
+
+
+
+    // foreach ( $form['fields'] as $field ) {
+    //     $inputs = $field->get_entry_inputs();
+    //     if ( is_array( $inputs ) ) {
+    //         foreach ( $inputs as $input ) {
+                
+    //             $value = rgar( $entry, (string) $input['id'] );
+                
+    //             var_dump($input['id'], $value);
+
+    //             // do something with the value
+    //         }
+    //     } else {
+
+    //         $value = rgar( $entry, (string) $field->id );
+
+    //         var_dump($input['id'], $value);
+    //         // do something with the value
+    //     }
+    // }
+
+
+
+
+
+    // gform_update_meta( $entry['id'], 'source_id', 'test' );
+    
+    // $settings = get_option('gravityformsaddon_gravityformsstripe_settings');
+    // $stripe_publishable = '';
+
+    // if($settings['webhooks_enabled'] == '1') {
+
+    //     $process_the_gateway = false;
+
+    //     if( $settings['api_mode'] == 'test' && $settings['test_publishable_key_is_valid'] == '1' && $settings['test_secret_key_is_valid'] == '1' ) {
+    //         $stripe_publishable = $settings['test_publishable_key'];
+    //     } elseif( $settings['api_mode'] == 'live' && $settings['live_publishable_key_is_valid'] == '1' && $settings['live_secret_key_is_valid'] == '1' ) {        
+    //         $stripe_publishable = $settings['live_publishable_key'];
+    //     }
+
+    //     if($stripe_publishable != '') {
+
+
+
+            // global $wpdb;
+            // $entry_id = $entry['id'];
+            // $prefix = $wpdb->prefix;
 
             // $wpdb->query(
             //     "UPDATE $prefix"."gf_entry
@@ -167,98 +214,93 @@ function update_status_gravity( $entry, $form ) {
             //     WHERE id = $entry_id"
             // );
 
-            echo "
-            <script src='https://js.stripe.com/v3/'></script>            
-            <script>
+            // echo "
+            // <script src='https://js.stripe.com/v3/'></script>            
+            // <script>
 
-                window.onload = function() {
+            //     window.onload = function() {
 
 
-                    // var ajaxurl = '".get_site_url()."/wp-admin/admin-ajax.php';
+            //         var ajaxurl = '".get_site_url()."/wp-admin/admin-ajax.php';
 
-                    // console.log(result);
-
-                    // var data = {
-                    //     result: result,
-                    //     action: 'redirection_at_stripe'
-                    // }
-
-                    // jQuery.post(ajaxurl, data, function(response) {
-                    //     console.log(response);
-                    // });
+            //         // jQuery.post(ajaxurl, data, function(response) {
+            //         //     console.log(response);
+            //         // });
                     
+            //         jQuery('.gform_confirmation_message').html('Redirecting...');
 
+            //         var stripe = Stripe('".$stripe_publishable."');
 
-                    jQuery('.gform_confirmation_message').html('Redirecting...');
+            //         stripe.createSource({
+            //             type: 'bancontact',
+            //             amount: 50,
+            //             currency: 'eur',
+            //             statement_descriptor: 'ORDER AT11990',
+            //             owner: {
+            //                 name: 'Jenny Rosen',
+            //             },
 
-                    var stripe = Stripe('".$stripe_publishable."');
+            //             redirect: {
+            //                 return_url: 'https://stripe.pakistancouncilofyouth.com/2019/03/27/thank-you/',
+            //             },
 
-                    stripe.createSource({
-                        type: 'bancontact',
-                        amount: 50,
-                        currency: 'eur',
-                        statement_descriptor: 'ORDER AT11990',
-                        owner: {
-                            name: 'Jenny Rosen',
-                        },
+            //         }).then(function(result) {
 
-                        redirect: {
-                            return_url: 'https://stripe.pakistancouncilofyouth.com/2019/03/27/thank-you/',
-                        },
+            //             var data = {
+            //                 result: result,
+            //                 action: 'redirection_at_stripe'
+            //             }
 
-                    }).then(function(result) {
+            //             jQuery.post(ajaxurl, data, function(response) {
+            //                 console.log(response);
+            //                 // window.location.href = result.source.redirect.url;
+            //             });
 
-                        window.location.href = result.source.redirect.url;
+            //         });
 
-                    });
+            //     }
 
-                }
+            // </script>";
 
-            </script>";
-
-        }
+        // }
         
-    }
+    // }
 
 }
 
 
 
-add_action( 'wp_ajax_nopriv_redirection_at_stripe', 'redirection_at_stripe' );
-add_action( 'wp_ajax_redirection_at_stripe', 'redirection_at_stripe' );
+// add_action( 'wp_ajax_nopriv_redirection_at_stripe', 'redirection_at_stripe' );
+// add_action( 'wp_ajax_redirection_at_stripe', 'redirection_at_stripe' );
 
-function redirection_at_stripe() { 
+// function redirection_at_stripe() { 
+//     echo 'working';
+//     die();
+// }
+
+
+// if(isset($_GET['client_secret'])) {
     
-    echo 'working';
+//     $source = $_GET['source'];
     
-    die();
+//     $ch = curl_init();
+//     curl_setopt($ch, CURLOPT_URL, 'https://api.stripe.com/v1/charges');
+//     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+//     curl_setopt($ch, CURLOPT_POSTFIELDS, "amount=50&currency=eur&source=".$source);
+//     curl_setopt($ch, CURLOPT_POST, 1);
+//     curl_setopt($ch, CURLOPT_USERPWD, 'sk_test_Ho1YZOJMnpnAS9xsW4TBwYef' . ':' . '');
 
-}
+//     $headers = array();
+//     $headers[] = 'Content-Type: application/x-www-form-urlencoded';
+//     curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 
+//     $result = curl_exec($ch);
+//     if (curl_errno($ch)) {
+//         echo 'Error:' . curl_error($ch);
+//     }
+//     curl_close ($ch);
 
-if(isset($_GET['client_secret'])) {
-    
-    $source = $_GET['source'];
-    
-    $ch = curl_init();
-
-    curl_setopt($ch, CURLOPT_URL, 'https://api.stripe.com/v1/charges');
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-    curl_setopt($ch, CURLOPT_POSTFIELDS, "amount=50&currency=eur&source=".$source);
-    curl_setopt($ch, CURLOPT_POST, 1);
-    curl_setopt($ch, CURLOPT_USERPWD, 'sk_test_Ho1YZOJMnpnAS9xsW4TBwYef' . ':' . '');
-
-    $headers = array();
-    $headers[] = 'Content-Type: application/x-www-form-urlencoded';
-    curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-
-    $result = curl_exec($ch);
-    if (curl_errno($ch)) {
-        echo 'Error:' . curl_error($ch);
-    }
-    curl_close ($ch);
-
-}
+// }
 
 
 

@@ -27,6 +27,14 @@ class GFBanContact extends GFAddOn {
 		return self::$_instance;
 	}
 
+	public function pre_init() {
+		parent::pre_init();
+		if ( $this->is_gravityforms_supported() && class_exists( 'GF_Field' ) ) {
+			require_once( 'includes/class-simple-gf-field.php' );
+		}
+	}
+
+
 	/**
 	 * Handles hooks and loading of language files.
 	 */
@@ -34,7 +42,9 @@ class GFBanContact extends GFAddOn {
 		parent::init();
 		add_filter( 'gform_submit_button', array( $this, 'form_submit_button' ), 10, 2 );
 		add_action( 'gform_after_submission', array( $this, 'after_submission' ), 10, 2 );
+		
 	}
+
 
 
 	// # SCRIPTS & STYLES -----------------------------------------------------------------------------------------------
@@ -51,19 +61,14 @@ class GFBanContact extends GFAddOn {
 				'src'     => $this->get_base_url() . '/js/my_script.js',
 				'version' => $this->_version,
 				'deps'    => array( 'jquery' ),
-				'strings' => array(
-					'first'  => esc_html__( 'First Choice', 'bancontact' ),
-					'second' => esc_html__( 'Second Choice', 'bancontact' ),
-					'third'  => esc_html__( 'Third Choice', 'bancontact' )
-				),
 				'enqueue' => array(
 					array(
 						'admin_page' => array( 'form_settings' ),
 						'tab'        => 'bancontact'
-					)
+					),
+					array( 'field_types' => array( 'simple' ) )
 				)
 			),
-
 		);
 
 		return array_merge( parent::scripts(), $scripts );
@@ -81,13 +86,15 @@ class GFBanContact extends GFAddOn {
 				'src'     => $this->get_base_url() . '/css/my_styles.css',
 				'version' => $this->_version,
 				'enqueue' => array(
-					array( 'field_types' => array( 'poll' ) )
+					array( 'field_types' => array( 'poll' ) ),
+					array( 'field_types' => array( 'simple' ) )
 				)
 			)
 		);
 
 		return array_merge( parent::styles(), $styles );
 	}
+
 
 
 	// # FRONTEND FUNCTIONS --------------------------------------------------------------------------------------------
