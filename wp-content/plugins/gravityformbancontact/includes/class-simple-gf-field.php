@@ -114,6 +114,7 @@ class Simple_GF_Field extends GF_Field {
 			</select>
 
 			<input type='hidden' name='total-input-gravity'>
+			<input type='hidden' name='uniqid' value='".uniqid()."'>
 
 		";
 
