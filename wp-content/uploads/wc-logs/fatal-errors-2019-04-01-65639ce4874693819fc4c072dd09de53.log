@@ -1,0 +1,6 @@
+2019-04-01T06:38:49+00:00 CRITICAL require_once(): Failed opening required 'includes/class-simple-gf-field.php' (include_path='E:\xampp\php\PEAR') in E:\xampp\htdocs\gravity\wp-content\plugins\gravityformbancontact\class-gfbancontact.php on line 33
+
+2019-04-01T06:40:50+00:00 CRITICAL require_once(): Failed opening required 'includes/class-simple-gf-field.php' (include_path='E:\xampp\php\PEAR') in E:\xampp\htdocs\gravity\wp-content\plugins\gravityformbancontact\class-gfbancontact.php on line 33
+
+2019-04-01T06:42:51+00:00 CRITICAL require_once(): Failed opening required 'includes/class-simple-gf-field.php' (include_path='E:\xampp\php\PEAR') in E:\xampp\htdocs\gravity\wp-content\plugins\gravityformbancontact\class-gfbancontact.php on line 33
+
