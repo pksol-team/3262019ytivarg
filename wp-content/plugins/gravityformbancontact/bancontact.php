@@ -133,6 +133,7 @@ function gravity_script() {
                 <script src='https://js.stripe.com/v3/'></script>                
                 <script>
 
+                
 
                 window.onload = function() {
 
@@ -247,81 +248,6 @@ function redirection_at_stripe() {
 
 }
 
-
-
-if(isset($_GET['client_secret'])) {
-    
-    $source = $_GET['source'];
-
-    global $wpdb;
-    $prefix = $wpdb->prefix;
-
-    $entry_row = $wpdb->get_row(
-        "SELECT * FROM $prefix"."gf_entry_meta
-        WHERE meta_key = 'source_id' AND meta_value = '$source' ", OBJECT
-    );
-
-    $entry_id = $entry_row->entry_id;
-   
-    $price_row = $wpdb->get_row(
-        "SELECT * FROM $prefix"."gf_entry_meta
-        WHERE entry_id = $entry_id AND meta_key = 'price'", OBJECT
-    );    
-
-    $price_amount = $entry_row->meta_value;
-
-    $settings = get_option('gravityformsaddon_gravityformsstripe_settings');
-    $stripe_publishable = '';
-
-    if($settings['webhooks_enabled'] == '1') {
-
-        $process_the_gateway = false;
-
-        if( $settings['api_mode'] == 'test' && $settings['test_publishable_key_is_valid'] == '1' && $settings['test_secret_key_is_valid'] == '1' ) {
-            $stripe_publishable = $settings['test_publishable_key'];
-        } elseif( $settings['api_mode'] == 'live' && $settings['live_publishable_key_is_valid'] == '1' && $settings['live_secret_key_is_valid'] == '1' ) {        
-            $stripe_publishable = $settings['live_publishable_key'];
-        }
-
-        if($stripe_publishable != '') {
-            
-            $wpdb->query(
-                "UPDATE $prefix"."gf_entry
-                SET status = 'active'
-                WHERE id = $entry_id"
-            );
-            
-            // $ch = curl_init();
-            // curl_setopt($ch, CURLOPT_URL, 'https://api.stripe.com/v1/charges');
-            // curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-            // curl_setopt($ch, CURLOPT_POSTFIELDS, "amount=".$price_amount."&currency=eur&source=".$source);
-            // curl_setopt($ch, CURLOPT_POST, 1);
-            // curl_setopt($ch, CURLOPT_USERPWD, $stripe_publishable . ':' . '');
-
-            // $headers = array();
-            // $headers[] = 'Content-Type: application/x-www-form-urlencoded';
-            // curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-
-            // $result = curl_exec($ch);
-            // if (curl_errno($ch)) {
-            //     echo 'Error:' . curl_error($ch);
-            // } else {
-                
-            //     // $wpdb->query(
-            //     //     "UPDATE $prefix"."gf_entry
-            //     //     SET status = 'active'
-            //     //     WHERE id = $entry_id"
-            //     // );
-
-            // }
-
-            // curl_close ($ch);
-
-        }
-    
-    }
-
-}
 
 
 add_filter( 'init', function( $template ) {

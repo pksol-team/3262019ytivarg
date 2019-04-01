@@ -1,3 +1,0 @@
-required select field
-dynamic select list
-by default payment method selected 
