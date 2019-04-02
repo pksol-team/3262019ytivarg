@@ -19,7 +19,7 @@ class Simple_GF_Field extends GF_Field {
 	 */
 
 	public function get_form_editor_field_title() {
-		return esc_attr__( 'Payments', 'bancontact' );
+		return esc_attr__( 'Payments', 'stripe-gateways' );
 	}
 
 	/**
@@ -69,7 +69,6 @@ class Simple_GF_Field extends GF_Field {
 	function get_form_editor_field_settings() {
 		return array(
 			'label_setting',
-			'rules_setting',
 			'input_class_setting',
 			'css_class_setting',
 		);
@@ -80,13 +79,19 @@ class Simple_GF_Field extends GF_Field {
 	 *
 	 * @return string
 	 */
+	
+
 	public function get_form_editor_inline_script_on_page_render() {
 
 		// set the default field label for the simple type field
 		$script = sprintf( "function SetDefaultValues_simple(field) {field.label = '%s';}", $this->get_form_editor_field_title() ) . PHP_EOL;
 
 		// initialize the fields custom settings
-		$script .= "alert('working'); jQuery(document).bind('gform_load_field_settings', function (event, field, form) {" .
+		$script .= "
+
+			console.log(jQuery('.payment_calss'));
+
+		jQuery(document).bind('gform_load_field_settings', function (event, field, form) {" .
 		           "var inputClass = field.inputClass == undefined ? '' : field.inputClass;" .
 		           "jQuery('#input_class_setting').val(inputClass);" .
 		           "});" . PHP_EOL;
@@ -135,44 +140,64 @@ class Simple_GF_Field extends GF_Field {
 		$invalid_attribute     = $this->failed_validation ? 'aria-invalid="true"' : 'aria-invalid="false"';
 		$disabled_text         = $is_form_editor ? 'disabled="disabled"' : '';
 
-		$options = '<option>Select Gateway</option>';
+		$options = '<option value="Select Gateway">Select Gateway</option>';
 		$gatway_settings = get_option( 'gravityformsaddon_stripe-gateways_settings' );
 		$enable = false;
 
-		if($gatway_settings['enabled_bancontact'] != NULL && $gatway_settings['enabled_bancontact'] != '0') {
-			$enable = true;
-			$options .= "<option value='bancontact'>Bancontact</option>";
-		}
+		$form_idd = absint( $form['id'] );
 
-		if($gatway_settings['enabled_eps'] != NULL && $gatway_settings['enabled_eps'] != '0') {
-			$enable = true;
-			$options .= "<option value='eps'>EPS</option>";
-		}
+		global $wpdb;
+		$prefix = $wpdb->prefix;
 
-		if($gatway_settings['enabled_ideal'] != NULL && $gatway_settings['enabled_ideal'] != '0') {
-			$enable = true;
-			$options .= "<option value='ideal'>Ideal</option>";
-		}
+		$thepost = $wpdb->get_row( "SELECT * FROM {$prefix}gf_form_meta WHERE form_id = $form_idd", OBJECT );
+		$data = json_decode($thepost->display_meta, true);
 
-		if($gatway_settings['enabled_sofort'] != NULL && $gatway_settings['enabled_sofort'] != '0') {
-			$enable = true;
-			$options .= "<option value='sofort'>Sofort</option>";
-		}
 
-		$input = "
+		if($data['stripe-gateways'] != NULL) { 
+			
+			if( $data['stripe-gateways']['enabled_bancontact'] == '1' && $gatway_settings['enabled_bancontact'] != NULL && $gatway_settings['enabled_bancontact'] != '0' ) {
+				$enable = true;
+				$options .= "<option value='bancontact'>Bancontact</option>";
+			}
 
-			<select name='input_{$id}' id='{$field_id}' class='{$class} payment_calss' {$tabindex} {$logic_event} {$placeholder_attribute} {$required_attribute} {$invalid_attribute} {$disabled_text} >
-				".$options."
-			</select>
+			if( $data['stripe-gateways']['enabled_eps'] == '1' && $gatway_settings['enabled_eps'] != NULL && $gatway_settings['enabled_eps'] != '0' ) {
+				$enable = true;
+				$options .= "<option value='eps'>EPS</option>";
+			}
 
-			<input type='hidden' name='total-input-gravity'>
-			<input type='hidden' name='method_name' class='method_name'>
-			<input type='hidden' name='uniqid' value='".uniqid()."'>
+			if( $data['stripe-gateways']['enabled_ideal'] == '1' && $gatway_settings['enabled_ideal'] != NULL && $gatway_settings['enabled_ideal'] != '0' ) {
+				$enable = true;
+				$options .= "<option value='ideal'>Ideal</option>";
+			}
 
-		";
+			if( $data['stripe-gateways']['enabled_sofort'] == '1' && $gatway_settings['enabled_sofort'] != NULL && $gatway_settings['enabled_sofort'] != '0' ) {
+				$enable = true;
+				$options .= "<option value='sofort'>Sofort</option>";
+			}
 
-		if($enable == true) {
-			return sprintf( "<div class='ginput_container ginput_container_%s'>%s</div>", $this->type, $input );
+			$input = "
+
+				<select name='input_{$id}' id='{$field_id}' class='{$class} payment_calss' {$tabindex} {$logic_event} {$placeholder_attribute} {$required_attribute} {$invalid_attribute} {$disabled_text} >
+					".$options."
+				</select>
+
+				<input type='hidden' name='total-input-gravity'>
+				<input type='hidden' name='method_name' class='method_name' value='Select Gateway'>
+				<input type='hidden' name='uniqid' value='".uniqid()."'>
+				<input type='hidden' name='form_idd' value='".$form_id."'>
+				<br>
+				<label class='gfield_label'> Payment Name </label>
+				<br>
+				<input type='text' name='owner_name'>
+
+
+				
+			";
+
+			if($enable == true) {
+				return sprintf( "<div class='ginput_container ginput_container_%s'>%s</div>", $this->type, $input );
+			}
+			
 		}
 
 

@@ -1,12 +1,4 @@
 <?php get_header(); ?>
-<main>
-
-    <h1>Thank You</h1>
-    <p>Thank you for your payment we will contact you soon</p>
-    <p id="timer"></p>
-
-</main>
-
 <?php 
 
     $settings = get_option('gravityformsaddon_gravityformsstripe_settings');
@@ -43,36 +35,62 @@
             $price_amount = $entry_row->meta_value;
 
             $ch = curl_init();
-            curl_setopt($ch, CURLOPT_URL, 'https://api.stripe.com/v1/charges');
+
+            curl_setopt($ch, CURLOPT_URL, 'https://api.stripe.com/v1/sources/'.$source.'?client_secret='.$_GET['client_secret']);
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-            curl_setopt($ch, CURLOPT_POSTFIELDS, "amount=".$price_amount."&currency=eur&source=".$source);
-            curl_setopt($ch, CURLOPT_POST, 1);
+            curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'GET');
+
             curl_setopt($ch, CURLOPT_USERPWD, $stripe_publishable . ':' . '');
 
-            $headers = array();
-            $headers[] = 'Content-Type: application/x-www-form-urlencoded';
-            curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-
-            $result = curl_exec($ch);
-            
+            $result = json_decode(curl_exec($ch));
             if (curl_errno($ch)) {
-                
                 echo 'Error:' . curl_error($ch);
-                echo "Please Contact admin: ".get_option('admin_email');
-
-            } else {
-
-                $wpdb->query(
-                    "UPDATE $prefix"."gf_entry
-                    SET status = 'active'
-                    WHERE id = $entry_id"
-                );
-
             }
-
             curl_close ($ch);
 
+        
+            if($result->status == 'failed') {
+             
+                $msg = '<h1>Payment Failed</h1>
+                <p>You didn\'t authorize the payment</p>';
+            
+            } else {
 
+                $msg = '<h1>Thank You</h1>
+                <p>Thank you for your payment we will contact you soon</p>';
+                
+                $ch = curl_init();
+                curl_setopt($ch, CURLOPT_URL, 'https://api.stripe.com/v1/charges');
+                curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+                curl_setopt($ch, CURLOPT_POSTFIELDS, "amount=".$price_amount."&currency=eur&source=".$source);
+                curl_setopt($ch, CURLOPT_POST, 1);
+                curl_setopt($ch, CURLOPT_USERPWD, $stripe_publishable . ':' . '');
+
+                $headers = array();
+                $headers[] = 'Content-Type: application/x-www-form-urlencoded';
+                curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+
+                $result = curl_exec($ch);
+                var_dump($result);
+                
+                if (curl_errno($ch)) {
+                    
+                    echo 'Error:' . curl_error($ch);
+                    echo "Please Contact admin: ".get_option('admin_email');
+
+                } else {
+
+                    $wpdb->query(
+                        "UPDATE $prefix"."gf_entry
+                        SET status = 'active'
+                        WHERE id = $entry_id"
+                    );
+
+                }
+
+                curl_close ($ch);
+
+            }
 
         }
     
@@ -83,6 +101,11 @@
 
 
 ?>
+
+<main>
+    <?= $msg ?>
+    <p id="timer"></p>
+</main>
 
 <script type="text/javascript">
 

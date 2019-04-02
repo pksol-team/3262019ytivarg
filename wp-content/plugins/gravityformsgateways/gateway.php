@@ -44,8 +44,6 @@ function gravity_scriptGateway() {
 
     if($settings['webhooks_enabled'] == '1') {
 
-        $process_the_gateway = false;
-
         if( $settings['api_mode'] == 'test' && $settings['test_publishable_key_is_valid'] == '1' && $settings['test_secret_key_is_valid'] == '1' ) {
             $stripe_publishable = $settings['test_publishable_key'];
         } elseif( $settings['api_mode'] == 'live' && $settings['live_publishable_key_is_valid'] == '1' && $settings['live_secret_key_is_valid'] == '1' ) {        
@@ -53,8 +51,6 @@ function gravity_scriptGateway() {
         }
 
         if($stripe_publishable != '') {
-
-            $total_price = $_POST['total-input-gravity'];
 
             echo "
             
@@ -79,6 +75,8 @@ function gravity_scriptGateway() {
                                     methodInput.val(thiss.val());
                                 });
 
+                                
+
                                 field_total.next().change(function(e) {
                                     
                                     var price_input = jQuery(this);
@@ -94,6 +92,8 @@ function gravity_scriptGateway() {
                             jQuery('[name=total-input-gravity]').val(price);
                         }
 
+
+
                     };
 
                 </script>
@@ -106,7 +106,6 @@ function gravity_scriptGateway() {
     }
 
 }
-
 
 
 add_action( 'gform_after_submission', 'update_status_gravity', 10, 2);
@@ -180,19 +179,83 @@ add_filter( 'init', function( $template ) {
 
 
 
-
-add_action("gform_after_update_entry", "update_entry", 10, 2);
-
-function update_entry($form, $entry_id){
+if(isset($_POST['method_name'])) {
     
-    update_option('sofort_update', uniqid());
-
+    $array = $_POST;
     
-
-
-	// $lead = RGFormsModel::get_lead($entry_id);
-    // $value = RGFormsModel::get_field_value_long($lead, 1, $form, false);
+    $form_idd = $array['form_idd'];
+    $payment_value = $_POST['method_name'];
+    $key = '_'.$form_idd. str_replace('input', '', array_search ($payment_value, $array));
     
+    add_filter( 'gform_field_validation'.$key, 'custom_validation', 10, 4 );
+    
+    function custom_validation( $result, $value, $form, $field ) {
+     
+        if ( $result['is_valid'] && $value == 'Select Gateway' ) {
+            $result['is_valid'] = false;
+            $result['message'] = 'Please Select Payment Method.';
+        }
+        return $result;
+    }
+    
+}
+
+
+add_action( 'gform_after_save_form', 'update_methods', 10, 2 );
+
+function update_methods($form) {
+
+    $form_id = $form['fields'][0]->formId;
+
+    global $wpdb;
+    $prefix = $wpdb->prefix;
+
+    $thepost = $wpdb->get_row( "SELECT * FROM {$prefix}gf_form_meta WHERE form_id = $form_id", OBJECT );
+    $data = json_decode($thepost->display_meta, true);
+
+    if($data['stripe-gateways'] == NULL) {
+
+        $gatway_settings = get_option( 'gravityformsaddon_stripe-gateways_settings' );
+        $to_update = false;
+        
+        if($gatway_settings['enabled_bancontact'] != NULL && $gatway_settings['enabled_bancontact'] != '0') {
+            
+            $to_update = true;
+            $data['stripe-gateways']['enabled_bancontact'] = '1';
+
+        }
+        
+        if($gatway_settings['enabled_eps'] != NULL && $gatway_settings['enabled_eps'] != '0') {
+            
+            $to_update = true;
+            $data['stripe-gateways']['enabled_eps'] = '1';
+
+        }
+        
+        if($gatway_settings['enabled_ideal'] != NULL && $gatway_settings['enabled_ideal'] != '0') {
+            
+            $to_update = true;
+            $data['stripe-gateways']['enabled_ideal'] = '1';
+
+        }
+        
+        if($gatway_settings['enabled_sofort'] != NULL && $gatway_settings['enabled_sofort'] != '0') {
+            
+            $to_update = true;
+            $data['stripe-gateways']['enabled_sofort'] = '1';
+
+        }
+
+        $newData = json_encode($data);
+        $wpdb->query(
+            "UPDATE $prefix"."gf_form_meta
+            SET display_meta = '".$newData."'
+            WHERE form_id = $form_id"
+        );
+
+    }
+
+
 
 }
 

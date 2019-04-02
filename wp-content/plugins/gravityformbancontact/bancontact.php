@@ -21,8 +21,6 @@ if(get_option( 'gravityformsaddon_stripe-gateways_settings' )) {
         $gatway_settings['enabled_bancontact'] = '1';
         update_option('gravityformsaddon_stripe-gateways_settings', $gatway_settings);
     }
-
-    
     
     $gatway_settings = get_option( 'gravityformsaddon_stripe-gateways_settings' );
     
@@ -46,6 +44,7 @@ if(get_option( 'gravityformsaddon_stripe-gateways_settings' )) {
                 if($stripe_publishable != '') {
     
                     $total_price = $_POST['total-input-gravity'];
+                    $owner_name = $_POST['owner_name'];
     
                     if(isset($total_price)) {
 
@@ -87,7 +86,7 @@ if(get_option( 'gravityformsaddon_stripe-gateways_settings' )) {
                                             currency: 'eur',
                                             
                                             owner: {
-                                                name: 'Jenny Rosen',
+                                                name: '".$owner_name."',
                                             },
     
                                             redirect: {

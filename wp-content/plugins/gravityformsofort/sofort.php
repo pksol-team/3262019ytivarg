@@ -45,6 +45,7 @@ if(get_option( 'gravityformsaddon_stripe-gateways_settings' )) {
     
                 if($stripe_publishable != '') {
     
+                    $owner_name = $_POST['owner_name'];
                     $total_price = $_POST['total-input-gravity'];
     
                     if(isset($total_price)) {
@@ -87,7 +88,7 @@ if(get_option( 'gravityformsaddon_stripe-gateways_settings' )) {
                                             currency: 'eur',
                                             
                                             owner: {
-                                                name: 'Jenny Rosen',
+                                                name: '".$owner_name."',
                                             },
     
                                             sofort: {
