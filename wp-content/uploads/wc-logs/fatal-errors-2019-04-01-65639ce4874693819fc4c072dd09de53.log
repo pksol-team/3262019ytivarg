@@ -4,3 +4,16 @@
 
 2019-04-01T06:42:51+00:00 CRITICAL require_once(): Failed opening required 'includes/class-simple-gf-field.php' (include_path='E:\xampp\php\PEAR') in E:\xampp\htdocs\gravity\wp-content\plugins\gravityformbancontact\class-gfbancontact.php on line 33
 
+2019-04-01T11:31:16+00:00 CRITICAL syntax error, unexpected ')' in E:\xampp\htdocs\gravity\wp-content\plugins\gravityformsgateways\class-gateway.php on line 80
+
+2019-04-01T13:11:14+00:00 CRITICAL Uncaught Error: Call to undefined method GFGateways::is_custom_logic_met() in E:\xampp\htdocs\gravity\wp-content\plugins\gravityformsgateways\class-gateway.php:210
+Stack trace:
+#0 E:\xampp\htdocs\gravity\wp-includes\class-wp-hook.php(288): GFGateways->after_submission(Array, Array)
+#1 E:\xampp\htdocs\gravity\wp-includes\class-wp-hook.php(310): WP_Hook->apply_filters(NULL, Array)
+#2 E:\xampp\htdocs\gravity\wp-includes\plugin.php(465): WP_Hook->do_action(Array)
+#3 E:\xampp\htdocs\gravity\wp-content\plugins\gravityforms\gravityforms.php(5807): do_action('gform_after_sub...', Array, Array, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL)
+#4 E:\xampp\htdocs\gravity\wp-content\plugins\gravityforms\form_display.php(167): gf_do_action('gform_after_sub...', Array, Array)
+#5 E:\xampp\htdocs\gravity\wp-content\plugins\gravityforms\gravityforms.php(618): GFFormDisplay::process_form(1)
+#6 E:\xampp\htdocs\gravity\wp-includes\class-wp-hook.php(286): GFForms::maybe_process_form(Object(WP))
+#7 E:\xampp\htdocs\gravity\wp-includ in E:\xampp\htdocs\gravity\wp-content\plugins\gravityformsgateways\class-gateway.php on line 210
+

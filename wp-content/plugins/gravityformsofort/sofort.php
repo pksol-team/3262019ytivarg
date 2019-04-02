@@ -1,9 +1,9 @@
 <?php
 
 /*
-Plugin Name: Gravity Forms Bancontact Add-On
+Plugin Name: Gravity Forms Sofort Add-On
 Plugin URI: http://www.gravityforms.com
-Description: Bancontact add-on to demonstrate the use of the Stripe Gateway
+Description: Sofort add-on to demonstrate the use of the Stripe Gateway
 Version: 2.1
 Author: PK SOL
 Author URI: https://www.pksol.com
@@ -13,30 +13,30 @@ Author URI: https://www.pksol.com
 
 if(get_option( 'gravityformsaddon_stripe-gateways_settings' )) {
     
-    register_activation_hook( __FILE__, 'plugin_activation_bancontact' );
+    register_activation_hook( __FILE__, 'plugin_activation_sofort' );
 
-    function plugin_activation_bancontact() {
+    function plugin_activation_sofort() {
         
         $gatway_settings = get_option( 'gravityformsaddon_stripe-gateways_settings' );
-        $gatway_settings['enabled_bancontact'] = '1';
+        $gatway_settings['enabled_sofort'] = '1';
         update_option('gravityformsaddon_stripe-gateways_settings', $gatway_settings);
     }
 
-    
+
     
     $gatway_settings = get_option( 'gravityformsaddon_stripe-gateways_settings' );
     
-    if($gatway_settings['enabled_bancontact'] != NULL && $gatway_settings['enabled_bancontact'] != '0') {
+    if($gatway_settings['enabled_sofort'] != NULL && $gatway_settings['enabled_sofort'] != '0') {
         
-        add_action( 'wp_footer', 'gravity_script_bancontact', 100 );
+        add_action( 'wp_footer', 'gravity_script_sofort', 100 );
     
-        function gravity_script_bancontact() {
+        function gravity_script_sofort() {
     
             $settings = get_option('gravityformsaddon_gravityformsstripe_settings');
             $stripe_publishable = '';
     
             if($settings['webhooks_enabled'] == '1') {
-    
+        
                 if( $settings['api_mode'] == 'test' && $settings['test_publishable_key_is_valid'] == '1' && $settings['test_secret_key_is_valid'] == '1' ) {
                     $stripe_publishable = $settings['test_publishable_key'];
                 } elseif( $settings['api_mode'] == 'live' && $settings['live_publishable_key_is_valid'] == '1' && $settings['live_secret_key_is_valid'] == '1' ) {        
@@ -48,10 +48,10 @@ if(get_option( 'gravityformsaddon_stripe-gateways_settings' )) {
                     $total_price = $_POST['total-input-gravity'];
     
                     if(isset($total_price)) {
-
+    
                         $gateway_name = $_POST['method_name'];
-                        if($gateway_name == 'bancontact') {
-
+                        if($gateway_name == 'sofort') {
+                            
                             $uniqid = $_POST['uniqid'];
         
                             global $wpdb;
@@ -88,6 +88,10 @@ if(get_option( 'gravityformsaddon_stripe-gateways_settings' )) {
                                             
                                             owner: {
                                                 name: 'Jenny Rosen',
+                                            },
+    
+                                            sofort: {
+                                                country: 'DE',
                                             },
     
                                             redirect: {

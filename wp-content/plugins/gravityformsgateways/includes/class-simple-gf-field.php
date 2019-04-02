@@ -28,10 +28,37 @@ class Simple_GF_Field extends GF_Field {
 	 * @return array
 	 */
 	public function get_form_editor_button() {
-		return array(
-			'group' => 'advanced_fields',
-			'text'  => $this->get_form_editor_field_title(),
-		);
+
+		$enable = false;
+		$gatway_settings = get_option( 'gravityformsaddon_stripe-gateways_settings' );
+
+		if($gatway_settings['enabled_bancontact'] != NULL && $gatway_settings['enabled_bancontact'] != '0') {
+			$enable = true;
+		}
+
+		if($gatway_settings['enabled_eps'] != NULL && $gatway_settings['enabled_eps'] != '0') {
+			$enable = true;
+		}
+
+		if($gatway_settings['enabled_ideal'] != NULL && $gatway_settings['enabled_ideal'] != '0') {
+			$enable = true;
+		}
+
+		if($gatway_settings['enabled_sofort'] != NULL && $gatway_settings['enabled_sofort'] != '0') {
+			$enable = true;
+		}
+
+		if($enable == true) {
+			
+			return array(
+				'group' => 'advanced_fields',
+				'text'  => $this->get_form_editor_field_title(),
+			);
+
+		}
+
+
+
 	}
 
 	/**
@@ -80,6 +107,8 @@ class Simple_GF_Field extends GF_Field {
 	 * @return string
 	 */
 	public function get_field_input( $form, $value = '', $entry = null ) {
+
+		
 		
 		$id              = absint( $this->id );
 		$form_id         = absint( $form['id'] );
@@ -106,19 +135,46 @@ class Simple_GF_Field extends GF_Field {
 		$invalid_attribute     = $this->failed_validation ? 'aria-invalid="true"' : 'aria-invalid="false"';
 		$disabled_text         = $is_form_editor ? 'disabled="disabled"' : '';
 
+		$options = '<option>Select Gateway</option>';
+		$gatway_settings = get_option( 'gravityformsaddon_stripe-gateways_settings' );
+		$enable = false;
+
+		if($gatway_settings['enabled_bancontact'] != NULL && $gatway_settings['enabled_bancontact'] != '0') {
+			$enable = true;
+			$options .= "<option value='bancontact'>Bancontact</option>";
+		}
+
+		if($gatway_settings['enabled_eps'] != NULL && $gatway_settings['enabled_eps'] != '0') {
+			$enable = true;
+			$options .= "<option value='eps'>EPS</option>";
+		}
+
+		if($gatway_settings['enabled_ideal'] != NULL && $gatway_settings['enabled_ideal'] != '0') {
+			$enable = true;
+			$options .= "<option value='ideal'>Ideal</option>";
+		}
+
+		if($gatway_settings['enabled_sofort'] != NULL && $gatway_settings['enabled_sofort'] != '0') {
+			$enable = true;
+			$options .= "<option value='sofort'>Sofort</option>";
+		}
+
 		$input = "
 
-			<select name='input_{$id}' id='{$field_id}' class='{$class}' {$tabindex} {$logic_event} {$placeholder_attribute} {$required_attribute} {$invalid_attribute} {$disabled_text} >
-				<option>Select Gateway</option>
-				<option value='sofortbanking'>Sofort Banking</option>
+			<select name='input_{$id}' id='{$field_id}' class='{$class} payment_calss' {$tabindex} {$logic_event} {$placeholder_attribute} {$required_attribute} {$invalid_attribute} {$disabled_text} >
+				".$options."
 			</select>
 
 			<input type='hidden' name='total-input-gravity'>
+			<input type='hidden' name='method_name' class='method_name'>
 			<input type='hidden' name='uniqid' value='".uniqid()."'>
 
 		";
 
-		return sprintf( "<div class='ginput_container ginput_container_%s'>%s</div>", $this->type, $input );
+		if($enable == true) {
+			return sprintf( "<div class='ginput_container ginput_container_%s'>%s</div>", $this->type, $input );
+		}
+
 
 	}
 
@@ -126,5 +182,6 @@ class Simple_GF_Field extends GF_Field {
 }
 
 GF_Fields::register( new Simple_GF_Field() );
+
 
 
