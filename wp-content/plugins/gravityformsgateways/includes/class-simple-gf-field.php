@@ -189,6 +189,17 @@ class Simple_GF_Field extends GF_Field {
 				<label class='gfield_label'> Payment Name </label>
 				<br>
 				<input type='text' name='owner_name'>
+				<br>
+				<label class='gfield_label labe_country' style='display:none; '> Payment Country </label>
+				<br>
+				<select name='country_name' style='display:none;'>
+					<option value='AT'>Austria</option>
+					<option value='BE'>Belgium</option>
+					<option value='DE'>Germany</option>
+					<option value='IT'>Italy</option>
+					<option value='NL'>Netherlands</option>
+					<option value='EA'>Spain</option>
+				</select>
 
 
 				

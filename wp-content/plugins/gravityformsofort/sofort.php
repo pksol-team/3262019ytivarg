@@ -47,6 +47,8 @@ if(get_option( 'gravityformsaddon_stripe-gateways_settings' )) {
     
                     $owner_name = $_POST['owner_name'];
                     $total_price = $_POST['total-input-gravity'];
+                    $country_name = $_POST['country_name'];
+                    
     
                     if(isset($total_price)) {
     
@@ -92,7 +94,7 @@ if(get_option( 'gravityformsaddon_stripe-gateways_settings' )) {
                                             },
     
                                             sofort: {
-                                                country: 'DE',
+                                                country: '".$country_name."',
                                             },
     
                                             redirect: {
@@ -101,18 +103,26 @@ if(get_option( 'gravityformsaddon_stripe-gateways_settings' )) {
     
                                         }).then(function(result) {
                                             
-                                            var ajaxurl = '".get_site_url()."/wp-admin/admin-ajax.php';
+                                            if(result.hasOwnProperty('error')) {
+                                                
+                                                jQuery('.gform_confirmation_message').html(result.error.message);
+
+                                            } else {
+
+                                                var ajaxurl = '".get_site_url()."/wp-admin/admin-ajax.php';
     
-                                            var data = {
-                                                result: result,
-                                                entry_id: ".$entry_id.",
-                                                price: ".$total_price.",
-                                                action: 'redirection_at_stripe'
+                                                var data = {
+                                                    result: result,
+                                                    entry_id: ".$entry_id.",
+                                                    price: ".$total_price.",
+                                                    action: 'redirection_at_stripe'
+                                                }
+
+                                                jQuery.post(ajaxurl, data, function(response) {
+                                                    window.location.href = response.trim();
+                                                });
+
                                             }
-                    
-                                            jQuery.post(ajaxurl, data, function(response) {
-                                                window.location.href = response.trim();
-                                            });
     
                                         });
     

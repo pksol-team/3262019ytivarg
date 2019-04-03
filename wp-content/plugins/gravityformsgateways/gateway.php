@@ -73,6 +73,13 @@ function gravity_scriptGateway() {
                                     var thiss = jQuery(this);
                                     var methodInput = thiss.next().next();
                                     methodInput.val(thiss.val());
+                                    if(thiss.val() == 'sofort') {
+                                        jQuery('.labe_country').show();
+                                        jQuery('[name=country_name]').show();
+                                    } else {
+                                        jQuery('.labe_country').hide();
+                                        jQuery('[name=country_name]').hide();
+                                    }
                                 });
 
                                 
