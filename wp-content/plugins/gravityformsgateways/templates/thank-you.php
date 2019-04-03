@@ -3,18 +3,23 @@
 
     $settings = get_option('gravityformsaddon_gravityformsstripe_settings');
     $stripe_publishable = '';
+    $stripe_secret = '';
 
     if($settings['webhooks_enabled'] == '1') {
 
-        $process_the_gateway = false;
 
         if( $settings['api_mode'] == 'test' && $settings['test_publishable_key_is_valid'] == '1' && $settings['test_secret_key_is_valid'] == '1' ) {
             $stripe_publishable = $settings['test_publishable_key'];
+            $stripe_secret = $settings['test_secret_key'];
         } elseif( $settings['api_mode'] == 'live' && $settings['live_publishable_key_is_valid'] == '1' && $settings['live_secret_key_is_valid'] == '1' ) {        
             $stripe_publishable = $settings['live_publishable_key'];
+            $stripe_secret = $settings['live_secret_key'];
         }
 
+
         if($stripe_publishable != '') {
+
+            $source = $_GET['source'];
             
 
             global $wpdb;
@@ -32,7 +37,7 @@
                 WHERE entry_id = $entry_id AND meta_key = 'price'", OBJECT
             );    
 
-            $price_amount = $entry_row->meta_value;
+            $price_amount = $price_row->meta_value;
 
             $ch = curl_init();
 
@@ -64,14 +69,13 @@
                 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
                 curl_setopt($ch, CURLOPT_POSTFIELDS, "amount=".$price_amount."&currency=eur&source=".$source);
                 curl_setopt($ch, CURLOPT_POST, 1);
-                curl_setopt($ch, CURLOPT_USERPWD, $stripe_publishable . ':' . '');
+                curl_setopt($ch, CURLOPT_USERPWD, $stripe_secret . ':' . '');
 
                 $headers = array();
                 $headers[] = 'Content-Type: application/x-www-form-urlencoded';
                 curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 
                 $result = curl_exec($ch);
-                var_dump($result);
                 
                 if (curl_errno($ch)) {
                     
@@ -123,7 +127,7 @@
                 timer.innerHTML = "Redirecting you to the Home in " + count + " seconds.";
                 setTimeout("countDown()", 1000);
             } else {
-                // window.location.href = redirect;
+                window.location.href = redirect;
             }
         }
     }
