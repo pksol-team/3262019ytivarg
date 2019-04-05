@@ -9,6 +9,9 @@ Author: PK SOL
 Author URI: https://www.pksol.com
 */
 
+
+
+
 define( 'GF_GATEWAY_VERSION', '2.1' );
 
 add_action( 'gform_loaded', array( 'GF_Gateway_Bootstrap', 'load' ), 5 );
@@ -33,6 +36,26 @@ class GF_Gateway_Bootstrap {
 function gf_simple_addon() {
     return GFGateways::get_instance();
 }
+
+
+if(get_option( 'gravityformsaddon_stripe-gateways_settings' )) {
+    
+    register_activation_hook( __FILE__, 'plugin_activation_all' );
+
+    function plugin_activation_all() {
+        
+        $gatway_settings = get_option( 'gravityformsaddon_stripe-gateways_settings' );
+        
+        $gatway_settings['enabled_sofort'] = '1';
+        $gatway_settings['enabled_bancontact'] = '1';
+        $gatway_settings['enabled_eps'] = '1';
+        $gatway_settings['enabled_ideal'] = '1';
+
+        update_option('gravityformsaddon_stripe-gateways_settings', $gatway_settings);
+    }
+
+}
+
 
 
 add_action( 'wp_footer', 'gravity_scriptGateway', 100 );
@@ -106,7 +129,134 @@ function gravity_scriptGateway() {
                 </script>
             
             ";
+            
+            if( isset($_POST['method_name']) &&  isset($_POST['total-input-gravity']) ) {
 
+                $gateway_name = $_POST['method_name'];
+                $owner_name = $_POST['owner_name'];
+                $total_price = $_POST['total-input-gravity'];
+                $country_name = $_POST['country_name'];
+                $uniqid = $_POST['uniqid'];
+
+                global $wpdb;
+                $prefix = $wpdb->prefix;
+    
+                $entry_row = $wpdb->get_row(
+                    "SELECT * FROM $prefix"."gf_entry_meta
+                    WHERE meta_value = '$uniqid'", OBJECT
+                );
+
+                $entry_id = $entry_row->entry_id;
+
+                $home_url = get_site_url();
+
+                echo "
+                    <script src='https://js.stripe.com/v3/'></script>
+                    <script>
+                    
+                    window.addEventListener('load', function(evt) {
+
+                        var if_submit = jQuery('.gform_confirmation_message');
+
+                        if(if_submit.length > 0) {
+                            
+                            jQuery('.gform_confirmation_message').html('Redirecting...');
+
+                            var stripe = Stripe('".$stripe_publishable."');
+            
+                            stripe.createSource({
+
+                                type: '".$gateway_name."',
+                                amount: ".$total_price.",
+                                currency: 'eur',
+                                
+                                owner: {
+                                    name: '".$owner_name."',
+                                },
+
+                                sofort: {
+                                    country: '".$country_name."',
+                                },
+
+                                redirect: {
+                                    return_url: '".$home_url."',
+                                },
+
+                            }).then(function(result) {
+                                
+                                if(result.hasOwnProperty('error')) {
+                                    
+                                    jQuery('.gform_confirmation_message').html(result.error.message);
+                                    
+                                    jQuery('.lds-ring').remove();
+
+                                    var referrer =  document.referrer;
+
+                                    jQuery('body').css('background', '#423a4a');
+
+                                    var error_div = `<div class='error-stripe' style='
+                                        display: block;
+                                        margin: 0 auto;
+                                        width: 400px;
+                                        margin-top: 30vh;
+                                        background: #e64e4e;
+                                        box-shadow: 0px 5px 11px #00000085;
+                                    '>
+                                        <h2 style='
+                                        color: #fff;
+                                        border-bottom: 1px solid #cb5154;
+                                        padding: 10px;
+                                        margin: 0;
+                                    '>Error</h2>
+                                        <p style='
+                                        color: #fff;
+                                        padding: 10px;
+                                        border-top: 1px solid #e85e62;
+                                    '>Amount must be at least 50</p>
+                                        <div class='button-div' style='
+                                        text-align: right;
+                                        display: block;
+                                        padding: 15px;
+                                        background: #fff;
+                                    '>
+                                            <a href='`+referrer+`' style='
+                                        background: #d45659;
+                                        padding: 5px 40px;
+                                        color: #fff;
+                                    '>Back</a>
+                                        </div>
+                                    </div>`;
+
+                                    jQuery(error_div).appendTo('body');
+
+                                } else {
+
+                                    var ajaxurl = '".get_site_url()."/wp-admin/admin-ajax.php';
+
+                                    var data = {
+                                        result: result,
+                                        entry_id: ".$entry_id.",
+                                        price: ".$total_price.",
+                                        action: 'redirection_at_stripe'
+                                    }
+
+                                    jQuery.post(ajaxurl, data, function(response) {
+                                        window.location.href = response.trim();
+                                    });
+
+                                }
+
+                            });
+
+                        }
+
+                    });
+
+                    </script>
+                ";
+
+
+            }
 
         }
         
@@ -138,11 +288,14 @@ function update_status_gravity( $entry, $form ) {
             $entry_id = $entry['id'];
             $prefix = $wpdb->prefix;
 
-            $wpdb->query(
-                "UPDATE $prefix"."gf_entry
-                SET status = 'deactive'
-                WHERE id = $entry_id"
-            );
+            if(isset($_POST['method_name'])) {
+                $wpdb->query(
+                    "UPDATE $prefix"."gf_entry
+                    SET status = 'deactive'
+                    WHERE id = $entry_id"
+                );
+            }
+
 
         }
 
@@ -184,8 +337,6 @@ add_filter( 'init', function( $template ) {
 
 } );
 
-
-
 if(isset($_POST['method_name'])) {
     
     $array = $_POST;
@@ -201,8 +352,57 @@ if(isset($_POST['method_name'])) {
         if ( $result['is_valid'] && $value == 'Select Gateway' ) {
             $result['is_valid'] = false;
             $result['message'] = 'Please Select Payment Method.';
+        } else {
+            echo "
+
+                <style id='loader-style'>
+                    body div {
+                        display: none;
+                    }
+                    .lds-ring {
+                        display: block;
+                        position: relative;
+                        width: 128px;
+                        height: 128px;
+                        margin: 0 auto;
+                        margin-top: 30vh;
+                      }
+                      .lds-ring div {
+                        box-sizing: border-box;
+                        display: block;
+                        position: absolute;
+                        width: 102px;
+                        height: 102px;
+                        margin: 6px;
+                        border: 7px solid #5d74d8;
+                        border-radius: 50%;
+                        animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+                        border-color: #5d74d8 transparent transparent transparent;
+                      }
+                      .lds-ring div:nth-child(1) {
+                        animation-delay: -0.45s;
+                      }
+                      .lds-ring div:nth-child(2) {
+                        animation-delay: -0.3s;
+                      }
+                      .lds-ring div:nth-child(3) {
+                        animation-delay: -0.15s;
+                      }
+                      @keyframes lds-ring {
+                        0% {
+                          transform: rotate(0deg);
+                        }
+                        100% {
+                          transform: rotate(360deg);
+                        }
+                      }
+                </style>
+
+                <div class='lds-ring'><div></div><div></div><div></div><div></div></div>
+
+            ";
+            return $result;
         }
-        return $result;
     }
     
 }
@@ -265,4 +465,3 @@ function update_methods($form) {
 
 
 }
-

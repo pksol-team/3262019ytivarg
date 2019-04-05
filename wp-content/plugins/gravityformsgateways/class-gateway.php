@@ -74,89 +74,66 @@ class GFGateways extends GFAddOn {
 	
 	 public function plugin_settings_fields() {
 
-		$show_plugin_list = false;
+		$show_plugin_list = true;
 		$plugins_array = [];
 
-		if(is_plugin_active( 'gravityformbancontact/bancontact.php' )) {
-			
-			$show_plugin_list = true;
-			
-			$bancontact_array = array(
-				'label'   => esc_html__( 'Bancontact', 'stripe-gateways' ),
-				'type'    => 'checkbox',
-				'name'    => 'enabled_bancontact',
-				'choices' => array(
-					array(
-						'label' => esc_html__( 'Enable/Disable', 'bancontact' ),
-						'name'  => 'enabled_bancontact',
-					),
-				),
-			);
-
-			array_push($plugins_array, $bancontact_array);
-
-		}
-
-		if(is_plugin_active( 'gravityformeps/eps.php' )) {
-
-			$show_plugin_list = true;
-
-			$eps_array = array(
-				'label'   => esc_html__( 'EPS', 'stripe-gateways' ),
-				'type'    => 'checkbox',
-				'name'    => 'enabled_eps',
-				'choices' => array(
-					array(
-						'label' => esc_html__( 'Enable/Disable', 'eps'),
-						'name'  => 'enabled_eps',
-					),
-				),
-			);
-
-			array_push($plugins_array, $eps_array);
-
-		}
-
-		if(is_plugin_active( 'gravityformideal/ideal.php' )) {
-
-			$show_plugin_list = true;
-
-			$ideal_array = array(
-				'label'   => esc_html__( 'Ideal', 'stripe-gateways' ),
-				'type'    => 'checkbox',
-				'name'    => 'enabled_ideal',
-				'choices' => array(
-					array(
-						'label' => esc_html__( 'Enable/Disable', 'ideal'),
-						'name'  => 'enabled_ideal',
-					),
-				),
-			);
-
-			array_push($plugins_array, $ideal_array);
-
-		}
 		
-
-		if(is_plugin_active( 'gravityformsofort/sofort.php' )) {
-			
-			$show_plugin_list = true;
-
-			$sofort_array = array(
-				'label'   => esc_html__( 'Sofort', 'stripe-gateways' ),
-				'type'    => 'checkbox',
-				'name'    => 'enabled_sofort',
-				'choices' => array(
-					array(
-						'label' => esc_html__( 'Enable/Disable', 'sofort'),
-						'name'  => 'enabled_sofort',
-					),
+		$bancontact_array = array(
+			'label'   => esc_html__( 'Bancontact', 'stripe-gateways' ),
+			'type'    => 'checkbox',
+			'name'    => 'enabled_bancontact',
+			'choices' => array(
+				array(
+					'label' => esc_html__( 'Enable/Disable', 'bancontact' ),
+					'name'  => 'enabled_bancontact',
 				),
-			);
+			),
+		);
 
-			array_push($plugins_array, $sofort_array);
+		array_push($plugins_array, $bancontact_array);
 
-		}
+		$eps_array = array(
+			'label'   => esc_html__( 'EPS', 'stripe-gateways' ),
+			'type'    => 'checkbox',
+			'name'    => 'enabled_eps',
+			'choices' => array(
+				array(
+					'label' => esc_html__( 'Enable/Disable', 'eps'),
+					'name'  => 'enabled_eps',
+				),
+			),
+		);
+
+		array_push($plugins_array, $eps_array);
+
+		$ideal_array = array(
+			'label'   => esc_html__( 'Ideal', 'stripe-gateways' ),
+			'type'    => 'checkbox',
+			'name'    => 'enabled_ideal',
+			'choices' => array(
+				array(
+					'label' => esc_html__( 'Enable/Disable', 'ideal'),
+					'name'  => 'enabled_ideal',
+				),
+			),
+		);
+
+		array_push($plugins_array, $ideal_array);
+
+		$sofort_array = array(
+			'label'   => esc_html__( 'Sofort', 'stripe-gateways' ),
+			'type'    => 'checkbox',
+			'name'    => 'enabled_sofort',
+			'choices' => array(
+				array(
+					'label' => esc_html__( 'Enable/Disable', 'sofort'),
+					'name'  => 'enabled_sofort',
+				),
+			),
+		);
+
+		array_push($plugins_array, $sofort_array);
+
 
 		if($show_plugin_list == false) {
 			echo 'You haven\'t added any Gateway addons ';
@@ -171,6 +148,7 @@ class GFGateways extends GFAddOn {
 			)
 		);
 
+		
 
 	}
 
