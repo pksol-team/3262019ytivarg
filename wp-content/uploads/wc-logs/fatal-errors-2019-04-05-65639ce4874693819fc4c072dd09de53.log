@@ -1,0 +1,8 @@
+2019-04-05T07:36:23+00:00 CRITICAL Cannot redeclare gf_stripe() (previously declared in E:\xampp\htdocs\gravity\wp-content\plugins\gravityformsgateways\gateway.php:67) in E:\xampp\htdocs\gravity\wp-content\plugins\gravityformsstripe\stripe.php on line 81
+
+2019-04-05T07:36:26+00:00 CRITICAL Cannot redeclare gf_stripe() (previously declared in E:\xampp\htdocs\gravity\wp-content\plugins\gravityformsgateways\gateway.php:67) in E:\xampp\htdocs\gravity\wp-content\plugins\gravityformsstripe\stripe.php on line 81
+
+2019-04-05T07:36:26+00:00 CRITICAL Cannot redeclare gf_stripe() (previously declared in E:\xampp\htdocs\gravity\wp-content\plugins\gravityformsgateways\gateway.php:67) in E:\xampp\htdocs\gravity\wp-content\plugins\gravityformsstripe\stripe.php on line 81
+
+2019-04-05T07:38:11+00:00 CRITICAL require_once(): Failed opening required 'class-gf-stripe.php' (include_path='E:\xampp\php\PEAR') in E:\xampp\htdocs\gravity\wp-content\plugins\gravityformsgateways\gateway.php on line 48
+

@@ -136,7 +136,7 @@ class GFGateways extends GFAddOn {
 
 
 		if($show_plugin_list == false) {
-			echo 'You haven\'t added any Gateway addons ';
+			echo 'You haven\'t added any Gateway addons or stripe keys ';
 			return false;
 		} 
 
@@ -251,7 +251,7 @@ class GFGateways extends GFAddOn {
 			
 			error_reporting(0);
 
-			echo 'You haven\'t added or enabled any Gateway addons ';
+			echo 'You haven\'t added or enabled any Gateway addons or stripe keys ';
 			return false;
 
 		} else {
