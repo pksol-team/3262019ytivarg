@@ -134,7 +134,7 @@ class GFStripe extends GFPaymentAddOn {
 	 *
 	 * @var bool $_requires_credit_card true.
 	 */
-	protected $_requires_credit_card = true;
+	protected $_requires_credit_card = true;	
 
 	/**
 	 * Defines if callbacks/webhooks/IPN will be enabled and the appropriate database table will be created.
@@ -1100,10 +1100,17 @@ class GFStripe extends GFPaymentAddOn {
 
 		add_filter( 'gform_register_init_scripts', array( $this, 'register_init_scripts' ), 10, 3 );
 		add_filter( 'gform_field_content', array( $this, 'add_stripe_inputs' ), 10, 5 );
+		
 		add_filter( 'gform_field_validation', array( $this, 'pre_validation' ), 10, 4 );
+		
 		add_filter( 'gform_pre_submission', array( $this, 'populate_credit_card_last_four' ) );
 
-		parent::init();
+		
+		// if( $_POST['method_name'] == 'credit-card'  ) {
+
+			parent::init();
+
+		// }
 
 	}
 
@@ -1296,20 +1303,51 @@ class GFStripe extends GFPaymentAddOn {
 	 *
 	 * @return array Authorization and transaction ID if authorized. Otherwise, exception.
 	 */
+	
+
 	public function authorize( $feed, $submission_data, $form, $entry ) {
 
-		// Include Stripe API library.
-		$this->include_stripe_api();
+		if( isset($_POST['method_name']) && $_POST['method_name'] == 'credit-card') {
+		
+			// Include Stripe API library.
+			$this->include_stripe_api();
+	
+			// If there was an error when retrieving the Stripe.js token, return an authorization error.
+			if ( $this->get_stripe_js_error() ) {
+				return $this->authorization_error( $this->get_stripe_js_error() );
+			}
+	
+			// Authorize product.
+			return $this->authorize_product( $feed, $submission_data, $form, $entry );
+		
+		} else {
+			
+			return array(
+				'is_authorized'  => true,
+				'transaction_id' => uniqid(),
+			);
 
-		// If there was an error when retrieving the Stripe.js token, return an authorization error.
-		if ( $this->get_stripe_js_error() ) {
-			return $this->authorization_error( $this->get_stripe_js_error() );
 		}
-
-		// Authorize product.
-		return $this->authorize_product( $feed, $submission_data, $form, $entry );
-
+	
 	}
+
+	
+
+	// public function authorize( $feed, $submission_data, $form, $entry ) {
+
+	// 	// Include Stripe API library.
+	// 	$this->include_stripe_api();
+
+	// 	// If there was an error when retrieving the Stripe.js token, return an authorization error.
+	// 	if ( $this->get_stripe_js_error() ) {
+	// 		return $this->authorization_error( $this->get_stripe_js_error() );
+	// 	}
+
+	// 	// Authorize product.
+	// 	return $this->authorize_product( $feed, $submission_data, $form, $entry );
+
+	// }
+	
 
 	/**
 	 * Create the Stripe charge authorization and return any authorization errors which occur.
@@ -1509,66 +1547,70 @@ class GFStripe extends GFPaymentAddOn {
 	 */
 	public function capture( $auth, $feed, $submission_data, $form, $entry ) {
 
-		// Get Stripe charge from authorization.
-		$charge = \Stripe\Charge::retrieve( $auth['transaction_id'] );
+		if( isset($_POST['method_name']) && $_POST['method_name'] == 'credit-card') {
 
-		try {
+			// Get Stripe charge from authorization.
+			$charge = \Stripe\Charge::retrieve( $auth['transaction_id'] );
 
-			// Set charge description and metadata.
-			$charge->description = $this->get_payment_description( $entry, $submission_data, $feed );
+			try {
 
-			$metadata = $this->get_stripe_meta_data( $feed, $entry, $form );
-			if ( ! empty( $metadata ) ) {
-				$charge->metadata = $metadata;
+				// Set charge description and metadata.
+				$charge->description = $this->get_payment_description( $entry, $submission_data, $feed );
+
+				$metadata = $this->get_stripe_meta_data( $feed, $entry, $form );
+				if ( ! empty( $metadata ) ) {
+					$charge->metadata = $metadata;
+				}
+
+				// Save charge.
+				$charge->save();
+
+				/**
+				 * Allow authorization only transactions by preventing the capture request from being made after the entry has been saved.
+				 *
+				 * @since 2.1.0
+				 *
+				 * @param bool  false            Defaults to false, return true to prevent payment being captured.
+				 * @param array $feed            The feed object currently being processed.
+				 * @param array $submission_data The customer and transaction data.
+				 * @param array $form            The form object currently being processed.
+				 * @param array $entry           The entry object currently being processed.
+				 */
+				$authorization_only = apply_filters( 'gform_stripe_charge_authorization_only', false, $feed, $submission_data, $form, $entry );
+
+				if ( $authorization_only ) {
+					$this->log_debug( __METHOD__ . '(): The gform_stripe_charge_authorization_only filter was used to prevent capture.' );
+
+					return array();
+				}
+
+				// Capture the charge.
+				$charge = $charge->capture();
+
+				// Prepare payment details.
+				$payment = array(
+					'is_success'     => true,
+					'transaction_id' => $charge->id,
+					'amount'         => $this->get_amount_import( $charge->amount, $entry['currency'] ),
+					'payment_method' => rgpost( 'stripe_credit_card_type' ),
+				);
+
+			} catch ( \Exception $e ) {
+
+				// Log that charge could not be captured.
+				$this->log_error( __METHOD__ . '(): Unable to capture charge; ' . $e->getMessage() );
+
+				// Prepare payment details.
+				$payment = array(
+					'is_success'    => false,
+					'error_message' => $e->getMessage(),
+				);
+
 			}
 
-			// Save charge.
-			$charge->save();
-
-			/**
-			 * Allow authorization only transactions by preventing the capture request from being made after the entry has been saved.
-			 *
-			 * @since 2.1.0
-			 *
-			 * @param bool  false            Defaults to false, return true to prevent payment being captured.
-			 * @param array $feed            The feed object currently being processed.
-			 * @param array $submission_data The customer and transaction data.
-			 * @param array $form            The form object currently being processed.
-			 * @param array $entry           The entry object currently being processed.
-			 */
-			$authorization_only = apply_filters( 'gform_stripe_charge_authorization_only', false, $feed, $submission_data, $form, $entry );
-
-			if ( $authorization_only ) {
-				$this->log_debug( __METHOD__ . '(): The gform_stripe_charge_authorization_only filter was used to prevent capture.' );
-
-				return array();
-			}
-
-			// Capture the charge.
-			$charge = $charge->capture();
-
-			// Prepare payment details.
-			$payment = array(
-				'is_success'     => true,
-				'transaction_id' => $charge->id,
-				'amount'         => $this->get_amount_import( $charge->amount, $entry['currency'] ),
-				'payment_method' => rgpost( 'stripe_credit_card_type' ),
-			);
-
-		} catch ( \Exception $e ) {
-
-			// Log that charge could not be captured.
-			$this->log_error( __METHOD__ . '(): Unable to capture charge; ' . $e->getMessage() );
-
-			// Prepare payment details.
-			$payment = array(
-				'is_success'    => false,
-				'error_message' => $e->getMessage(),
-			);
-
+			return $payment;
 		}
-
-		return $payment;
+		
 	}
 
 	/**

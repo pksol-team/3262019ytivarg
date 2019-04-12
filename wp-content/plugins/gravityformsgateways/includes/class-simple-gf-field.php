@@ -157,41 +157,42 @@ class Simple_GF_Field extends GF_Field {
 			
 			if( $data['stripe-gateways']['enabled_bancontact'] == '1' && $gatway_settings['enabled_bancontact'] != NULL && $gatway_settings['enabled_bancontact'] != '0' ) {
 				$enable = true;
-				$options .= "<option value='bancontact'>Bancontact</option>";
+				$options .= "<option data-image='".plugins_url('gravityformsgateways/images/mistercash-th.png')."' value='bancontact'>MisterCash/Bancontact</option>";
 			}
 
 			if( $data['stripe-gateways']['enabled_eps'] == '1' && $gatway_settings['enabled_eps'] != NULL && $gatway_settings['enabled_eps'] != '0' ) {
 				$enable = true;
-				$options .= "<option value='eps'>EPS</option>";
+				$options .= "<option data-image='".plugins_url('gravityformsgateways/images/eps-th.png')."' value='eps'>EPS</option>";
 			}
 
 			if( $data['stripe-gateways']['enabled_ideal'] == '1' && $gatway_settings['enabled_ideal'] != NULL && $gatway_settings['enabled_ideal'] != '0' ) {
 				$enable = true;
-				$options .= "<option value='ideal'>Ideal</option>";
+				$options .= "<option data-image='".plugins_url('gravityformsgateways/images/ideal-th.png')."' value='ideal'>Ideal</option>";
 			}
 
 			if( $data['stripe-gateways']['enabled_sofort'] == '1' && $gatway_settings['enabled_sofort'] != NULL && $gatway_settings['enabled_sofort'] != '0' ) {
 				$enable = true;
-				$options .= "<option value='sofort'>Sofort</option>";
+				$options .= "<option data-image='".plugins_url('gravityformsgateways/images/sofort-th.png')."' value='sofort'>Sofort</option>";
 			}
 
 			$input = "
 
-				<select name='input_{$id}' id='{$field_id}' class='{$class} payment_calss' {$tabindex} {$logic_event} {$placeholder_attribute} {$required_attribute} {$invalid_attribute} {$disabled_text} >
+				<select name='input_{$id}' id='{$field_id}' class='{$class} payment_calss' {$tabindex} {$logic_event} {$placeholder_attribute} {$required_attribute} {$invalid_attribute} {$disabled_text} style='display: none;'>
 					".$options."
 				</select>
 
-				<input type='hidden' name='total-input-gravity'>
+				<input type='hidden' name='total-input-gravity' value='0'>
 				<input type='hidden' name='method_name' class='method_name' value='Select Gateway'>
 				<input type='hidden' name='uniqid' value='".uniqid()."'>
 				<input type='hidden' name='form_idd' value='".$form_id."'>
-				<br>
-				<label class='gfield_label'> Payment Name </label>
-				<br>
-				<input type='text' name='owner_name'>
-				<br>
+				<br class='payee'>
+				<label class='gfield_label payee'> Payee Name </label>
+				<br class='payee'>
+				<input type='text' name='owner_name' class='payee'>
+				<br class='payee'>
 				<label class='gfield_label labe_country' style='display:none; '> Payment Country </label>
-				<br>
+				<br class='payee'>
+				
 				<select name='country_name' style='display:none;'>
 					<option value='AT'>Austria</option>
 					<option value='BE'>Belgium</option>
@@ -200,8 +201,6 @@ class Simple_GF_Field extends GF_Field {
 					<option value='NL'>Netherlands</option>
 					<option value='EA'>Spain</option>
 				</select>
-
-
 				
 			";
 
