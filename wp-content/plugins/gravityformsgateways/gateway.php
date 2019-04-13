@@ -91,8 +91,13 @@ function gravity_scriptGateway() {
                 });
 
                 jQuery('.payment_calss').hide();
-                jQuery('.gateway-radio').first().trigger('click');
-                jQuery('.method_name').val('bancontact');
+                
+                var first_gateway = jQuery('.gateway-radio').first();
+                var first_gateway_val = first_gateway.val();
+
+                first_gateway.trigger('click');
+                jQuery('.method_name').val(first_gateway_val);
+                jQuery('.payment_calss').val(first_gateway_val);
 
                 jQuery(document).on('click', '.gateway-radio', function() {
                     jQuery('.gateway-radio').prop('checked', false);
@@ -246,8 +251,7 @@ function gravity_scriptGateway() {
 
                                 var referrer =  document.referrer;
 
-                                jQuery('body').css('background', '#423a4a');
-                                jQuery('body').css('color', '#423a4a');
+                                jQuery('body').attr('style', 'background-color: #423a4a !important; color: #423a4a !important; ');
                                 jQuery('body div').hide();
                                 jQuery('link').remove();
 
@@ -396,10 +400,13 @@ function redirection_at_stripe() {
 
 add_filter( 'init', function( $template ) {
 
+    var_dump('working');
+
     if ( isset( $_GET['client_secret'] ) && isset($_GET['source']) ) {
         
         $secret = $_GET['client_secret'];
         $source = $_GET['source'];
+        
         include plugin_dir_path( __FILE__ ) . 'templates/thank-you.php';
         die;
 

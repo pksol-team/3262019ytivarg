@@ -1,4 +1,3 @@
-<?php get_header(); ?>
 <?php 
 
     $settings = get_option('gravityformsaddon_gravityformsstripe_settings');
@@ -129,7 +128,7 @@
 
 ?>
 
-<main style="width: 70%; margin: 0 auto;">
+<main style="width: 34%; margin-top: 30vh; font-family: sans-serif; margin: 0 auto; border: 2px solid #eee; padding: 10px;">
     <?= $msg ?>
     <p id="timer"></p>
 </main>
@@ -151,12 +150,9 @@
                 timer.innerHTML = "Redirecting you to the Home in " + count + " seconds.";
                 setTimeout("countDown()", 1000);
             } else {
-                // window.location.href = redirect;
+                window.location.href = redirect;
             }
         }
     }
     countDown();
 </script>
-
-
-<?php get_footer(); ?> 
