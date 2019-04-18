@@ -5,8 +5,8 @@ Plugin Name: Gravity Forms Stripe Payment Gateways Add-On
 Plugin URI: http://www.gravityforms.com
 Description: Gravity Forms Stripe Payment Gateways Add-On
 Version: 2.1
-Author: PK SOL
-Author URI: https://www.pksol.com
+Author: Ahsen Soft
+Author URI: https://www.ahsensoft.nl
 */
 
 
@@ -76,7 +76,7 @@ function gravity_scriptGateway() {
                 if(Credit_card.length > 0 && if_gateways.length > 0 ) {
                     
                     Credit_card.parent().hide();
-                    jQuery('.payment_calss').append('<option value=credit-card data-image=".plugins_url('gravityformsgateways/images/credit-cards-th.png').">Credit Card</option>');
+                    jQuery('.payment_calss').append('<option value=credit-card data-image=".plugins_url('gravityformsgateways/images/credit-card.svg').">Credit Card</option>');
 
                 }
 
@@ -161,7 +161,7 @@ function gravity_scriptGateway() {
                     var gravity_total = form.find('[name=total-input-gravity]');
                     var field_total = form.find('.ginput_total');
 
-                    writeTotal(form, field_total.next().val());                    
+                    writeTotal(form, field_total.next().val());
 
                     field_total.next().change(function(e) {
 
@@ -208,8 +208,8 @@ function gravity_scriptGateway() {
             }
 
         }
-        
 
+        
 
         echo "
             <script src='https://js.stripe.com/v3/'></script>
@@ -400,8 +400,6 @@ function redirection_at_stripe() {
 
 add_filter( 'init', function( $template ) {
 
-    var_dump('working');
-
     if ( isset( $_GET['client_secret'] ) && isset($_GET['source']) ) {
         
         $secret = $_GET['client_secret'];
@@ -516,17 +514,6 @@ if(isset($_POST['method_name']) && $_POST['method_name'] != 'credit-card' ) {
 
     
 }
-
-
-
-
-
-
-
-
-
-
-
 
 /* 
 

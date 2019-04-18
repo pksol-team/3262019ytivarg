@@ -78,7 +78,7 @@
 
             if(strlen($result2) > 150) {
                 $msg = '<h1>Thank You</h1>
-                <p>Thank you for your payment we will contact you soon</p>';
+                <p>Thank you for your payment.</p>';
 
                 $charge_date = date('Y-m-d H:i:s');
                 $price_updated = $price_amount/100;
@@ -138,7 +138,7 @@
 
 
 
-    var count = 16;
+    var count = 10;
     var redirect = "<?= get_site_url() ?>";
 
     function countDown() {

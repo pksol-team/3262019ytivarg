@@ -152,8 +152,6 @@ class GFGateways extends GFAddOn {
 
 	}
 
-
-
 	/**
 	 * Configures the settings which should be rendered on the Form Settings > Simple Add-On tab.
 	 *

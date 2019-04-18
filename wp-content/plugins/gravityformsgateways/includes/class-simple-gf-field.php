@@ -57,8 +57,6 @@ class Simple_GF_Field extends GF_Field {
 
 		}
 
-
-
 	}
 
 	/**
@@ -111,9 +109,7 @@ class Simple_GF_Field extends GF_Field {
 	 *
 	 * @return string
 	 */
-	public function get_field_input( $form, $value = '', $entry = null ) {
-
-		
+	public function get_field_input( $form, $value = '', $entry = null ) {	
 		
 		$id              = absint( $this->id );
 		$form_id         = absint( $form['id'] );
@@ -157,22 +153,22 @@ class Simple_GF_Field extends GF_Field {
 			
 			if( $data['stripe-gateways']['enabled_bancontact'] == '1' && $gatway_settings['enabled_bancontact'] != NULL && $gatway_settings['enabled_bancontact'] != '0' ) {
 				$enable = true;
-				$options .= "<option data-image='".plugins_url('gravityformsgateways/images/mistercash-th.png')."' value='bancontact'>MisterCash/Bancontact</option>";
+				$options .= "<option data-image='".plugins_url('gravityformsgateways/images/bancontact.svg')."' value='bancontact'>Bancontact</option>";
 			}
 
 			if( $data['stripe-gateways']['enabled_eps'] == '1' && $gatway_settings['enabled_eps'] != NULL && $gatway_settings['enabled_eps'] != '0' ) {
 				$enable = true;
-				$options .= "<option data-image='".plugins_url('gravityformsgateways/images/eps-th.png')."' value='eps'>EPS</option>";
+				$options .= "<option data-image='".plugins_url('gravityformsgateways/images/eps.svg')."' value='eps'>EPS</option>";
 			}
 
 			if( $data['stripe-gateways']['enabled_ideal'] == '1' && $gatway_settings['enabled_ideal'] != NULL && $gatway_settings['enabled_ideal'] != '0' ) {
 				$enable = true;
-				$options .= "<option data-image='".plugins_url('gravityformsgateways/images/ideal-th.png')."' value='ideal'>Ideal</option>";
+				$options .= "<option data-image='".plugins_url('gravityformsgateways/images/ideal.svg')."' value='ideal'>IDEAL</option>";
 			}
 
 			if( $data['stripe-gateways']['enabled_sofort'] == '1' && $gatway_settings['enabled_sofort'] != NULL && $gatway_settings['enabled_sofort'] != '0' ) {
 				$enable = true;
-				$options .= "<option data-image='".plugins_url('gravityformsgateways/images/sofort-th.png')."' value='sofort'>Sofort</option>";
+				$options .= "<option data-image='".plugins_url('gravityformsgateways/images/sofort.svg')."' value='sofort'>SOFORT</option>";
 			}
 
 			$input = "
@@ -186,7 +182,7 @@ class Simple_GF_Field extends GF_Field {
 				<input type='hidden' name='uniqid' value='".uniqid()."'>
 				<input type='hidden' name='form_idd' value='".$form_id."'>
 				<br class='payee'>
-				<label class='gfield_label payee'> Payee Name </label>
+				<label class='gfield_label payee'> Hesap Sahibinin Adı Soyadı </label>
 				<br class='payee'>
 				<input type='text' name='owner_name' class='payee'>
 				<br class='payee'>
@@ -197,9 +193,9 @@ class Simple_GF_Field extends GF_Field {
 					<option value='AT'>Austria</option>
 					<option value='BE'>Belgium</option>
 					<option value='DE'>Germany</option>
-					<option value='IT'>Italy</option>
 					<option value='NL'>Netherlands</option>
-					<option value='EA'>Spain</option>
+					<option value='IT'>Italy</option>
+					<option value='ES'>Spain</option>
 				</select>
 				
 			";
