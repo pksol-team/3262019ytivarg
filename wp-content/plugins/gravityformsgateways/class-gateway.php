@@ -9,7 +9,7 @@ class GFGateways extends GFAddOn {
 	protected $_slug = 'stripe-gateways';
 	protected $_path = 'gravityformsgateways/gateway.php';
 	protected $_full_path = __FILE__;
-	protected $_title = 'Gravity Forms Stripe Payment Gateways Add-On';
+	protected $_title =  'Gravity Forms Stripe Payment Gateways Add-On';
 	protected $_short_title = 'Stripe Payment Gateways';
 
 	private static $_instance = null;
@@ -136,14 +136,15 @@ class GFGateways extends GFAddOn {
 
 
 		if($show_plugin_list == false) {
-			echo 'You haven\'t added any Gateway addons ';
+			
+			echo  __('You haven\'t added any Gateway addons ','stripe-gateways');
 			return false;
 		} 
 
 		return array(
 			
 			array(
-				'title'  => esc_html__( '', 'stripe-gateways' ),
+				'title'  => '',
 				'fields' => $plugins_array
 			)
 		);
@@ -249,7 +250,7 @@ class GFGateways extends GFAddOn {
 			
 			error_reporting(0);
 
-			echo 'You haven\'t added or enabled any Gateway addons ';
+			echo __('You haven\'t added or enabled any Gateway addons ','stripe-gateways');
 			return false;
 
 		} else {

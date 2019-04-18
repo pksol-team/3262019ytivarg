@@ -136,7 +136,7 @@ class Simple_GF_Field extends GF_Field {
 		$invalid_attribute     = $this->failed_validation ? 'aria-invalid="true"' : 'aria-invalid="false"';
 		$disabled_text         = $is_form_editor ? 'disabled="disabled"' : '';
 
-		$options = '<option value="Select Gateway">Select Gateway</option>';
+		$options = '<option value="Select Gateway">'. __('Select Gateway ','stripe-gateways') .'</option>';
 		$gatway_settings = get_option( 'gravityformsaddon_stripe-gateways_settings' );
 		$enable = false;
 
@@ -153,22 +153,22 @@ class Simple_GF_Field extends GF_Field {
 			
 			if( $data['stripe-gateways']['enabled_bancontact'] == '1' && $gatway_settings['enabled_bancontact'] != NULL && $gatway_settings['enabled_bancontact'] != '0' ) {
 				$enable = true;
-				$options .= "<option data-image='".plugins_url('gravityformsgateways/images/bancontact.svg')."' value='bancontact'>Bancontact</option>";
+				$options .= "<option data-image='".plugins_url('gravityformsgateways/images/bancontact.svg')."' value='bancontact'>".__('Bancontact ','stripe-gateways')."</option>";
 			}
 
 			if( $data['stripe-gateways']['enabled_eps'] == '1' && $gatway_settings['enabled_eps'] != NULL && $gatway_settings['enabled_eps'] != '0' ) {
 				$enable = true;
-				$options .= "<option data-image='".plugins_url('gravityformsgateways/images/eps.svg')."' value='eps'>EPS</option>";
+				$options .= "<option data-image='".plugins_url('gravityformsgateways/images/eps.svg')."' value='eps'>".__('EPS ','stripe-gateways')."</option>";
 			}
 
 			if( $data['stripe-gateways']['enabled_ideal'] == '1' && $gatway_settings['enabled_ideal'] != NULL && $gatway_settings['enabled_ideal'] != '0' ) {
 				$enable = true;
-				$options .= "<option data-image='".plugins_url('gravityformsgateways/images/ideal.svg')."' value='ideal'>IDEAL</option>";
+				$options .= "<option data-image='".plugins_url('gravityformsgateways/images/ideal.svg')."' value='ideal'>".__('IDEAL ','stripe-gateways')."</option>";
 			}
 
 			if( $data['stripe-gateways']['enabled_sofort'] == '1' && $gatway_settings['enabled_sofort'] != NULL && $gatway_settings['enabled_sofort'] != '0' ) {
 				$enable = true;
-				$options .= "<option data-image='".plugins_url('gravityformsgateways/images/sofort.svg')."' value='sofort'>SOFORT</option>";
+				$options .= "<option data-image='".plugins_url('gravityformsgateways/images/sofort.svg')."' value='sofort'>".__('SOFORT ','stripe-gateways')."</option>";
 			}
 
 			$input = "
@@ -182,11 +182,11 @@ class Simple_GF_Field extends GF_Field {
 				<input type='hidden' name='uniqid' value='".uniqid()."'>
 				<input type='hidden' name='form_idd' value='".$form_id."'>
 				<br class='payee'>
-				<label class='gfield_label payee'> Hesap Sahibinin Adı Soyadı </label>
+				<label class='gfield_label payee'> ".__('Hesap Sahibinin Adı Soyadı ','stripe-gateways')." </label>
 				<br class='payee'>
 				<input type='text' name='owner_name' class='payee'>
 				<br class='payee'>
-				<label class='gfield_label labe_country' style='display:none; '> Payment Country </label>
+				<label class='gfield_label labe_country' style='display:none; '> ".__('Payment Country ','stripe-gateways')." </label>
 				<br class='payee'>
 				
 				<select name='country_name' style='display:none;'>
@@ -213,6 +213,7 @@ class Simple_GF_Field extends GF_Field {
 }
 
 GF_Fields::register( new Simple_GF_Field() );
+
 
 
 

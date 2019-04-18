@@ -7,6 +7,7 @@ Description: Gravity Forms Stripe Payment Gateways Add-On
 Version: 2.1
 Author: Ahsen Soft
 Author URI: https://www.ahsensoft.nl
+Text Domain: stripe-gateways
 */
 
 
@@ -33,6 +34,13 @@ class GF_Gateway_Bootstrap {
 
 function gf_simple_addon() {
     return GFGateways::get_instance();
+}
+
+
+add_action('plugins_loaded', 'plugin_init'); 
+
+function plugin_init() {
+    load_plugin_textdomain( 'stripe-gateways', false, dirname(plugin_basename(__FILE__)).'/languages/' );
 }
 
 
@@ -76,7 +84,7 @@ function gravity_scriptGateway() {
                 if(Credit_card.length > 0 && if_gateways.length > 0 ) {
                     
                     Credit_card.parent().hide();
-                    jQuery('.payment_calss').append('<option value=credit-card data-image=".plugins_url('gravityformsgateways/images/credit-card.svg').">Credit Card</option>');
+                    jQuery('.payment_calss').append('<option value=credit-card data-image=".plugins_url('gravityformsgateways/images/credit-card.svg').">". __('Credit Card','stripe-gateways') ."</option>');
 
                 }
 
@@ -442,12 +450,12 @@ if(isset($_POST['method_name']) && $_POST['method_name'] != 'credit-card' ) {
         if($owner_name == "") {
             
             $result['is_valid'] = false;
-            $result['message'] = 'Please Select Payment Method and enter payee name ';
+            $result['message'] = __('Please Select Payment Method and enter payee name ','stripe-gateways');
 
         } elseif ( $result['is_valid'] && $value == 'Select Gateway') {
             
             $result['is_valid'] = false;
-            $result['message'] = 'Please Select Payment Method and enter payee name ';
+            $result['message'] = __('Please Select Payment Method and enter payee name ','stripe-gateways');
 
         } else {
             

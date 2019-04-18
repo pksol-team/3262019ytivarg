@@ -46,14 +46,14 @@
         $result = json_decode(curl_exec($ch));
         if (curl_errno($ch)) {
             echo 'Error:' . curl_error($ch);
-            echo "Please Contact admin: ".get_option('admin_email');
+            echo __('Please Contact admin:','stripe-gateways')." ".get_option('admin_email');
         }
         curl_close ($ch);
 
         if($result->status == 'failed') {
             
-            $msg = '<h1>Payment Failed</h1>
-            <p>You didn\'t authorize the payment</p>';
+            $msg = '<h1>'. __('Payment Failed','stripe-gateways') .'</h1>
+            <p>'. __('You didn\'t authorize the payment','stripe-gateways').'</p>';
         
         } else {
 
@@ -71,14 +71,15 @@
             $result2 = curl_exec($ch);
 
             if (curl_errno($ch)) {
-                
+
                 echo 'Error:' . curl_error($ch);
-                echo "Please Contact admin: ".get_option('admin_email');
+                echo __('Please Contact admin:','stripe-gateways')." ".get_option('admin_email');
+                
             }
 
             if(strlen($result2) > 150) {
-                $msg = '<h1>Thank You</h1>
-                <p>Thank you for your payment.</p>';
+                $msg = '<h1>'.__('Thank You','stripe-gateways').'</h1>
+                <p>'.__('Thank you for your payment.','stripe-gateways').'</p>';
 
                 $charge_date = date('Y-m-d H:i:s');
                 $price_updated = $price_amount/100;
@@ -112,8 +113,10 @@
 
 
             } else {
-                $msg = '<h1>Payment Failed</h1>
-                <p>Something Went Wrong </p>'."Please Contact admin: ".get_option('admin_email');
+
+                $msg = '<h1>'. __('Payment Failed','stripe-gateways') .'</h1>
+                <p>'. __('Something Went Wrong ','stripe-gateways'). __('Please Contact admin: ','stripe-gateways').get_option('admin_email').'</p>';
+
             }
 
         
@@ -147,7 +150,7 @@
         if (timer != null) {
             if (count > 0) {
                 count--;
-                timer.innerHTML = "Redirecting you to the Home in " + count + " seconds.";
+                timer.innerHTML = " <?= __('Redirecting you to the Home in ','stripe-gateways'); ?> " + count + " <?= __('seconds','stripe-gateways'); ?>.";
                 setTimeout("countDown()", 1000);
             } else {
                 window.location.href = redirect;
