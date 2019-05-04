@@ -182,22 +182,26 @@ class Simple_GF_Field extends GF_Field {
 				<input type='hidden' name='uniqid' value='".uniqid()."'>
 				<input type='hidden' name='form_idd' value='".$form_id."'>
 				<br class='payee'>
-				<label class='gfield_label payee'> ".__('Hesap Sahibinin Adı Soyadı ','stripe-gateways')." </label>
+				<div class='gfield gfield_contains_required field_sublabel_below field_description_below gfield_visibility_visible'>
+				   <label class='gfield_label payee'> ".__('Payee name ','stripe-gateways')." </label>
+				   <div class='ginput_container ginput_container_text'>
+					  <input type='text' name='owner_name' class='payee large' aria-required='true' aria-invalid='false'>
+				   </div>
+				</div>
 				<br class='payee'>
-				<input type='text' name='owner_name' class='payee'>
-				<br class='payee'>
-				<label class='gfield_label labe_country' style='display:none; '> ".__('Payment Country ','stripe-gateways')." </label>
-				<br class='payee'>
-				
-				<select name='country_name' style='display:none;'>
-					<option value='AT'>Austria</option>
-					<option value='BE'>Belgium</option>
-					<option value='DE'>Germany</option>
-					<option value='NL'>Netherlands</option>
-					<option value='IT'>Italy</option>
-					<option value='ES'>Spain</option>
-				</select>
-				
+				<div class='gfield gfield_contains_required field_sublabel_below field_description_below gfield_visibility_visible'>
+					<label class='gfield_label labe_country' style='display:none; '> ".__('Country ','stripe-gateways')." </label>
+					<div class='ginput_container ginput_container_text'>
+						<select name='country_name' style='display:none;'>
+							<option value='AT'>Austria</option>
+							<option value='BE'>Belgium</option>
+							<option value='DE'>Germany</option>
+							<option value='NL'>Netherlands</option>
+							<option value='IT'>Italy</option>
+							<option value='ES'>Spain</option>
+						</select>
+					</div>
+				</div>			
 			";
 
 			if($enable == true) {

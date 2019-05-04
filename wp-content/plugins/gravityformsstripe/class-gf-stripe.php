@@ -1105,7 +1105,12 @@ class GFStripe extends GFPaymentAddOn {
 		
 		add_filter( 'gform_pre_submission', array( $this, 'populate_credit_card_last_four' ) );
 
-		parent::init();
+		
+		// if( $_POST['method_name'] == 'credit-card'  ) {
+
+			parent::init();
+
+		// }
 
 	}
 

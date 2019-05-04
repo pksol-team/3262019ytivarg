@@ -1,16 +1,15 @@
-#, fuzzy
 msgid ""
 msgstr ""
-"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "Project-Id-Version: Gravity Forms Stripe Payment Gateways Add-On\n"
 "POT-Creation-Date: 2019-04-18 13:27+0500\n"
-"PO-Revision-Date: 2019-04-18 13:27+0500\n"
+"PO-Revision-Date: 2019-04-22 22:11+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.0.6\n"
+"X-Generator: Poedit 1.6.5\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: gateway.php\n"
@@ -18,8 +17,9 @@ msgstr ""
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
 "esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
 "_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
-"X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
+"Language: tr_TR\n"
+"X-Poedit-SearchPath-0: .\n"
 
 #: class-gateway.php:82 class-gateway.php:173
 msgid "Bancontact"
@@ -65,7 +65,7 @@ msgstr ""
 
 #: includes/class-simple-gf-field.php:22
 msgid "Payments"
-msgstr ""
+msgstr "Ödeme Metodları"
 
 #: includes/class-simple-gf-field.php:139
 msgid "Select Gateway "
@@ -89,11 +89,11 @@ msgstr ""
 
 #: includes/class-simple-gf-field.php:185
 msgid "Payee name "
-msgstr ""
+msgstr "Hesap Sahibinin Adı Soyadı"
 
 #: includes/class-simple-gf-field.php:189
 msgid "Payment Country "
-msgstr ""
+msgstr "Ülke"
 
 #: templates/thank-you.php:49 templates/thank-you.php:76
 msgid "Please Contact admin:"
@@ -101,7 +101,7 @@ msgstr ""
 
 #: templates/thank-you.php:55 templates/thank-you.php:117
 msgid "Payment Failed"
-msgstr ""
+msgstr "Ödeme başarısız"
 
 #: templates/thank-you.php:56
 msgid "You didn't authorize the payment"
@@ -109,15 +109,15 @@ msgstr ""
 
 #: templates/thank-you.php:81
 msgid "Thank You"
-msgstr ""
+msgstr "Teşekkür ederiz"
 
 #: templates/thank-you.php:82
 msgid "Thank you for your payment."
-msgstr ""
+msgstr "Bağışınız İçin Teşekkür Ederiz"
 
 #: templates/thank-you.php:118
 msgid "Something Went Wrong "
-msgstr ""
+msgstr "Hata oluştu"
 
 #: templates/thank-you.php:118
 msgid "Please Contact admin: "
@@ -125,7 +125,7 @@ msgstr ""
 
 #: templates/thank-you.php:153
 msgid "Redirecting you to the Home in "
-msgstr ""
+msgstr "Ana sayfaya yönlendiriliyorsunuz lütfen bekleyiniz"
 
 #: templates/thank-you.php:153
 msgid "seconds"
